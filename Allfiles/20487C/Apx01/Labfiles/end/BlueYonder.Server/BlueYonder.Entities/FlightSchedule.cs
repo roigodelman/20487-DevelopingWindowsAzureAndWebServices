@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace BlueYonder.Entities
@@ -27,12 +23,11 @@ namespace BlueYonder.Entities
         [DataMember]
         public TimeSpan Duration { get; set; }
 
-        [DataMember]
-        public int FlightId { get; set; }
+//        [DataMember]
+//        public int FlightId { get; set; }
 
         [JsonIgnore]
         [XmlIgnore]
-        [ForeignKey("FlightId")]
         public virtual Flight Flight { get; set; }
     }
 }

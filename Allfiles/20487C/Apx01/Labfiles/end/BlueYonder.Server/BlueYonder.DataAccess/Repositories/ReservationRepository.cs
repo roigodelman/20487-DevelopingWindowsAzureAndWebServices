@@ -66,9 +66,9 @@ namespace BlueYonder.DataAccess.Repositories
         {
             context.Reservations.Find(entity.ReservationId);
             if (entity.DepartFlightScheduleID != 0)
-                context.Entry(entity.DepartureFlight).State = System.Data.EntityState.Deleted;
+                context.Entry(entity.DepartureFlight).State = EntityState.Deleted;
             if (entity.ReturnFlightScheduleID != 0)
-                context.Entry(entity.ReturnFlight).State = System.Data.EntityState.Deleted;            
+                context.Entry(entity.ReturnFlight).State = EntityState.Deleted;            
             context.Reservations.Remove(entity);
         }
 
