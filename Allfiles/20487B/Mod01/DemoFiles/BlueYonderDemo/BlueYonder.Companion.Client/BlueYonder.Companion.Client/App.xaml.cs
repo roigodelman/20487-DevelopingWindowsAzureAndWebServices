@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using BlueYonder.Companion.Client.Helpers;
 using System.Threading.Tasks;
+using BlueYonder.Companion.Client.Common;
 //using BlueYonder.Companion.Client.Common;
 using BlueYonder.Companion.Client.Views;
 
@@ -25,7 +26,6 @@ namespace BlueYonder.Companion.Client
 {
     sealed partial class App : Application
     {
-        private const int SEARCH_PANE_MAX_SUGGESTIONS = 5;
         private Frame _rootFrame;
 
         public App()
@@ -81,12 +81,24 @@ namespace BlueYonder.Companion.Client
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+                //Associate the frame with a SuspensionManager key                                
+                SuspensionManager.RegisterFrame(rootFrame, "AppFrame");
+
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
-                    //TODO: Load state from previously suspended application
+                    // Restore the saved session state only when appropriate
+                    try
+                    {
+                        await SuspensionManager.RestoreAsync();
+                    }
+                    catch (SuspensionManagerException)
+                    {
+                        //Something went wrong restoring state.
+                        //Assume there is no state and continue
+                    }
                 }
 
                 // Place the frame in the current Window
@@ -135,7 +147,7 @@ namespace BlueYonder.Companion.Client
         private async void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //await SuspensionManager.SaveAsync();
+            await SuspensionManager.SaveAsync();
             deferral.Complete();
         }
     }

@@ -2060,6 +2060,24 @@
         <Setter Property="Content" Value="&#xE112;"/>
     </Style>
 
+    <Style x:Key="AboutAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
+        <Setter Property="AutomationProperties.AutomationId" Value="SearchAppBarButton"/>
+        <Setter Property="AutomationProperties.Name" Value="About" x:Uid="AppBarSearch"/>
+        <Setter Property="Content" Value="&#xE11B;"/>
+    </Style>
+
+    <Style x:Key="OptionsAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
+        <Setter Property="AutomationProperties.AutomationId" Value="SearchAppBarButton"/>
+        <Setter Property="AutomationProperties.Name" Value="Options" x:Uid="AppBarSearch"/>
+        <Setter Property="Content" Value="&#xE115;"/>
+    </Style>
+
+    <Style x:Key="TravelerInfoAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
+        <Setter Property="AutomationProperties.AutomationId" Value="SearchAppBarButton"/>
+        <Setter Property="AutomationProperties.Name" Value="Traveler Info" x:Uid="AppBarSearch"/>
+        <Setter Property="Content" Value="&#xE136;"/>
+    </Style>
+
     <Style x:Key="CustomSearchAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
         <Setter Property="AutomationProperties.AutomationId" Value="SearchAppBarButton"/>
         <Setter Property="AutomationProperties.Name" Value="Search" x:Uid="AppBarSearch"/>

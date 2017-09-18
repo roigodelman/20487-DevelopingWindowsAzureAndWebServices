@@ -26,13 +26,6 @@ namespace BlueYonder.Companion.Client.ViewModels
 
         private readonly DataManager _data;
 
-        public DelegateCommand LoginCommand { get; set; }
-        public DelegateCommand SearchCommand { get; set; }
-        public DelegateCommand TravelerInfoCommand { get; set; }
-        public DelegateCommand AboutCommand { get; set; }
-        public DelegateCommand OptionsCommand { get; set; }
-        public DelegateCommand LogoutCommand { get; set; }
-
         private ObservableCollection<TripCategory> _tripCategories;
         public ObservableCollection<TripCategory> TripCategories
         {
@@ -138,27 +131,8 @@ namespace BlueYonder.Companion.Client.ViewModels
             IsTripDataVisible = false;
             IsGlanceVisible = false;
 
-            SearchCommand = new DelegateCommand(ShowSearch);
-            TravelerInfoCommand = new DelegateCommand(TravelerInfoHandler);
-            AboutCommand = new DelegateCommand(AboutHandler);
-            OptionsCommand = new DelegateCommand(OptionsHandler);
-            LoginCommand = new DelegateCommand(Login);
-            LogoutCommand = new DelegateCommand(Logout);
-
             // TODO: Module 12: Exercise 1: Task 2.5: Initialize the IsTrialLicense property
             IsTrialLicense = LicenseManager.Instance.IsTrialLicense;
-        }
-
-        private void TravelerInfoHandler(object parameter)
-        {
-        }
-
-        private void OptionsHandler(object parameter)
-        {
-        }
-
-        private void AboutHandler(object parameter)
-        {
         }
 
         public override async void Initialize(Frame frame)
@@ -231,20 +205,6 @@ namespace BlueYonder.Companion.Client.ViewModels
             Working = true;
             TripCategories = await ReservationDataFetcher.Instance.GetCategoriesAsync(forceRefresh);
             Working = false;
-        }
-
-        private void ShowSearch(object parameter)
-        {
-            // Not supported on UWP
-            //SearchPane.GetForCurrentView().Show();
-        }
-
-        private async void Login(object parameter)
-        {
-        }
-
-        private void Logout(object parameter)
-        {
         }
 
         private async Task InitializeWeather(Reservation currentTrip)

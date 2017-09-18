@@ -95,5 +95,48 @@ namespace BlueYonder.Companion.Client.Views
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+        }
+        private void NavigateToSearchPage(string queryText)
+        {
+            var argument = JsonSerializerHelper.Serialize(new TripDetailNavigationArgument()
+            {
+                CategoryType = CategoryType.SearchResult,
+                QueryText = queryText
+            });
+
+            var frame = Window.Current.Content as Frame;
+            frame.Navigate(typeof(TripDetailPage), argument);
+            Window.Current.Content = frame;
+        }
+
+        private async void SearchBox_OnSuggestionsRequested(SearchBox sender, SearchBoxSuggestionsRequestedEventArgs e)
+        {
+            //Request deferral must be recieved to allow async search suggestion population
+            var deferal = e.Request.GetDeferral();
+
+            // Add suggestions to Search Pane
+            var destinations = await LocationsDataFetcher.Instance.FetchLocationsAsync(e.QueryText, false);
+            var suggestions =
+                destinations
+                    .OrderBy(location => location.City)
+                    .Take(5)
+                    .Select(location => location.City);
+            e.Request.SearchSuggestionCollection.AppendQuerySuggestions(suggestions);
+            deferal.Complete();
+        }
+
+        private void SearchBox_OnQuerySubmitted(SearchBox sender, SearchBoxQuerySubmittedEventArgs args)
+        {
+            NavigateToSearchPage(args.QueryText);
+        }
+
+        private void Search_Clicked(object sender, RoutedEventArgs e)
+        {
+            LocationsSearchBox.Focus(FocusState.Pointer);
+        }
     }
 }

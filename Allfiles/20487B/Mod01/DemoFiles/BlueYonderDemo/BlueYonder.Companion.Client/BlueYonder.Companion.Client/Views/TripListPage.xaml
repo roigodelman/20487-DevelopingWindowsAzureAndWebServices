@@ -49,13 +49,14 @@
                             Loaded="StartLayoutUpdates" Unloaded="StopLayoutUpdates" />
                 </StackPanel>
                 <StackPanel x:Name="LeftCommands" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
-                    <Button Command="{Binding SearchCommand}"
+                    <Button Click="Search_Clicked"
                             HorizontalAlignment="Left"
                             Style="{StaticResource CustomSearchAppBarButtonStyle}"
-                            Loaded="StartLayoutUpdates" Unloaded="StopLayoutUpdates" />
-                    <Button Command="{Binding TravelerInfoCommand}"
+                            Loaded="StartLayoutUpdates" Unloaded="StopLayoutUpdates">
+                    </Button>
+                    <Button Click="ButtonBase_OnClick"
                             HorizontalAlignment="Left"
-                            Style="{StaticResource CustomSearchAppBarButtonStyle}"
+                            Style="{StaticResource TravelerInfoAppBarButtonStyle}"
                             Loaded="StartLayoutUpdates" Unloaded="StopLayoutUpdates">
                         <FlyoutBase.AttachedFlyout>
                             <Flyout>
@@ -63,14 +64,28 @@
                             </Flyout>
                         </FlyoutBase.AttachedFlyout>
                     </Button>
-                    <Button Command="{Binding OptionsCommand}"
+                    <Button Click="ButtonBase_OnClick"
                             HorizontalAlignment="Left"
-                            Style="{StaticResource CustomSearchAppBarButtonStyle}"
-                            Loaded="StartLayoutUpdates" Unloaded="StopLayoutUpdates" />
-                    <Button Command="{Binding AboutCommand}"
+                            Style="{StaticResource OptionsAppBarButtonStyle}"
+                            Loaded="StartLayoutUpdates" Unloaded="StopLayoutUpdates">
+                        <FlyoutBase.AttachedFlyout>
+                            <Flyout>
+                                <settings:OptionsControl />
+                            </Flyout>
+                        </FlyoutBase.AttachedFlyout>
+
+                    </Button>
+                    <Button Click="ButtonBase_OnClick"
                             HorizontalAlignment="Left"
-                            Style="{StaticResource CustomSearchAppBarButtonStyle}"
-                            Loaded="StartLayoutUpdates" Unloaded="StopLayoutUpdates" />
+                            Style="{StaticResource AboutAppBarButtonStyle}"
+                            Loaded="StartLayoutUpdates" Unloaded="StopLayoutUpdates">
+                        <FlyoutBase.AttachedFlyout>
+                            <Flyout>
+                                <settings:AboutControl />
+                            </Flyout>
+                        </FlyoutBase.AttachedFlyout>
+
+                    </Button>
                 </StackPanel>
             </Grid>
         </AppBar>
@@ -202,12 +217,13 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}"
                     Style="{StaticResource BackButtonStyle}" />
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Grid.Column="1" IsHitTestVisible="false"
                        Style="{StaticResource PageHeaderTextStyle}" />
-
+            <SearchBox Name="LocationsSearchBox" Height="40" VerticalAlignment="Top" Grid.Column="2" Width="200" Margin="10" SuggestionsRequested="SearchBox_OnSuggestionsRequested" ChooseSuggestionOnEnter="True" QuerySubmitted="SearchBox_OnQuerySubmitted"/>
             <!-- TODO: Module 12: Exercise 1: Task 2.6: Add the trial version sub-header and bind its Visibility to the IsTrialLicense property value -->
             <TextBlock
                 Text="Trial version"
