@@ -28,6 +28,9 @@ namespace BlueYonder.Companion.Client.ViewModels
 
         public DelegateCommand LoginCommand { get; set; }
         public DelegateCommand SearchCommand { get; set; }
+        public DelegateCommand TravelerInfoCommand { get; set; }
+        public DelegateCommand AboutCommand { get; set; }
+        public DelegateCommand OptionsCommand { get; set; }
         public DelegateCommand LogoutCommand { get; set; }
 
         private ObservableCollection<TripCategory> _tripCategories;
@@ -136,11 +139,26 @@ namespace BlueYonder.Companion.Client.ViewModels
             IsGlanceVisible = false;
 
             SearchCommand = new DelegateCommand(ShowSearch);
+            TravelerInfoCommand = new DelegateCommand(TravelerInfoHandler);
+            AboutCommand = new DelegateCommand(AboutHandler);
+            OptionsCommand = new DelegateCommand(OptionsHandler);
             LoginCommand = new DelegateCommand(Login);
             LogoutCommand = new DelegateCommand(Logout);
 
             // TODO: Module 12: Exercise 1: Task 2.5: Initialize the IsTrialLicense property
             IsTrialLicense = LicenseManager.Instance.IsTrialLicense;
+        }
+
+        private void TravelerInfoHandler(object parameter)
+        {
+        }
+
+        private void OptionsHandler(object parameter)
+        {
+        }
+
+        private void AboutHandler(object parameter)
+        {
         }
 
         public override async void Initialize(Frame frame)
@@ -217,7 +235,8 @@ namespace BlueYonder.Companion.Client.ViewModels
 
         private void ShowSearch(object parameter)
         {
-            SearchPane.GetForCurrentView().Show();
+            // Not supported on UWP
+            //SearchPane.GetForCurrentView().Show();
         }
 
         private async void Login(object parameter)

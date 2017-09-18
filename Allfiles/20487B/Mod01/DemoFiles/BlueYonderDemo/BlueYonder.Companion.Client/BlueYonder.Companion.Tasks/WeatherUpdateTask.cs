@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using BlueYonder.Companion.Shared;
 using Newtonsoft.Json;
-using NotificationsExtensions.TileContent;
 using System;
 using System.Diagnostics;
 using System.Net.Http;
@@ -11,6 +10,7 @@ using Windows.Foundation;
 using Windows.Storage;
 using Windows.System.Threading;
 using Windows.UI.Notifications;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace BlueYonder.Companion.Tasks
 {
@@ -70,18 +70,84 @@ namespace BlueYonder.Companion.Tasks
 
             var locationName = GetSetting("locationName");
 
-            ITileWideText01 tileContent = TileContentFactory.CreateTileWideText01();
-            tileContent.TextHeading.Text = locationName;
-            tileContent.TextBody1.Text = condition;
-            tileContent.TextBody2.Text = "Celsius: " + celsius;
-            tileContent.TextBody3.Text = "Fahrenheit: " + fahrenheit;
+            var tileContent = new TileContent()
+            {
+                Visual = new TileVisual()
+                {
+                    TileWide = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = locationName,
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = condition,
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Celsius: " + celsius,
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Fahrenheit: " + fahrenheit,
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                            }
+                        }
+                    },
 
-            ITileSquareBlock squareTileContent = TileContentFactory.CreateTileSquareBlock();
-            squareTileContent.TextBlock.Text = celsius;
-            squareTileContent.TextSubBlock.Text = locationName;
-            tileContent.SquareContent = squareTileContent;
+                    TileLarge = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = locationName,
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = condition,
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Celsius: " + celsius,
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Fahrenheit: " + fahrenheit,
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                            }
+                        }
+                    },
+                    Branding = TileBranding.Logo
+                }
+            };
+            //ITileWideText01 tileContent = TileContentFactory.CreateTileWideText01();
+            //tileContent.TextHeading.Text = locationName;
+            //tileContent.TextBody1.Text = condition;
+            //tileContent.TextBody2.Text = "Celsius: " + celsius;
+            //tileContent.TextBody3.Text = "Fahrenheit: " + fahrenheit;
 
-            tileContent.Branding = TileBranding.Logo;
+            //ITileSquareBlock squareTileContent = TileContentFactory.CreateTileSquareBlock();
+            //squareTileContent.TextBlock.Text = celsius;
+            //squareTileContent.TextSubBlock.Text = locationName;
+            //tileContent.SquareContent = squareTileContent;
+
+            //tileContent.Branding = TileBranding.Logo;
 
             TileNotification tileNotification = new TileNotification(tileContent.GetXml());
             TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
