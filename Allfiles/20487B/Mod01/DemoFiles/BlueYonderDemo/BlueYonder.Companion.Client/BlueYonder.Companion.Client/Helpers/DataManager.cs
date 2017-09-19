@@ -1,7 +1,6 @@
 ﻿using BlueYonder.Companion.Client.DataModel;
 using BlueYonder.Companion.Client.DataTransferObjects;
 using BlueYonder.Companion.Shared;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,6 +11,7 @@ using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using File = BlueYonder.Companion.Client.DataModel.File;
 
 namespace BlueYonder.Companion.Client.Helpers
 {

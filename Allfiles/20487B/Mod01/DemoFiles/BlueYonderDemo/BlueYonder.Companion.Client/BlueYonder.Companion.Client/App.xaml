@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BlueYonder.Companion.Client"
     xmlns:Common="using:BlueYonder.Companion.Client.Common">
-
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -31,7 +30,6 @@
             <Common:ImagePreviewTemplateSelector x:Key="ImagePreviewTemplateSelector"/>
             <Common:ImageThumbnailTemplateSelector x:Key="ImageThumbnailTemplateSelector"/>
             <Common:CurrentDestinationTemplateSelector x:Key="CurrentDestinationTemplateSelector"/>
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>
