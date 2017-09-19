@@ -56,12 +56,12 @@ namespace BlueYonder.DataAccess.Repositories
         //TODO :Lab 02 Exercise 1, Task 4.5 : unmark the Delete Method
         public void Delete(Reservation entity)
         {
-            /* 
+             /*
             context.Reservations.Find(entity.ReservationId);
             if (entity.DepartFlightScheduleID != 0)
-                context.Entry(entity.DepartureFlight).State = System.Data.EntityState.Deleted;
+                context.Entry(entity.DepartureFlight).State = System.Data.Entity.EntityState.Deleted;
             if (entity.ReturnFlightScheduleID != 0)
-                context.Entry(entity.ReturnFlight).State = System.Data.EntityState.Deleted;
+                context.Entry(entity.ReturnFlight).State = System.Data.Entity.EntityState.Deleted;
             context.Reservations.Remove(entity);
            */
         }

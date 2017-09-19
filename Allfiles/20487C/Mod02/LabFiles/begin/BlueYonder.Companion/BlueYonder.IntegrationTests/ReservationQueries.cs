@@ -7,6 +7,7 @@ using BlueYonder.Entities;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 
 namespace BlueYonder.IntegrationTests
 {
