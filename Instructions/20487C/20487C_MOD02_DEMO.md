@@ -139,12 +139,16 @@
 11. In the **Main** method, right-click the **Console.ReadLine()** method call, point to **Breakpoint** , and then click **Insert Breakpoint**.
 12. To run the application, press F5. After a few seconds, the code execution will break, and the breakpoint will be highlighted in yellow.
 13. In the console window, review the course and student lists printed to the console window.
-14. In Visual Studio 2017, on the **Debug** menu, point to **IntelliTrace** , and then click **IntelliTrace Events**.
-15. Review the SQL statements executed by Entity Framework. The first set of queries is part of the database initializer code. The next set of queries is a single query to get the list of courses, and another set of queries to get the list of students, one query for each course.
+14. In Visual Studio 2017, while debugging, you can view **IntelliTrace** events in the  **Diagnostic Tools** pane on the right hand side of the window.
+15. In the **Diagnostic Tools** pane, on the bottom part below the charts, click on the **Events** tab. The **Events** tab lists various events that happen during execution.
+16. Events that start with "**ADO.NET:**" contain the actual SQL statements executed by Entity Framework.
+17. Review the SQL statements executed by Entity Framework. The first set of queries is part of the database initializer code. The next set of queries is a single query to get the list of courses, and another set of queries to get the list of students, one query for each course.
 
-     >**Note** : IntelliTrace will be covered in Module 10, &quot;Monitoring and Diagnostics&quot; in Course 20487.
+     >**Notes** : 
+     >1. IntelliTrace is available on Visual Studio 2017 Enterprise edition. 
+     >2. IntelliTrace will be covered in Module 10, &quot;Monitoring and Diagnostics&quot; in Course 20487.
 
-16. To stop the debugger, press Shift+F5.
+18. To stop the debugger, press Shift+F5.
 
 ### Demonstration 2: Running Stored Procedures with Entity Framework
 
@@ -224,9 +228,11 @@
 15. In the **Main** method, right-click the _Console.ReadLine()_ method call, point to **Breakpoint** , and then click **Insert Breakpoint**.
 16. To run the application, press F5. After a few seconds, the code execution will break, and the breakpoint will be highlighted in yellow.
 17. The list of students appears in the console window. Notice that there are two new students at the bottom of the list, and student 1 is missing from the list. Also notice that the salary of the teacher is now 101000.
-18. In Visual Studio 2012, on the **Debug** menu, point to **IntelliTrace** , and then click **IntelliTrace Events**.
-19. Notice the SQL update, delete, and insert statements that correspond to the salary update, student deletion, and the addition of the two new students.
-20. To stop the debugger, press Shift+F5.
+18. In Visual Studio 2017, while debugging, you can view **IntelliTrace** events in the  **Diagnostic Tools** pane on the right hand side of the window.
+19. In the **Diagnostic Tools** pane, on the bottom part below the charts, click on the **Events** tab. The **Events** tab lists various events that happen during execution.
+20. Events that start with "**ADO.NET:**" contain the actual SQL statements executed by Entity Framework.
+21. Notice the SQL update, delete, and insert statements that correspond to the salary update, student deletion, and the addition of the two new students.
+22. To stop the debugger, press Shift+F5.
 
 ©2016 Microsoft Corporation. All rights reserved.
 

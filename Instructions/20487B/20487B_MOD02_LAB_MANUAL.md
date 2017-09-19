@@ -15,28 +15,6 @@ After completing this lab, you will be able to:
 - Manipulate data by using Entity Framework.
 - Create a database transaction with the **TransactionScope** class.
 
-#### Lab Setup
-
-Estimated Time: **60 minutes**
-
-Virtual Machine: **20487B-SEA-DEV-A** , **20487B-SEA-DEV-C**
-
-User name: **Administrator** , **Admin**
-
-Password: **Pa$$w0rd** , **Pa$$w0rd**
-
-For this lab, you will use the available virtual machine environment. Before you begin this lab, you must complete the following steps:
-
-1. On the host computer, click **Start** , point to **Administrative Tools** , and then click **Hyper-V Manager**.
-
-2. In Hyper-V Manager, click **MSL-TMG1** , and in the Action pane, click **Start**.
-3. In Hyper-V Manager, click **20487B-SEA-DEV-A** , and in the Action pane, click **Start**.
-4. In the Action pane, click **Connect**. Wait until the virtual machine starts.
-5. Sign in using the following credentials:
-
-   - User name: **Administrator**
-   - Password: **Pa$$w0rd**
-
 ### Exercise 1: Creating a Data Model
 
 #### Scenario
@@ -242,12 +220,6 @@ The main tasks for this exercise are as follows:
    
    >**Results** : The Entity Framework data model works as designed and is verified by tests.
 
-Perform the following steps to apply the **StartingImage** snapshot:
-
-1. On the host computer, click **Start**, point to **Administrative Tools**, and then click **Hyper-V Manager**.
-2. In Hyper-V Manager, click **20487B-SEA-DEV-A**, and in the **Snapshots** pane, right-click **StartingImage**, and then click **Apply**.
-3. In the **Apply Snapshot** dialog box, click **Apply**.
-4. Repeat Step 2 for all the virtual machines that you used in this lab. (excluding **MSL-TMG1**).
 
 ©2016 Microsoft Corporation. All rights reserved.
 
