@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="edb142aa-5203-493f-a489-5cd4b40913bd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/HotelBooking/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="f42c853e-d05e-4579-a043-bbe1cc69566e" SourceId="1" SourceUrl="http://localhost:8733/HotelBooking/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="49c88e28-1326-4818-a959-4ce6e5a5689c" SourceId="1" SourceUrl="http://localhost:8733/HotelBooking/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="01a4f8dd-199b-4a67-971a-8cd7504bd723" SourceId="1" SourceUrl="http://localhost:8733/HotelBooking/mex" />
+    <MetadataFile FileName="HotelBooking.xsd" MetadataType="Schema" ID="cf76642a-e15a-4716-bef2-80af35803f70" SourceId="1" SourceUrl="http://localhost:8733/HotelBooking/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
