@@ -4,20 +4,7 @@
 
 ### Demonstration: Creating Service Bus Relays
 
-#### Preparation Steps
-
-For this demo, you will use the available virtual machine environment. Before you begin this demo, you must complete the following steps:
- 1.	On the host computer, click **Start**, point to **Administrative Tools**, and then click **Hyper-V Manager**.
- 2.	In Hyper-V Manager, click **MSL-TMG1**, and then in the Actions pane, click **Start**.
- 3.	In Hyper-V Manager, click **20487B-SEA-DEV-A**, and then in the Actions pane, click **Start**.
- 4.	In the **Actions** pane, click **Connect**. Wait until the virtual machine starts.
- 5.	Sign in using the following credentials:
-    - User name: **Administrator**
-    - Password: **Pa$$w0rd**
-
-#### Demonstration Steps
-
-1. On the Start screen, click the **Visual Studio 2012** tile.
+1. On the Start menu, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open** , and then click **Project/Solution**.
 3. In the **File name** text box, type **D:\AllFiles\Mod07\DemoFiles\ServiceBusRelay\begin\ServiceBusRelay\ServiceBusRelay.sln**, and then click **Open**.
 4. In **Solution Explorer**, expand the **ServiceBusRelay.Server** project, and then double-click **Program.cs**.
@@ -32,9 +19,9 @@ For this demo, you will use the available virtual machine environment. Before yo
 13. Position the browser and console windows next to each other so that you can show both windows.
 14. In the browser window, in the **Text** text box, type **Hello** and click **Write to console**. The **Hello** text will appear in the console window.
 15. Close the browser and the console window.
-16. On the Start screen, click the **Internet Explorer** tile.
-17. Go to the Microsoft Azure portal at **http://manage.windowsazure.com**.
-18. If a page appears, asking for your email address, type your email address, and then click **Continue**. Wait for the **Sign In** page to appear, type your email address and password, and then click **Sign In**.
+16. On the Start menu, click the **Microsoft Edge** tile.
+17. Go to the Microsoft Azure portal at **http://portal.azure.com**.
+18. If a page appears, asking for your email address and password, type your email address and password, and then click **Sign in**.
 
     >**Note:** If during the sign-in process, a page appears asking you to choose from a list of previously used accounts, select the account you previously used, and then continue to type your credentials.
 
@@ -43,17 +30,22 @@ For this demo, you will use the available virtual machine environment. Before yo
 21. At the bottom of the page, click **CREATE**.
 22. In the **CREATE A NAMESPACE** dialog box, provide the following information:
 
-    a. NAMESPACE NAME: **ServiceBusDemo07**** YourInitials** (Replace _YourInitials_ with your initials).  
-    b. TYPE: **MESSAGING**    
-    c. MESSAGING TIER: **STANDARD**    
-    d. REGION: Select the region closest to your location.
+    a. Name: **ServiceBusDemo07**** YourInitials** (Replace _YourInitials_ with your initials).      
+    b. Pricing Tier: **Standard**. \
+    c. Subscription: either **Free Trial** or any available subscription
+       
+       >**Note:** If you don't have any available subscriptions, create one before proceeding.
+       
+    d. Resource Group: Select **Create New** and type in **ServiceBusDemo07**** YourInitials** (Replace _YourInitials_ with your initials). \
+    e. Region: Select the region closest to your location.
 
-23. To create the namespace,at the bottom of the dialog box, click the **V** icon, and then wait until the namespace is active.
-24. Click the name of the newly created namespace.
-25. Click the **CONFIGURE** tab.
-26. Click the **Copy** icon to the right-side of the **PRIMARY KEY** text box.
+23. To create the namespace,at the bottom of the dialog box, click the **Create** button, and then wait until the namespace is active.
+24. In the **Dashboard**, under the **All Resources** tile, you should see your newly created service bus. Click it.
+    >**Note:** If you cannot see the service bus, you can click **See more...** to access the full list of resources, alternatively, you can expand the tile by dragging its bottom-right corner. 
+25. In the service bus box, click the **Shared access policies** tab on the left-hand menu, then click **RootManageSharedAccessKey**.
+26. In the box that opened to the right, Click the **Copy** icon to the right-side of the **Primary Key** text box.
 27. If you are prompted to allow access to your clipboard, click **Allow access**.
-28. Close the dialog box, and then return to Visual Studio 2012.
+28. Close the dialog box, and then return to Visual Studio 2017.
 29. In **Solution Explorer**, right-click the **ServiceBusRelay.Server** project, and then click **Manage NuGet Packages**.
 30. In the **Manage NuGet Packages** dialog box, on the navigation pane, expand the **Online** node, and then click the **NuGet official package source** node.
 31. Press Ctrl+E and type **WindowsAzure.ServiceBus**.
