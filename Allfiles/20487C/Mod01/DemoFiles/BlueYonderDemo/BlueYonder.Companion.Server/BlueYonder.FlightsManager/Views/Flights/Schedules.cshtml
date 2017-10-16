@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BlueYonder.Companion.Entities.FlightWithSchedulesDTO>
+@{
+    ViewBag.Title = "Schedules";
+}
+
+<style type="text/css">
+
+    .timePicker {
+        border: 1px solid gray;
+        overflow-y: scroll;
+        height: 120px;
+        width: 180px;
+        position: absolute;
+        background-color: #fff;
+    }
+
+    .timePicker ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .timePicker ul li p {
+        padding: 3px;
+        margin: 0;
+    }
+
+    .timePicker ul li:hover, .timePicker-selected {
+        background-color: gray;
+        color: #fff;
+    }
+
+</style>
+
+@foreach (var flight in Model)
+{  
+    <section class="content">
+        <div>
+            <div class="plane"></div>
+            <span class="title">Flight @Html.DisplayFor(m => flight.FlightNumber)</span>
+        </div>
+        <div style="margin-top: 20px;">
+            <table style="width: 100%">
+                <tr class="table_title">
+                    <td style="width: 25%">Original Departure</td>
+                    <td style="width: 35%">New Date</td>
+                    <td style="width: 35%">New Time</td>
+                    <td style="width: 5%"></td>
+                </tr>
+                @foreach (var schedule in flight.Schedules)
+                {
+                    var departureDate = schedule.Departure.ToShortDateString();
+                    var departureTime = schedule.Departure.ToShortTimeString();
+                    <tr>
+                        <td>@Html.DisplayFor(m => schedule.Departure)</td>
+                        <td>@Html.EditorFor(m => departureDate, "", "d_" + schedule.FlightScheduleId.ToString())</td>
+                        <td>@Html.EditorFor(m => departureTime, "", "t_" + schedule.FlightScheduleId.ToString())</td>
+                        <td><a class="update" href="~/flights/UpdateActualDeparture/@flight.FlightId?scheduleId=@schedule.FlightScheduleId" data-id="@schedule.FlightScheduleId">
+                            <div class="save"></div>
+                        </a></td>
+                        <td id="o_@schedule.FlightScheduleId">
+                            <div class="vi"></div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </section>       
+}
+
+
