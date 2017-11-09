@@ -1,0 +1,63 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="3.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="ConsumingODataService.Host.Model" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="Course">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <NavigationProperty Name="CourseTeacher" Relationship="ConsumingODataService.Host.Model.ConsumingODataService_Host_Model_Course_CourseTeacher_ConsumingODataService_Host_Model_Teacher_CourseTeacherPartner" ToRole="CourseTeacher" FromRole="CourseTeacherPartner" />
+        <NavigationProperty Name="Students" Relationship="ConsumingODataService.Host.Model.ConsumingODataService_Host_Model_Course_Students_ConsumingODataService_Host_Model_Student_StudentsPartner" ToRole="Students" FromRole="StudentsPartner" />
+      </EntityType>
+      <EntityType Name="Student">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Grade" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <NavigationProperty Name="Courses" Relationship="ConsumingODataService.Host.Model.ConsumingODataService_Host_Model_Student_Courses_ConsumingODataService_Host_Model_Course_CoursesPartner" ToRole="Courses" FromRole="CoursesPartner" />
+      </EntityType>
+      <EntityType Name="Teacher">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Salary" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+      </EntityType>
+      <Association Name="ConsumingODataService_Host_Model_Course_CourseTeacher_ConsumingODataService_Host_Model_Teacher_CourseTeacherPartner">
+        <End Type="ConsumingODataService.Host.Model.Teacher" Role="CourseTeacher" Multiplicity="0..1" />
+        <End Type="ConsumingODataService.Host.Model.Course" Role="CourseTeacherPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsumingODataService_Host_Model_Course_Students_ConsumingODataService_Host_Model_Student_StudentsPartner">
+        <End Type="ConsumingODataService.Host.Model.Student" Role="Students" Multiplicity="*" />
+        <End Type="ConsumingODataService.Host.Model.Course" Role="StudentsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsumingODataService_Host_Model_Student_Courses_ConsumingODataService_Host_Model_Course_CoursesPartner">
+        <End Type="ConsumingODataService.Host.Model.Course" Role="Courses" Multiplicity="*" />
+        <End Type="ConsumingODataService.Host.Model.Student" Role="CoursesPartner" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="Container" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Courses" EntityType="ConsumingODataService.Host.Model.Course" />
+        <EntitySet Name="Students" EntityType="ConsumingODataService.Host.Model.Student" />
+        <EntitySet Name="Teachers" EntityType="ConsumingODataService.Host.Model.Teacher" />
+        <AssociationSet Name="ConsumingODataService_Host_Model_Course_CourseTeacher_ConsumingODataService_Host_Model_Teacher_CourseTeacherPartnerSet" Association="ConsumingODataService.Host.Model.ConsumingODataService_Host_Model_Course_CourseTeacher_ConsumingODataService_Host_Model_Teacher_CourseTeacherPartner">
+          <End Role="CourseTeacherPartner" EntitySet="Courses" />
+          <End Role="CourseTeacher" EntitySet="Teachers" />
+        </AssociationSet>
+        <AssociationSet Name="ConsumingODataService_Host_Model_Course_Students_ConsumingODataService_Host_Model_Student_StudentsPartnerSet" Association="ConsumingODataService.Host.Model.ConsumingODataService_Host_Model_Course_Students_ConsumingODataService_Host_Model_Student_StudentsPartner">
+          <End Role="StudentsPartner" EntitySet="Courses" />
+          <End Role="Students" EntitySet="Students" />
+        </AssociationSet>
+        <AssociationSet Name="ConsumingODataService_Host_Model_Student_Courses_ConsumingODataService_Host_Model_Course_CoursesPartnerSet" Association="ConsumingODataService.Host.Model.ConsumingODataService_Host_Model_Student_Courses_ConsumingODataService_Host_Model_Course_CoursesPartner">
+          <End Role="CoursesPartner" EntitySet="Students" />
+          <End Role="Courses" EntitySet="Courses" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
