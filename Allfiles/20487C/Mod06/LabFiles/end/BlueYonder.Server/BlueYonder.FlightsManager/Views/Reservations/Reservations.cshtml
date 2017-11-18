@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BlueYonder.Companion.Entities.ReservationDTO>
+@using BlueYonder.FlightsManager
+
+@if (Model.Count() > 0)
+{
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfirmationCode)
+            </th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>@Html.DisplayNameFor(model => model.DepartureFlight.Status)</th>
+            <th>@Html.DisplayNameFor(model => model.DepartureFlight.Class)</th>
+            <th>Status update</th>
+            <th>Change class</th>           
+        </tr>
+
+        @foreach (var reservation in Model)
+        {
+            var flights = new List<BlueYonder.Companion.Entities.TripDTO> { reservation.DepartureFlight };
+            int? rows = null;
+            if (reservation.ReturnFlight != null)
+            {
+                flights.Add(reservation.ReturnFlight);
+                rows = 2;
+            }
+            bool firstRow = true;
+            
+            foreach (var flight in flights)
+            {
+                var origin = flight.FlightInfo.Flight.Source;
+                var destination = flight.FlightInfo.Flight.Destination;       
+        
+            <tr>
+                @if (firstRow){
+                <td rowspan="@rows">
+                    @Html.DisplayFor(modelItem => reservation.ReservationDate)
+                    </td>
+                <td rowspan="@rows">
+                    @Html.DisplayFor(modelItem => reservation.ConfirmationCode)
+                    </td>                                       
+                }
+
+                <td>@origin.GetFullLocation()</td>
+                <td>@destination.GetFullLocation()</td>
+                <td>@Html.DisplayFor(modelItem => flight.Status)</td>
+                <td>@Html.DisplayFor(modelItem => flight.Class)</td>
+                 <td>
+                    @if (flight.Status == BlueYonder.Companion.Entities.FlightStatus.StandBy) {
+                        @Html.ActionLink("Approve reservation", "Approve", new { id = flight.TripId, userId = ViewBag.UserId })
+                    }
+                    else {
+                        <p>-</p>
+                    }
+                    </td>
+                <td>
+                    @switch (flight.Class) {
+                        case BlueYonder.Companion.Entities.SeatClass.Business:
+                        @Html.ActionLink("Upgrade to first", "UpgradeClass", new { id = flight.TripId, userId = ViewBag.UserId, newClass = BlueYonder.Companion.Entities.SeatClass.First })
+                            break;
+                        case BlueYonder.Companion.Entities.SeatClass.Economy:
+                        @Html.ActionLink("Upgrade to business", "UpgradeClass", new { id = flight.TripId, userId = ViewBag.UserId, newClass = BlueYonder.Companion.Entities.SeatClass.Business })
+                            break;
+                    }
+                </td>
+                @{firstRow = false;}
+            </tr>
+            }
+        }
+
+    </table>
+}
+else
+{
+    <h2>No reservations found</h2>
+}

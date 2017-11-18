@@ -41,7 +41,7 @@ For this demonstration, you will use the available virtual machine environment. 
     - Password: **Pa$$w0rd**
     - Save password: **Checked**
     - Destination URL: **http://10.10.0.11/MyApp/api/values**
-
+-
 12. Click **Validate Connection**, and wait for the green check mark to appear.
 13. Click **Next**, click **Next** again, and then click **Publish**.
 14. Wait until the publishing completes and the browser opens. Click **Open** at the bottom of the browser, and then click **Notepad**. Verify that you see two values.

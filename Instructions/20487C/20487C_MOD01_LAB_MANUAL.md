@@ -32,7 +32,15 @@ The main tasks for this exercise are as follows:
 1. Open a browser and navigate to the Azure portal at **https://portal.azure.com**.
 2. On the left side navigation pane, click the **+ New** button.
 3. In the search box, enter **SQL Server**, then select **SQL Server (logical server)** from the results.
-4. Use the sign-in name **SQLAdmin** and password **Pa$$w0rd**, select a region that is closest to you, and then click **Complete**. Wait till the server appears in the list of servers and its status changes to **Ready**. Write down the name of the newly created server.
+4. Enter the following values:
+  - Server name: **my-first-azure-sql-database-*YourInitials*** (replace *YourInitials* with your initials, e.g. - John Doe -> jd)
+  - Server admin login: **SQLAdmin**
+  - Password: **Pa$$w0rd**
+  - Confirm Password: **Pa$$w0rd**
+  - Resource Group: Select **Create new**.
+  - Location: Select the location closest to you.
+5. Click **Create** and wait until the server is created.
+You can track its progress by hovering over the bell icon on the top bar.
 
 #### Task 2: Manage the Azure SQL Database server from SQL Server Management Studio
 

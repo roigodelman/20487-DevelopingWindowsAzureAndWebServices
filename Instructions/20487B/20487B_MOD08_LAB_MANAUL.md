@@ -70,7 +70,7 @@ The main tasks for this exercise are as follows:
 
    - Write down the names of the Azure Service Bus namespace and Azure cloud service.
 
-2. Open the solution **D:\AllFiles\Mod08\LabFiles\begin\BlueYonder.Server\BlueYonder.Companion.sln**.
+2. Open the solution **[repository root]\AllFiles\20487C\Mod08\LabFiles\begin\BlueYonder.Server\BlueYonder.Companion.sln**.
 3. Create a cloud deployment package for the cloud project.
 4. Right-click the **BlueYonder.Companion.Host.Azure** project, and then click **Package**.
 5. Create a package for the **Cloud** service configuration with the **Debug** build configuration.
