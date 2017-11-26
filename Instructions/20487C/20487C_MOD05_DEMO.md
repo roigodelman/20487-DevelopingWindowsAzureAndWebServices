@@ -117,7 +117,7 @@
 33. On the Start menu, click the **Microsoft Edge** icon, select all the text in the browser address bar, and press Ctrl+V to paste the metadata address you copied. Press Enter.
 34. The page displays an explanation of how to consume the service from a client. Click the link  **http://localhost:8733/?wsdl** and review the overall structure of the WSDL file.
 35. Close the browser and the WCF Test Client window.
-36. Return to Visual Studio 2012, press Shift+F5 to stop debugging, and then close Visual Studio 2012.
+36. Return to Visual Studio 2017, press Shift+F5 to stop debugging, and then close Visual Studio 2017.
 
 # Lesson 4: Consuming WCF Services
 
