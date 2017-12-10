@@ -1,0 +1,56 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "serviceBusNamespaceName": {
+            "defaultValue": "",
+            "type": "String"
+        },
+        "SharedAccessKeyName": {
+            "defaultValue": "RootManageSharedAccessKey",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/1f825f11-d8f8-4f04-b880-6925cf937b70/resourceGroups/BlueYonder.Lab.08/providers/Microsoft.ServiceBus/namespaces/BlueYonderLab-2017-10-03-nhz'.",
+            "type": "Microsoft.ServiceBus/namespaces",
+            "sku": {
+                "name": "Basic",
+                "tier": "Basic"
+            },
+            "name": "[parameters('serviceBusNamespaceName')]",
+            "apiVersion": "2017-04-01",
+            "location": "West Europe",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "metricId": "[concat('1f825f11-d8f8-4f04-b880-6925cf937b70:blueyonderlab-2017-10-03-nhz', parameters('serviceBusNamespaceName'))]",
+                "createdAt": "2017-12-03T12:46:30.447Z",
+                "updatedAt": "2017-12-03T12:47:00.237Z",
+                "serviceBusEndpoint": "[concat('https://', parameters('serviceBusNamespaceName'),'.servicebus.windows.net:443/')]"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/1f825f11-d8f8-4f04-b880-6925cf937b70/resourcegroups/BlueYonder.Lab.08/providers/Microsoft.ServiceBus/namespaces/BlueYonderLab-2017-10-03-nhz/AuthorizationRules/RootManageSharedAccessKey'.",
+            "type": "Microsoft.ServiceBus/namespaces/AuthorizationRules",
+            "name": "[concat(parameters('serviceBusNamespaceName'), '/', parameters('SharedAccessKeyName'))]",
+            "apiVersion": "2017-04-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "rights": [
+                    "Listen",
+                    "Manage",
+                    "Send"
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.ServiceBus/namespaces', parameters('serviceBusNamespaceName'))]"
+            ]
+        }
+    ]
+}

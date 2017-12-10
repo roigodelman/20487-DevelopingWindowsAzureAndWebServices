@@ -39,7 +39,7 @@ namespace BlueYonder.Companion.WNS
 
             Parallel.ForEach<int>
                 (notification.TargetClientDevices,
-                (travelerId) => client.SendWindowsNativeNotificationAsync(notification.GetNotificationXML(), $"user-{travelerId}");
+                (travelerId) => client.SendWindowsNativeNotificationAsync(notification.GetNotificationXML(), $"user-{travelerId}"));
         }
     }
 }

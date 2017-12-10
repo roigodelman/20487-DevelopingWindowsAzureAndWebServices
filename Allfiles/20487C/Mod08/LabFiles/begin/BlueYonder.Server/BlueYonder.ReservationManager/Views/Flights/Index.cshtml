@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BlueYonder.Companion.Entities.LocationDTO>
+@using BlueYonder.ReservationManager
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    @Html.DropDownList("lstFrom", Model.Select(l => new SelectListItem { Text = l.GetFullLocation(), Value = l.LocationId.ToString() }))
+    @Html.DropDownList("lstTo", Model.Select(l => new SelectListItem { Text = l.GetFullLocation(), Value = l.LocationId.ToString() }))
+    <input type="button" id="btnFilter" value="Filter" />
+</div>
+
+<div id="flights">
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $('#btnFilter').click(function () {           
+                var from = $("#lstFrom").val();
+                var to = $("#lstTo").val();
+
+                $.get("@Url.Content("~/flights/schedules")",
+                 { from: from, to: to },
+                function (data) {
+                    $('#flights').html(data);
+                    $.getScript('@Url.Content("~/scripts/FlightSchedules.js")');
+                });
+        });
+    });
+    </script>
+}
