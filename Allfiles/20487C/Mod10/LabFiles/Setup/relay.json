@@ -1,0 +1,23 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "String"
+        },
+        "location": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Relay/namespaces",
+            "name": "[parameters('name')]",
+            "apiVersion": "2016-07-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "namespaceType": "Relay"
+            }
+        }
+    ]
+}
