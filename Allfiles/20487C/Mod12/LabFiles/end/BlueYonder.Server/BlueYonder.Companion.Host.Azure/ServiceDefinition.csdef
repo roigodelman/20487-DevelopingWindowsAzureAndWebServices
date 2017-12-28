@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ServiceDefinition name="BlueYonder.Companion.Host.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2015-04.2.6">
+    <WebRole name="BlueYonder.Companion.Host" vmsize="Small">
+        <Sites>
+            <Site name="Web">
+                <Bindings>
+                    <Binding name="Endpoint1" endpointName="Endpoint1" />
+                    <Binding name="Endpoint2" endpointName="Endpoint2" />
+                </Bindings>
+            </Site>
+        </Sites>
+        <Endpoints>
+            <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+            <InputEndpoint name="Endpoint2" protocol="https" port="443" certificate="BlueYonderCompanionSSL" />
+        </Endpoints>
+        <Imports>
+        </Imports>
+        <Certificates>
+            <Certificate name="BlueYonderCompanionSSL" storeLocation="LocalMachine" storeName="My" />
+        </Certificates>
+        <ConfigurationSettings>
+            <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" />
+            <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
+        </ConfigurationSettings>
+        <Startup priority="-2">
+            <Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" />
+            <Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" />
+        </Startup>
+    </WebRole>
+    <WorkerRole name="BlueYonder.Companion.CacheWorkerRole" vmsize="Small">
+        <Imports>
+            <Import moduleName="Caching" />
+        </Imports>
+        <LocalResources>
+            <LocalStorage name="DiagnosticStore" sizeInMB="20000" cleanOnRoleRecycle="false" />
+        </LocalResources>
+        <ConfigurationSettings>
+            <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
+        </ConfigurationSettings>
+    </WorkerRole>
+</ServiceDefinition>
