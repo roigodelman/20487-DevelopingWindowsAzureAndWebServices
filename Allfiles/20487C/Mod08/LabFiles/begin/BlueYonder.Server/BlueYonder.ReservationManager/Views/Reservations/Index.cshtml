@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BlueYonder.Companion.Entities.TravelerDTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobilePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Passport)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MobilePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passport)
+        </td>
+        <td>
+            @Ajax.ActionLink("Reservations", "Reservations",  new { travelerId=item.TravelerId }, new AjaxOptions {UpdateTargetId="divReservations"})
+        </td>
+    </tr>
+}
+</table>
+
+<div id="divReservations">
+
+</div>

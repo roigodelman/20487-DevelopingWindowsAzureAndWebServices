@@ -1,0 +1,88 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "administratorLogin": {
+            "defaultValue": "BlueYonderAdmin",
+            "type": "string"
+        },
+        "administratorLoginPassword": {
+            "defaultValue": "Pa$$w0rd",
+            "type": "securestring"
+        },
+        "collation": {
+            "defaultValue": "SQL_Latin1_General_CP1_CI_AS",
+            "type": "string"
+        },
+        "databaseName": {
+            "type": "string"
+        },
+        "edition": {
+            "defaultValue": "Standard",
+            "type": "string"
+        },
+        "requestedServiceObjectiveId": {
+            "defaultValue": "789681b8-ca10-4eb0-bdf2-e0b050601b40",
+            "type": "string"
+        },
+        "location": {
+            "defaultValue": "westeurope",
+            "type": "string"
+        },
+        "maxSizeBytes": {
+            "defaultValue": "268435456000",
+            "type": "string"
+        },
+        "serverName": {
+            "type": "string"
+        },
+        "sampleName": {
+            "type": "string",
+            "defaultValue": ""
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2015-05-01-preview",
+            "location": "[parameters('location')]",
+            "name": "[parameters('serverName')]",
+            "properties": {
+                "administratorLogin": "[parameters('administratorLogin')]",
+                "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
+                "version": "12.0"
+            },
+            "resources": [
+                {
+                    "apiVersion": "2014-04-01-preview",
+                    "dependsOn": [
+                        "[concat('Microsoft.Sql/servers/', parameters('serverName'))]"
+                    ],
+                    "location": "[parameters('location')]",
+                    "name": "[parameters('databaseName')]",
+                    "properties": {
+                        "collation": "[parameters('collation')]",
+                        "edition": "[parameters('edition')]",
+                        "maxSizeBytes": "[parameters('maxSizeBytes')]",
+                        "requestedServiceObjectiveId": "[parameters('requestedServiceObjectiveId')]",
+                        "sampleName": "[parameters('sampleName')]"
+                    },
+                    "type": "databases"
+                },
+                {
+                    "apiVersion": "2014-04-01-preview",
+                    "dependsOn": [
+                        "[concat('Microsoft.Sql/servers/', parameters('serverName'))]"
+                    ],
+                    "location": "[parameters('location')]",
+                    "name": "AllowAllWindowsAzureIps",
+                    "properties": {
+                        "endIpAddress": "0.0.0.0",
+                        "startIpAddress": "0.0.0.0"
+                    },
+                    "type": "firewallrules"
+                }
+            ],
+            "type": "Microsoft.Sql/servers"
+        }
+    ]
+}
