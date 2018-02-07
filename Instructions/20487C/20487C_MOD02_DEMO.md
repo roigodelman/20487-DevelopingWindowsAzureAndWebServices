@@ -18,7 +18,7 @@
 10. In the search results, select **EntityFramework**, and then click **Install**. If a **Preview** dialog box appears, click **OK**. If a **License Acceptance** dialog box appears, click **I Accept**.
 11. Wait until the package is completely downloaded and installed. To close the **Manage NuGet Packages** dialog box, click **Close**.
 12. In **Solution Explorer**, right-click the **MyFirstEF** project, point to **Add**, and then click **Class**.
-13. In the **Add New Item** dialog box, in the **Name** box type **Product** and then click **Add**.
+13. In the **Add New Item** dialog box, in the **Name** box, type **Product**, and then click **Add**.
 14. In **Product.cs**, change the class definition to the match the following code.
 
   ```cs
@@ -30,7 +30,7 @@
 ```
 15. To save the changes, press Ctrl+S.
 16. In **Solution Explorer**, right-click the **MyFirstEF** project, point to **Add**, and then click **Class**.
-17. In the **Add New Item** dialog box, in the **Name** box type **Store** and then click **Add**.
+17. In the **Add New Item** dialog box, in the **Name** box, type **Store**, and then click **Add**.
 18. In **Store.cs**, change the class definition to match the following code.
 
   ```cs
@@ -42,8 +42,8 @@
         }
 ```
 19. To save the changes, press Ctrl+S.
-20. In Solution Explorer, right-click the **MyFirstEF** project, point to **Add**, and then click **Class**.
-21. In the **Add New Item** dialog box, in the **Name** box, type **MyDbContext** and then click **Add**.
+20. In **Solution Explorer**, right-click the **MyFirstEF** project, point to **Add**, and then click **Class**.
+21. In the **Add New Item** dialog box, in the **Name** box, type **MyDbContext**, and then click **Add**.
 22. In **MyDbContext.cs**, add the following **using** directive to the beginning of the file.
 
   ```cs
@@ -139,7 +139,7 @@
         }
         Console.ReadLine();
 ```
-10. To save the changes, Press Ctrl+S.
+10. To save the changes, press Ctrl+S.
 11. In the **Main** method, right-click the **Console.ReadLine()** method call, point to **Breakpoint**, and then click **Insert Breakpoint**.
 12. To run the application, press F5. After a few seconds, the code execution will break, and the breakpoint will be highlighted in yellow.
 13. In the console window, review the course and student lists printed to the console window.  
