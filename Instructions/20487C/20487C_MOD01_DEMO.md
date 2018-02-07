@@ -26,7 +26,7 @@
 10. In **Location**, select the location that is closest to you.
 11. Click **Ok.**
 12. Click **Create**, and then wait until the web app is deployed.
-13. In the **All Resources** pane, click the web app that you created in the previous step (the one that is named **WebAppDemo_YourInitials_**).  
+13. In the **All Resources** pane, click the web app that you created in the previous step (the one that is named **WebAppDemo _YourInitials_**).  
 
     Currently the web app has no content. In module 06, &quot;Hosting Services&quot;, you will see how to publish web apps using Visual Studio 2017.
   
