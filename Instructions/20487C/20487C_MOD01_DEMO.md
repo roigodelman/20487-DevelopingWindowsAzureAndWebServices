@@ -44,21 +44,21 @@
 
 1. Open the file explorer, and go to **[repository root]\AllFiles\20487C\Mod01\DemoFiles\BlueYonderDemo\Setup**.
    > Substitute **[repository root]** with the absolute path to which you cloned the 20487 repository.
-   > For example, if you cloned the repository to **C:\Users\JohnDoe\20487** then the path should be changed to   **C:\Users\JohnDoe\20487\AllFiles\20487C\Mod01\DemoFiles\BlueYonderDemo\Setup**.
+   > For example, if you cloned the repository to **C:\Users\JohnDoe\20487**, then the path should be changed to   **C:\Users\JohnDoe\20487\AllFiles\20487C\Mod01\DemoFiles\BlueYonderDemo\Setup**.
 2. Right-click the **SetupIIS.cmd** file, and then click **Run as Administrator**.
 3. Click **Yes** and wait for the script to finish.  
    
    This script builds the server solutions and deploys them to the local IIS server.
    
 4. Open **Visual Studio 2017.**
-5. On the **File** menu, point to **Open** , and then click **Project/Solution**.
+5. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 6. Go to **[repository root]\AllFiles\20487C\Mod01\DemoFiles\BlueYonderDemo\BlueYonder.Companion.Client**, select the **BlueYonder.Companion.Client.sln** file, and then click **Open**.
 7. If the **Developers License** dialog box appears, click **I Agree**.
 8. If the **User Account Control** dialog box appears, click **Yes**.
 9. In the **Developers License** dialog box, type your email address and your password, and then click **Sign in**.
 10. In the **Developers License** dialog box, click **Close**.
 
-   >**Note**: If you do not have valid email address, click **Sign up** and register for the service.  
+   >**Note**: If you do not have a valid email address, click **Sign up** and register for the service.  
    >Write down these credentials and use them whenever you are required to use an email address.
 
 11. In Solution Explorer, right-click the **BlueYonder.Companion.Client** project, and then click **Set as StartUp Project**.
