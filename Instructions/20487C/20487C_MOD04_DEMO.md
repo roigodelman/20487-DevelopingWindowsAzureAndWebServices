@@ -318,11 +318,11 @@
 5. In **Solution Explorer**, under the **WebAPISecurity** project, double-click **AuthenticationMessageHandler.cs**.
 6. Locate the **SendAsync** method, and review its code. First the method checks if the request contains _Basic_ authentication information by checking the **HttpRequestMessage.Headers.Authorization.Scheme** property. If the request does not contain the _Authorization_ header, it is sent to the next handler without checking.
 
-  >**Note**: The authentication handler does not require all the requests to contain the authentication information. This is because some actions in this demonstration need to be accessible to anonymous users.
+   >**Note**: The authentication handler does not require all the requests to contain the authentication information. This is because some actions in this demonstration need to be accessible to anonymous users.
 
 7. Review the code in the first **if** statement. If the request contains _Basic_ authentication information, then the code retrieves the identity from the HTTP _Authorization_ header, parses it into the username and password, and then sends the identity to be verified in the **AuthenticateUser** method. If the authentication fails, an _Unauthorized_ response is sent back to the client.
 
-  >**Note**: In _Basic_ authentication, the username and password are encoded to a single Base64 string.
+   >**Note**: In _Basic_ authentication, the username and password are encoded to a single Base64 string.
 
 8. In the **SendAsync** method, review the code in the last **if** statement. An action can return an unauthorized response if it requires authentication and the user did not supply it, or if it requires the user to have a specific role, which the user does not have. If an unauthorized response is returned from the action, the code will add the _Basic_ authentication type to notify the client of the expected authentication type.
 9. Locate the **AuthenticateUser** method, and review its code. After the identity is authenticated, the code creates the  **GenericIdentity** and the **GenericPrincipal** objects to identify the user and its roles. The principal is then attached to the **Thread.CurrentPrincipal** property to have it available for the authorization process.
@@ -337,14 +337,14 @@
 15. Remove **/1** from the address in the address bar and then press Enter.
 16. In the **Windows Security** dialog box, type the following information:
 
- - User name: **Admin**
- - Password: **Admin1**
+   - User name: **Admin**
+   - Password: **Admin1**
 
 17. Click **OK**. Verify that the dialog box reappears.
 18. Type the following information in the **Windows Security** dialog box:
 
- - User name: **Admin**
- - Password: **Admin**
+   - User name: **Admin**
+   - Password: **Admin**
 
 19. Click **OK**. Verify that you can see an XML reply with the response of the action.
 20. Close the browser.
