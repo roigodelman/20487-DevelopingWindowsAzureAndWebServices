@@ -97,7 +97,7 @@
 
     You will implement the upload and download features in the upcoming labs.
 
-   >**Note**: Do not click the upload buttons, because you have not created any Azure Storage accounts yet. If you click any of the upload buttons, the app will fail and close.
+    >**Note**: Do not click the upload buttons, because you have not created any Azure Storage accounts yet. If you click any of the upload buttons, the app will fail and close.
 
 31. Close the client app.
 
