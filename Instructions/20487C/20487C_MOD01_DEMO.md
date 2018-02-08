@@ -60,8 +60,8 @@
 9. In the **Developers License** dialog box, type your email address and your password, and then click **Sign in**.
 10. In the **Developers License** dialog box, click **Close**.
 
-   >**Note**: If you do not have a valid email address, click **Sign up** and register for the service.  
-   >Write down these credentials and use them whenever you are required to use an email address.
+    >**Note**: If you do not have a valid email address, click **Sign up** and register for the service.  
+    >Write down these credentials and use them whenever you are required to use an email address.
 
 11. In Solution Explorer, right-click the **BlueYonder.Companion.Client** project, and then click **Set as StartUp Project**.
 12. To start the client app without debugging, press Ctrl+F5.
