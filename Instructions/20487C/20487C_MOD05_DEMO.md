@@ -5,16 +5,16 @@
 ### Demonstration: Creating a WCF Service
 
 1. On the Start menu, click the **Visual Studio 2017** tile.
-2. On the **File** menu, point to **Open** , and then click **Project/Solution**.
-3. Go to **D:\Allfiles\Mod05\DemoFiles\CreatingWCFService\begin**.
-4. Select the file **CreatingWCFService.sln** and then click **Open**.
-5. In Solution Explorer, expand the **Service** project, and double-click **IHotelBookingService.cs**. This interface is the service contract, but it still has to be configured with **[ServiceContract]** and **[ServiceOperation]** attributes.
-6. In Solution Explorer, double-click **HotelBookingService.cs**. This class is the implementation of the service contract.
+2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
+3. Go to **\Allfiles\Mod05\DemoFiles\CreatingWCFService\begin**.
+4. Select the **CreatingWCFService.sln** file, and then click **Open**.
+5. In **Solution Explorer**, expand the **Service** project, and then double-click **IHotelBookingService.cs**. This interface is the service contract, but it still has to be configured with **[ServiceContract]** and **[ServiceOperation]** attributes.
+6. In **Solution Explorer**, double-click **HotelBookingService.cs**. This class is the implementation of the service contract.
 7. In Solution Explorer, double-click **BookingResponse.cs**. This class is a data contract that is returned by the service operation **BookHotel**. It still has to be configured with the **[DataContract]** and **[DataMember]** attributes.
-8. In Solution Explorer, right-click the project, and click **Add Reference**.
-9. In the **Reference Manager** dialog box, expand the **Assemblies** node in the left pane and click **Framework**.
-10. Scroll down the assemblies list, point to the **System.Runtime.Serialization** assembly, and select the check box next to the assembly name.
-11. Scroll down the assemblies list some more, point to the **System.ServiceModel** assembly, and select the check box next to the assembly name. Click **OK** to close the dialog box.
+8. In **Solution Explorer**, right-click the project, and then click **Add Reference**.
+9. In the **Reference Manager** dialog box, expand the **Assemblies** node in the left pane, and then click **Framework**.
+10. Scroll down the assemblies list, point to the **System.Runtime.Serialization** assembly, and then select the check box next to the assembly name.
+11. Scroll down the assemblies list some more, point to the **System.ServiceModel** assembly, and then select the check box next to the assembly name. Click **OK** to close the dialog box.
 12. In Solution Explorer, double-click **IHotelBookingService.cs**.
 13. Add the following **using** directive.
 
@@ -22,27 +22,31 @@
         using System.ServiceModel;
 ```
 14. Add the **[ServiceContract]** attribute above the **IHotelBookingService** interface declaration.
-15. Add the **[OperationContract]** attribute above the **BookHotel** method declaration.
-16. These attributes mark the interface as a WCF service contract and expose the interface methods as service operations.
-17. To save the file, press Ctrl+S.
-18. In Solution Explorer, double-click **BookingResponse.cs**.
-19. Add a **using** directive for the **System.Runtime.Serialization** namespace after the last **using** directive.
-20. To the **BookingResponse** class declaration, add the **[DataContract]** attribute.
-21. To each of the properties of the class, add the **[DataMember]** attribute.
-22. These attributes define the classes as data contracts so that WCF can serialize/deserialize them appropriately.
-23. To save the file, press Ctrl+S.
-24. In Solution Explorer, double-click **Reservation.cs**.
-25. To the **Reservation** class declaration, add the **[DataContract]** attribute.
-26. To each of the properties of the class, add the **[DataMember]** attribute.
-27. To save the file, press Ctrl+S.
-28. In Visual Studio 2017, press F5 to run the project. Check that the WCF Test Client opens, and the service project&#39;s tree in the left pane displays the **BookHotel()** operation node.
-29. Double-click the operation **BookHotel** , locate the **HotelName** parameter in the **Request** section on the right, and enter  **HotelA** in the **Value** column.
-30. To make a request to the service, click **Invoke**.
-31. If a security warning appears, click **OK**.
+15. Add the **[OperationContract]** attribute above the **BookHotel** method declaration.  
+
+    These attributes mark the interface as a WCF service contract and expose the interface methods as service operations.
+ 
+16. To save the file, press Ctrl+S.
+17. In **Solution Explorer**, double-click **BookingResponse.cs**.
+18. Add a **using** directive for the **System.Runtime.Serialization** namespace after the last **using** directive.
+19. To the **BookingResponse** class declaration, add the **[DataContract]** attribute.
+20. To each of the properties of the class, add the **[DataMember]** attribute.  
+
+    These attributes define the classes as data contracts so that WCF can serialize/deserialize them appropriately.
+    
+21. To save the file, press Ctrl+S.
+22. In **Solution Explorer**, double-click **Reservation.cs**.
+23. To the **Reservation** class declaration, add the **[DataContract]** attribute.
+24. To each of the properties of the class, add the **[DataMember]** attribute.
+25. To save the file, press Ctrl+S.
+26. In Visual Studio 2017, press F5 to run the project. Check that the WCF Test Client opens, and the service project&#39;s tree in the left pane displays the **BookHotel()** operation node.
+27. Double-click the operation **BookHotel**, locate the **HotelName** parameter in the **Request** section on the right, and enter  **HotelA** in the **Value** column.
+28. To make a request to the service, click **Invoke**.
+29. If a security warning appears, click **OK**.
 32. Check that the **Response** section displays the following:
 
-  - BookingReference: **AR3254**
-  - IsApproved: **True**
+     - BookingReference: **AR3254**
+     - IsApproved: **True**
 
 33. Close the WCF Test Client application.
 34. Close Visual Studio 2017.
@@ -52,9 +56,9 @@
 ### Demonstration: Configuring Endpoints in Code and in Configuration
 
 1. On the Start menu, click the **Visual Studio 2017** tile.
-2. On the **File** menu, point to **Open** , and then click **Project/Solution**.
-3. Go to **D:\Allfiles\Mod05\DemoFiles\DefineServiceEndpoints\begin** , select **DefineServiceEndpoints.sln** , and then click  **Open**.
-4. In Solution Explorer, expand the **ServiceHost** project and double-click **App.config**.
+2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
+3. Go to **Allfiles\Mod05\DemoFiles\DefineServiceEndpoints\begin**, select **DefineServiceEndpoints.sln**, and then click **Open**.
+4. In **Solution Explorer**, expand the **ServiceHost** project and double-click **App.config**.
 5. Locate the **&lt;system.serviceModel&gt;** section group. In this section of the file, you define the base address, endpoints, and behaviors of the service.
 6. To the **&lt;serviceBehaviors&gt;** element, add the following configuration:
 
@@ -62,9 +66,9 @@
         <behavior>
           <serviceMetadata httpGetEnabled="True"/>
         </behavior>
-```
-7. The service cannot be tested unless the service behavior has the **serviceMetadata** behavior.
-8. To add base addresses, add the following configuration to the **&lt;service&gt;** element.
+      ```  
+   The service cannot be tested unless the service behavior has the **serviceMetadata** behavior.
+7. To add base addresses, add the following configuration to the **&lt;service&gt;** element.
 
    ```cs
         <host>
@@ -72,22 +76,24 @@
                <add baseAddress="http://localhost:8733/" />
            </baseAddresses>
         </host>
-```
-9. To save the file, press Ctrl+S.
-10. In Solution Explorer, right-click **App.config** and click **Edit WCF Configuration**.
-11. In the Service Configuration Editor window, expand the **HotelBooking.HotelBookingService** node in the **Configuration** pane, right-click the **Endpoints** node, and click **New Service Endpoint.**
-12. In the **General** tab, enter the following information.
+        ```
+8. To save the file, press Ctrl+S.
+9. In **Solution Explorer**, right-click **App.config**, and then click **Edit WCF Configuration**.
+10. In the **Configuration** pane of the **Service Configuration Editor** window, expand the **HotelBooking.HotelBookingService** node right-click the **Endpoints** node, and then click **New Service Endpoint.**
+11. In the **General** tab, enter the following information.
 
   - Address: **booking**
   - Binding: **basicHttpBinding**
   - Contract: **HotelBooking.IHotelBookingService**
 
-13. On the **File** menu, click **Save**.
-14. On the **File** menu, click **Exit**.
-15. Return to Visual Studio 2012. If you receive a message saying that the **App.config** file has changed, click **Yes**.
-16. You added a service endpoint that uses **basicHttpBinding**. This endpoint uses a relative address ( **booking** ). This is why the base addresses section is also required.
-17. In Solution Explorer, under the **ServiceHost** project, click **Program.cs**.
-18. After the initialization of the **ServiceHost** , add the following line of code to the **Main** method.
+12. On the **File** menu, click **Save**.
+13. On the **File** menu, click **Exit**.
+14. Return to Visual Studio 2012. If you receive a message saying that the **App.config** file has changed, click **Yes**.  
+
+    You added a service endpoint that uses **basicHttpBinding**. This endpoint uses a relative address (**booking**). This is why the base addresses section is also required.
+    
+15. In **Solution Explorer**, under the **ServiceHost** project, click **Program.cs**.
+16. After the initialization of the **ServiceHost**, add the following line of code to the **Main** method.
 
    ```cs
         host.AddServiceEndpoint(typeof(IHotelBookingService), new NetTcpBinding(), "booking");
