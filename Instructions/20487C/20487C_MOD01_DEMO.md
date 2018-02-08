@@ -19,7 +19,9 @@
 4. Review the items in the pane on the left side of the screen and understand the different services that you can manage with the Azure portal.
 5. Click **+ New** on the left side of the portal, and then click **Web App**. The **App Name** and **Resource Group** text boxes and **App Service Plan/Location** appear on the right side of the screen.
 6. In the **App Name** text box, type the following web app name: **WebAppDemo _YourInitials_** (Replace **_YourInitials_** with your initials).  
+
    The app name you typed is going to be part of the URL that you will use when connecting to the web application.
+   
 7. In the **Resource Group** text box, select **Create new**.
 8. Click **App Service Plan/Location**,  and then click **Create new**.
 9. In **App Service Plan**, enter **BlueYonder**.
