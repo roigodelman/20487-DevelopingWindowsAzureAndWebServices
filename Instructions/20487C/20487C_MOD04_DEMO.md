@@ -227,7 +227,7 @@
 17. On the **Network** tab, click **Start capturing**.
 18. On the web page, type **2** in the text box, and then click **Get default**.
 19. On the **Network** tab, click **Go to detailed view**.
-20. On the **Request headers** tab, notice that the **Accept** header is set to ***/***.
+20. On the **Request headers** tab, notice that the **Accept** header is set to **&ast;/&ast;**.
 21. Click the **Response headers** tab and notice that the **Content-Type** is set to **application/json; charset=utf-8**. The default content type of ASP.NET Web API is JSON.
 22. Click **Clear**.
 23. Click **Get JSON**.
