@@ -12,7 +12,7 @@
 4. In the **Name** box, type **MyFirstEF**.
 5. In the **Location** box, type **c:\users\[user name]\documents\visual studio 2017\Projects\Allfiles\Mod02\Democode**.
 6. Select the **Create directory for solution** check box, and then click **OK**.
-7. In Solution Explorer, right-click the **MyFirstEF** project, and then click **Manage NuGet Packages**. 
+7. In **Solution Explorer**, right-click the **MyFirstEF** project, and then click **Manage NuGet Packages**. 
 8. In the left pane of the **Manage NuGet Packages** dialog box, select the **Browse** node.
 9. On the upper right side of the dialog box, click the **Search** box, and type **EntityFramework**.
 10. In the search results, select **EntityFramework**, and then click **Install**. If a **Preview** dialog box appears, click **OK**. If a **License Acceptance** dialog box appears, click **I Accept**.
@@ -82,18 +82,18 @@
 
     The application now creates a new database on the local SQL Express, named **MyFirstEF.MyDbContext.**  
     
-34. On the Start screen, click the **SQL Server Management Studio** tile.
-35. In the **Server Name** box, type **.\SQLEXPRESS**.
-36. In the **Authentication** drop-down menu, verify that **Windows Authentication** is selected, and then click **Connect**.
-37. In **Object Explorer**, expand the **Databases** node.
-38. Make sure you see a database named **MyFirstEF.MyDbContext**.
-39. In **Object Explorer**, expand the **MyFirstEF.MyDbContext** node, and then expand the **Tables** node.
-40. Notice that both classes defined in the **MyFirstEF** project appear as tables, **dbo.Stores** and **dbo.Products**.
+33. On the Start screen, click the **SQL Server Management Studio** tile.
+34. In the **Server Name** box, type **.\SQLEXPRESS**.
+35. In the **Authentication** drop-down menu, verify that **Windows Authentication** is selected, and then click **Connect**.
+36. In **Object Explorer**, expand the **Databases** node.
+37. Make sure you see a database named **MyFirstEF.MyDbContext**.
+38. In **Object Explorer**, expand the **MyFirstEF.MyDbContext** node, and then expand the **Tables** node.
+39. Notice that both classes defined in the **MyFirstEF** project appear as tables, **dbo.Stores** and **dbo.Products**.
 
     >**Note**: Database tables are usually named in the plural form, which is why Entity Framework changed the names of the generated tables from Store and Product to Stores and Products. The _dbo_ prefix is the name of the schema in which the tables were created.
 
-41. Expand the **dbo.Products** and **dbo.Stores** tables, and then expand the **Columns** node in each of them to see that both tables have **Id** and **Name** columns, similar to their corresponding class properties.
-42. Close SQL Server Management Studio.
+40. Expand the **dbo.Products** and **dbo.Stores** tables, and then expand the **Columns** node in each of them to see that both tables have **Id** and **Name** columns, similar to their corresponding class properties.
+41. Close SQL Server Management Studio.
 
 
 
@@ -120,13 +120,13 @@
  
    You use the **using** statement to control the release of unmanaged resources used by the context, such as a database connection.
    
-8. To select all courses from the database, add the following LINQ to Entities code in the **using** block.
+7. To select all courses from the database, add the following LINQ to Entities code in the **using** block.
 
   ```cs
 		var courses = from c in context.Courses
          			select c;
 ```
-9. To print courses and students list to the console window, add the following code in the **using** block after the LINQ to Entities code.
+8. To print courses and students list to the console window, add the following code in the **using** block after the LINQ to Entities code.
 
   ```cs
 		foreach (var course in courses)
@@ -139,31 +139,31 @@
         }
         Console.ReadLine();
 ```
-10. To save the changes, press Ctrl+S.
-11. In the **Main** method, right-click the **Console.ReadLine()** method call, point to **Breakpoint**, and then click **Insert Breakpoint**.
-12. To run the application, press F5. After a few seconds, the code execution will break, and the breakpoint will be highlighted in yellow.
-13. In the console window, review the course and student lists printed to the console window.  
+9. To save the changes, press Ctrl+S.
+10. In the **Main** method, right-click the **Console.ReadLine()** method call, point to **Breakpoint**, and then click **Insert Breakpoint**.
+11. To run the application, press F5. After a few seconds, the code execution will break, and the breakpoint will be highlighted in yellow.
+12. In the console window, review the course and student lists printed to the console window.  
 
     In Visual Studio 2017, while debugging, you can view **IntelliTrace** events in the **Diagnostic Tools** pane on the right side of the window.
     
-15. In the **Diagnostic Tools** pane, below the charts, click the **Events** tab. The **Events** tab lists various events that happen during execution.  
+13. In the **Diagnostic Tools** pane, below the charts, click the **Events** tab. The **Events** tab lists various events that happen during execution.  
 
     Events that start with "**ADO.NET:**" contain the actual SQL statements executed by Entity Framework.
     
-17. Review the SQL statements executed by Entity Framework. The first set of queries is part of the database initializer code. The next set of queries is a single query to get the list of courses, and another set of queries to get the list of students, one query for each course.
+14. Review the SQL statements executed by Entity Framework. The first set of queries is part of the database initializer code. The next set of queries is a single query to get the list of courses, and another set of queries to get the list of students, one query for each course.
 
      >**Notes**: 
      >1. IntelliTrace is available on Visual Studio 2017 Enterprise edition. 
      >2. IntelliTrace will be covered in Module 10, &quot;Monitoring and Diagnostics&quot; in Course 20487.
 
-18. To stop the debugger, press Shift+F5.
+15. To stop the debugger, press Shift+F5.
 
 ### Demonstration 2: Running Stored Procedures with Entity Framework
 
 #### Demonstration Steps
 
 1. On the Start screen, click the **Visual Studio 2017** tile.
-2. On the **File** menu, point to **Open** , and then click **Project/Solution**.
+2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 3. Go to **Allfiles\Mod02\Democode\StoredProcedure\Begin**.
 4. Click **EF\_CodeFirst.sln**, and then click **Open**.
 5. In **Solution Explorer**, expand the **EF\_CodeFirst** project, and double-click the **Program.cs** file.
@@ -238,11 +238,11 @@
 
     The list of students appears in the console window. Notice that there are two new students at the bottom of the list, and student 1 is missing from the list. Also notice that the salary of the teacher is now 101000.
 
-18. In Visual Studio 2017, while debugging, you can view **IntelliTrace** events in the **Diagnostic Tools** pane on the right side of the window.
-19. In the **Diagnostic Tools** pane, on the bottom part below the charts, click the **Events** tab. The **Events** tab lists various events that happen during execution.
-20. Events that start with "**ADO.NET:**" contain the actual SQL statements executed by Entity Framework.
-21. Notice the SQL update, delete, and insert statements that correspond to the salary update, student deletion, and the addition of the two new students.
-22. To stop the debugger, press Shift+F5.
+17. In Visual Studio 2017, while debugging, you can view **IntelliTrace** events in the **Diagnostic Tools** pane on the right side of the window.
+18. In the **Diagnostic Tools** pane, on the bottom part below the charts, click the **Events** tab. The **Events** tab lists various events that happen during execution.
+19. Events that start with "**ADO.NET:**" contain the actual SQL statements executed by Entity Framework.
+20. Notice the SQL update, delete, and insert statements that correspond to the salary update, student deletion, and the addition of the two new students.
+21. To stop the debugger, press Shift+F5.
 
 ©2018 Microsoft Corporation. All rights reserved.
 
