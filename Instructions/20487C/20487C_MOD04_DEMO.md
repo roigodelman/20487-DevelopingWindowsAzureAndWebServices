@@ -274,7 +274,7 @@
 13. In **Solution Explorer**, under the **ODataService.Client** project, right-click the **references** node and then select **Add Service Reference**.
 14. In the **Address** text box, type **http://localhost:57371/OData**, and then click **Go**.
 
-  >**Note** : OData URLs are case-sensitive. Use the casing as shown in the instruction.
+    >**Note** : OData URLs are case-sensitive. Use the casing as shown in the instruction.
 
 15. In the **Namespace** text box, type **OData**, and then click **OK**.
 16. In **Solution Explorer**, under the **ODataService.Client** project, double-click the **Program.cs** file.
@@ -283,7 +283,7 @@
 	```cs
         var container = new OData.Container(new Uri("http://localhost:57371/OData"));
 	```
-  >**Note** : OData URLs are case-sensitive. Use the casing as shown in the instruction.
+    >**Note** : OData URLs are case-sensitive. Use the casing as shown in the instruction.
 
 18. Use the following code to create a LINQ query to select the WCF course from the container&#39;s **Courses** property.
 
@@ -337,14 +337,14 @@
 15. Remove **/1** from the address in the address bar and then press Enter.
 16. In the **Windows Security** dialog box, type the following information:
 
-   - User name: **Admin**
-   - Password: **Admin1**
+    - User name: **Admin**
+    - Password: **Admin1**
 
 17. Click **OK**. Verify that the dialog box reappears.
 18. Type the following information in the **Windows Security** dialog box:
 
-   - User name: **Admin**
-   - Password: **Admin**
+    - User name: **Admin**
+    - Password: **Admin**
 
 19. Click **OK**. Verify that you can see an XML reply with the response of the action.
 20. Close the browser.
