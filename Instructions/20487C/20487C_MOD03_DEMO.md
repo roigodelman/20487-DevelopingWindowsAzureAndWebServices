@@ -35,8 +35,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
         public IEnumerable<string> Get()  
         {  
               return new string[] { "value1", "value2" };  
-        } 
-```
+        } ```
 
 15. To save the changes, press Ctrl+S.
 16. In **Solution Explorer**, under **App\Start folder, double-click **WebApiConfig.cs**.
@@ -48,8 +47,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
              name: "ActionApi",  
              routeTemplate: "api/{controller}/{action}/{id}",  
              defaults: new { id = RouteParameter.Optional }  
-        );
-```
+        );```
 
 18. To save the changes, press Ctrl+S.
 19. To start debugging the application, press **F5**.
@@ -70,8 +68,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
 6. Change the signature of the **Get** method to the following signature.
 
 	```cs
-        public Destination Get(int id)
-```        
+        public Destination Get(int id)```        
   
 7. Remove the **if-else** statement and return the **destination** variable. When you are finished, the **Get** method should look like this.
  
@@ -80,8 +77,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
         {  
            var destination = _destinations.Where(d=>d.Id == id).FirstOrDefault();  
            return destination;  
-        }
-```
+        }```
  
    Discuss what should be the result of such a call (404 not found status). Notice that the string **null** is being returned instead (with 200 OK status).
 
@@ -174,8 +170,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
              HttpResponseMessage message = await client.GetAsync("api/Destinations");  
              var res = await message.Content.ReadAsStringAsync();  
              Console.WriteLine(res);  
-        }  
-```
+        }  ```
 
 11. To deserialize the request content, add code into **List<Destinations>** by using the **HttpContent.ReadAsAsync<T>** method. When  you are finished, the **CallServer** method should look like this.
 
@@ -193,8 +188,8 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
               
               var destinations = await message.Content.ReadAsAsync<List<Destination>>();  
               Console.WriteLine(destinations.Count);  
-        }
-```
+        } 
+	```
 
 12. To save the changes, press Ctrl+S.
 13. In **Solution Explorer**, right-click the **HttpClientApplication.Host** project, and then click **Set as StartUp Project**.
