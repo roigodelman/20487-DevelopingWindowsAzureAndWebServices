@@ -155,7 +155,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
 
 1. Open **Visual Studio 2017**.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution.**
-3. In the **File Name** text box, type **[repository root]\Allfiles\20487C\Mod03\Democode\ConsumingFromHttpClient\Begin\HttpClientApplication\HttpClientApplication.sln**,and then click  **Open**.
+3. In the **File Name** text box, type **[repository root]\Allfiles\20487C\Mod03\Democode\ConsumingFromHttpClient\Begin\HttpClientApplication\HttpClientApplication.sln**, and then click  **Open**.
 4. In **Solution Explorer**, under the **HttpClientApplication.Client** project, right-click **References**, and then click **Manage NuGet Packages**.
 5. Inside the **NuGet Manager** window, click **Online** on the left menu, and in the search box on the upper-right side, enter **Microsoft.AspNet.WebApi.Client**.
 6. In the search results list, locate **Microsoft ASP.NET Web API 2.2 Client Libraries**, and then click **Install**.
@@ -200,9 +200,9 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
 13. In **Solution Explorer**, right-click the **HttpClientApplication.Host** project, and then click **Set as StartUp Project**.
 14. To start the server application without debugging, press Ctrl+F5.
 15. In **Solution Explorer**, under the **HttpClientApplication.Client** project, double-click **Program.cs**.
-16. In the **Program** class, locate the **client** variable definition at the beginning of the **CallServer** method, and then click it. To put a breakpoint in that line, press **F9**.
+16. In the **Program** class, locate the **client** variable definition at the beginning of the **CallServer** method, and then click it. To put a breakpoint in that line, press F9.
 17. In **Solution Explorer**, right-click the **HttpClientApplication.Client** project, point to **Debug**, click **Start new instance** , and then wait for a program to hit your breakpoint.
-18. To execute the **CallServer** method line-by-line, press **F10**.
+18. To execute the **CallServer** method line-by-line, press F10.
 
 ©2018 Microsoft Corporation. All rights reserved.
 
