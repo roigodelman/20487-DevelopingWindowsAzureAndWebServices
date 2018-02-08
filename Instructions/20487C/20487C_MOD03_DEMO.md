@@ -36,7 +36,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
         {  
               return new string[] { "value1", "value2" };  
         } 
-```  
+```
 
 15. To save the changes, press Ctrl+S.
 16. In **Solution Explorer**, under **App\Start folder, double-click **WebApiConfig.cs**.
