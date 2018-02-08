@@ -10,7 +10,7 @@
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 3. Browse to **D:\Allfiles\Mod04\DemoFiles\RequestResponseFlow\begin\RequestResponseFlow**.
 4. Select the **RequestResponseFlow.sln**, file and then click **Open**.
-5. In **Solution Explorer**, under the **RequestResponseFlow.Web** project, right-click the **Extensions** folder point to **Add**, and click **New Item**.
+5. In **Solution Explorer**, under the **RequestResponseFlow.Web** project, right-click the **Extensions** folder, point to **Add**, and then click **New Item**.
 6. In the **Add New Item** dialog box, in the pane on the left side, expand the **Installed** node, expand the **Visual C#** node, click the **Code** node, and then click **Class** in the list of items.
 7. In the **Name** box, type **TraceHandler.cs**, and then click **Add**.
 8. In **Solution Explorer**, under the **RequestResponseFlow.Web** project, expand the **Extensions** folder, and then double-click  **TraceHandler.cs**.
@@ -22,7 +22,7 @@
         using System.Threading;
         using System.Threading.Tasks;
 	```
-10. To derive from the **DelegatingHandler** base class, change use the following code to change the class declaration of the **TraceHandler** class.
+10. To derive from the **DelegatingHandler** base class, use the following code to change the class declaration of the **TraceHandler** class.
 
 	```cs
         public class TraceHandler : DelegatingHandler
@@ -46,11 +46,11 @@
 
         return response;
 	```
-    The **System.Debug.Trace** class is used to write **HttpRequestMessage** before calling the  **base.SendAsync** method, which calls the next handler in the message handlers stack. Additionally the **System.Debug.Trace** class is used write **HttpResponseMessage** after the **base.SendAsync** method completes.
+    The **System.Debug.Trace** class is used to write **HttpRequestMessage** before calling the  **base.SendAsync** method, which calls the next handler in the message handlers stack. Additionally, the **System.Debug.Trace** class is used write **HttpResponseMessage** after the **base.SendAsync** method completes.
     
 13. In the **SendAsync** method, right-click the first line of code, point to **Breakpoint**, and then click **Insert Breakpoint**.
 14. To save the file, press CTRL+S.
-15. In **Solution Explorer**, under the **RequestResponseFlow.Web** project, expand the **App_Start** folder and then double-click the  **WebApiConfig.cs** file.
+15. In **Solution Explorer**, under the **RequestResponseFlow.Web** project, expand the **App_Start** folder, and then double-click the  **WebApiConfig.cs** file.
 16. Add the following by using the directive at the top of the **WebApiConfig.cs** file.
 
 	```cs
@@ -64,7 +64,7 @@
     ASP.NET Web API will add the new trace handler to the host handlers stack, affecting every service call.
 18. To save the file, press CTRL+S.
 19. In **Solution Explorer**, under the **RequestResponseFlow.Web** project, right-click the **Extensions** folder, point to **Add**, and then click **New Item**.
-20. In the pane on the left side, of the **Add New Item** dialog box, expand the **Installed** node, expand the **Visual C#** node, click the **Code** node, and then click **Class** in the list of items.
+20. In the pane on the left side of the **Add New Item** dialog box, expand the **Installed** node, expand the **Visual C#** node, click the **Code** node, and then click **Class** in the list of items.
 21. In the **Name** box, type **TraceFilterAttribute.cs**, and then click **Add**.
 22. In **Solution Explorer**, under the **RequestResponseFlow.Web** project, expand the **Extensions** folder, and then double-click the  **TraceFilterAttribute.cs** file.
 23. Add the following by using the directives at the top of the **TraceFilterAttribute.cs** file.
@@ -196,10 +196,10 @@
 14. To save the changes, press Ctrl+S.
 15. In **Solution Explorer**, right-click the root solution node, and then click **Properties**.
 16. In the **Solution &#39;AsynchronousActions&#39; Property Pages** dialog box, select the **Multiple startup projects** option.
-17. In the projects list, click the **Action** cell of every project, and select **Start**.
+17. In the projects list, click the **Action** cell of every project, and then select **Start**.
 18. Click the **DataServices** project line, and then click the up arrow button to start the project before the  **AsynchronousActions.Web** project.
 19. Click **OK**.
-20. To start both the projects without debugging, press Ctrl+F5 .
+20. To start both the projects without debugging, press Ctrl+F5.
 21. In the browser, notice the XML containing the list of countries.
 22. Close the browser.
 
@@ -222,7 +222,7 @@
 12. In **Solution Explorer**, under the **ImagesWithMediaTypeFormatter.Host** project, under the **Formatters** folder, double-click  **UriFormatHandler.cs**.
 13. Review the code of the **SendAsync** method. The method checks the request&#39;s URL. If the extension in the URL matches one of the image types, the extension is removed from the URL, a matching mime type is added to the request, and the request is sent to the next component in the pipeline.
 14. To start the web application without debugging, press Ctrl+F5.
-15. To open the developer tools window, in the browser, press F12 .
+15. To open the developer tools window, in the browser, press F12.
 16. In the developer tools window, click the **Network** tab.
 17. On the **Network** tab, click **Start capturing**.
 18. On the web page, type **2** in the text box, and then click **Get default**.
@@ -260,13 +260,11 @@
 1. On the Start screen, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 3. Browse to **D:\Allfiles\Mod04\DemoFiles\ODataService\begin\ConsumingODataService**.
-4. Select the **ConsumingODataService.sln**, file and then click **Open**.
+4. Select the **ConsumingODataService.sln** file, and then click **Open**.
 5. In **Solution Explorer**, under the **ConsumingODataService.Host** project, expand the **Controllers** folder node, and then double-click the **CoursesController.cs** file.
 6. Review the **Get** action, which returns **IQueryable&lt;Course&gt;** and is also decorated with the **[Queryable]** attribute.
 7. This is done to enable OData queries.  
-
-   The **CoursesController** class derives from the **ODataController** base class, which handles the formatting.
-   
+   The **CoursesController** class derives from the **ODataController** base class, which handles the formatting.   
 8. In **Solution Explorer**, under the **ConsumingODataService.Host** project, double-click the **Global.asax** file.
 9. Review the content of the **SetupOData** method.  
    The **ODataConventionModelBuilder** class is used to create an entity data model, which will be used to create the OData metadata. The **MapODataRoute** method is used to create a new route that exposes the OData metadata and the various controllers in the model.
@@ -301,7 +299,7 @@
         Console.ReadKey();
 	```
 20. To save the changes, press Ctrl+S .
-21. In **Solution Explorer**, right-click the **ODataService.Client** project, point to **Debug** and then click **Start New Instance** to run the client application.
+21. In **Solution Explorer**, right-click the **ODataService.Client** project, point to **Debug**, and then click **Start New Instance** to run the client application.
 22. Notice how the query returns data about the WCF course.  
 
     The application transforms the LINQ query to an OData service call to the server. The server then uses OData querying in CoursesController to query the database.
@@ -316,21 +314,21 @@
 1. On the Start screen, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 3. Browse to **D:\Allfiles\Mod04\DemoFiles\WebAPISecurity**.
-4. Select the **WebAPISecurity.sln** file and then click **Open**.
+4. Select the **WebAPISecurity.sln** file, and then click **Open**.
 5. In **Solution Explorer**, under the **WebAPISecurity** project, double-click **AuthenticationMessageHandler.cs**.
 6. Locate the **SendAsync** method, and review its code. First the method checks if the request contains _Basic_ authentication information by checking the **HttpRequestMessage.Headers.Authorization.Scheme** property. If the request does not contain the _Authorization_ header, it is sent to the next handler without checking.
 
-  >**Note** : The authentication handler does not require all the requests to contain the authentication information. This is because some actions in this demonstration need to be accessible to anonymous users.
+  >**Note**: The authentication handler does not require all the requests to contain the authentication information. This is because some actions in this demonstration need to be accessible to anonymous users.
 
 7. Review the code in the first **if** statement. If the request contains _Basic_ authentication information, then the code retrieves the identity from the HTTP _Authorization_ header, parses it into the username and password, and then sends the identity to be verified in the **AuthenticateUser** method. If the authentication fails, an _Unauthorized_ response is sent back to the client.
 
-  >**Note** : In _Basic_ authentication, the username and password are encoded to a single Base64 string.
+  >**Note**: In _Basic_ authentication, the username and password are encoded to a single Base64 string.
 
 8. In the **SendAsync** method, review the code in the last **if** statement. An action can return an unauthorized response if it requires authentication and the user did not supply it, or if it requires the user to have a specific role, which the user does not have. If an unauthorized response is returned from the action, the code will add the _Basic_ authentication type to notify the client of the expected authentication type.
 9. Locate the **AuthenticateUser** method, and review its code. After the identity is authenticated, the code creates the  **GenericIdentity** and the **GenericPrincipal** objects to identify the user and its roles. The principal is then attached to the **Thread.CurrentPrincipal** property to have it available for the authorization process.
 10. In **Solution Explorer**, under the **WebAPISecurity** project, expand **Controllers**, and then double-click the  **ValuesController.cs** file.  
 
-    You need to understand the use of the **[Authorize]** and **[AllowAnonymous]** attributes. The **[Authorize]** attribute, which decorates the controller, verifies that the client was authenticated before invoking the controller&#39;s actions. The **[AllowAnonymous]** attribute decorating the second **Get** method skips the authentication check, allowing anonymous users to invoke the decorated action.
+    You need to understand the use of the **[Authorize]** and the **[AllowAnonymous]** attributes. The **[Authorize]** attribute, which decorates the controller, verifies that the client was authenticated before invoking the controller&#39;s actions. The **[AllowAnonymous]** attribute decorating the second **Get** method skips the authentication check, allowing anonymous users to invoke the decorated action.
     
 11. In **Solution Explorer**, under the **WebAPISecurity** project, expand **App_Start**, and then double-click **WebApiConfig.cs**.
 12. Locate the **Register** method, and review the **MessageHandler.Add** method call. This is how the authentication message handler is attached to the message handling pipeline.
@@ -361,7 +359,7 @@
 1. On the Start screen, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 3. Browse to **D:\Allfiles\Mod04\DemoFiles\DependencyResolver**.
-4. Select the **DependencyResolver.sln** file and then click **Open**.
+4. Select the **DependencyResolver.sln** file, and then click **Open**.
 5. In **Solution Explorer**, under the **DependencyResolver** project, expand **Controllers**, and then double-click  **CoursesController.cs**.
 6. Review the **Get** method. The method uses the **__context_** private member, which is initialized in the constructor.
 7. Review the **CoursesController** constructor. The constructor receives the context as an **ISchoolContext** interface to decouple the controller from a specific implementation of the interface.
@@ -370,7 +368,7 @@
 10. In **Solution Explorer**, under the **DependencyResolver** project, expand **App_Start**, and then double-click **WebApiConfig.cs**.
 11. Review the **Register** method. The dependency resolver that will be used by ASP.NET Web API is the one that is set in the **config.DependencyResolver** property.
 12. To start the project without debugging, press Ctrl+F5 .
-13. To call the **Get** action of the **CourseController** class in the browser window, append the **api/courses** relative address to the address bar, and then press Enter.
+13. To call the **Get** action of the **CoursesController** class, in the browser window, append the **api/courses** relative address to the address bar, and then press Enter.
 
 ©2018 Microsoft Corporation. All rights reserved.
 
