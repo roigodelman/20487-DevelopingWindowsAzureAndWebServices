@@ -50,13 +50,13 @@ You need to activate Microsoft Internet Information Services (IIS) on your machi
     >**Note**: Lesson 4, &quot;Consuming WCF Services&quot; in Module 5, "Creating WCF Services" of Course 20487 explains how to use WSDL to generate service proxies.
 
 13. Return to Visual Studio and stop the debugger by pressing Shift+F5.
-14. Publish the service to IIS:
-	a. In Solution Explorer, right-click the **MyIISService** project, and then click **Publish**. The **Publish** tab opens.
-	b. Select **IIS, FTP, etc**, and then click **Publish**. The **Publish** window opens.
-	c. In **Publish method**, select **Web Deploy**.
-	d. In **Server**, type **localhost**.
-	e. In **Site Name**, type **Default Web Site/MyIISService**.
-	f. In **Destination URL**, type **http://localhost/MyIISService/Service1.svc?wsdl**.
+14. Publish the service to IIS:  
+	a. In Solution Explorer, right-click the **MyIISService** project, and then click **Publish**. The **Publish** tab opens.  
+	b. Select **IIS, FTP, etc**, and then click **Publish**. The **Publish** window opens.  
+	c. In **Publish method**, select **Web Deploy**.  
+	d. In **Server**, type **localhost**.  
+	e. In **Site Name**, type **Default Web Site/MyIISService**.  
+	f. In **Destination URL**, type **http://localhost/MyIISService/Service1.svc?wsdl**.  
 	g. Click **Save**.  
 	
     Visual Studio 2017 proceeds to build and deploy the service to IIS. When it's done, a browser automatically opens and navigates to the service WSDL.
