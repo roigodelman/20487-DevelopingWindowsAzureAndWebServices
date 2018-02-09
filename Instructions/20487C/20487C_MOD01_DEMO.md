@@ -10,9 +10,9 @@
 
 #### Demonstration Steps
 
-1. Open Microsoft Edge
+1. Open Microsoft Edge.
 2. Navigate to **https://portal.azure.com**.
-3. If a page appears prompting for your email address, type your email address, and then click **Continue**. Wait for the **Sign In** page to appear, type your email address and password, and then click **Sign In**.
+3. If a page appears prompting for your email address, enter your email address, and then click **Continue**. Wait for the **Sign In** page to appear, enter your email address and password, and then click **Sign In**.
 
    >**Note**: During the sign-in process, if a page appears prompting you to choose from a list of previously used accounts, select the account that you previously used, and then continue to provide your credentials.
 
@@ -57,7 +57,7 @@
 6. Go to **[repository root]\AllFiles\20487C\Mod01\DemoFiles\BlueYonderDemo\BlueYonder.Companion.Client**, select the **BlueYonder.Companion.Client.sln** file, and then click **Open**.
 7. If the **Developers License** dialog box appears, click **I Agree**.
 8. If the **User Account Control** dialog box appears, click **Yes**.
-9. In the **Developers License** dialog box, type your email address and your password, and then click **Sign in**.
+9. In the **Developers License** dialog box, enter your email address and your password, and then click **Sign in**.
 10. In the **Developers License** dialog box, click **Close**.
 
     >**Note**: If you do not have a valid email address, click **Sign up** and register for the service.  
@@ -76,12 +76,12 @@
     The app communicates with the front-end service to retrieve a list of flights to a location whose name begins with _New_; for example, New York.  
  
 17. Select any destination from the list of search results, and then click the **Purchase this trip** link.
-18. In the **First Name** text box, type your first name.
-19. In the **Last Name** text box, type your last name.
+18. In the **First Name** text box, enter your first name.
+19. In the **Last Name** text box, enter your last name.
 20. In the **Passport** text box, type **Aa1234567**.
 21. In the **Mobile Phone** text box, type **555-5555555**.
 22. In the **Home Address** text box, type **423 Main St.**
-23. In the **Email Address** text box, type your email address.
+23. In the **Email Address** text box, enter your email address.
 24. Click **Purchase**.
 
     Now the app sends the purchase request to the front-end service. The front-end service saves the purchase information, and then sends a separate purchase request to the back-end service for additional processing. After the back-end and front-end services complete their task, the client app displays a confirmation message.
