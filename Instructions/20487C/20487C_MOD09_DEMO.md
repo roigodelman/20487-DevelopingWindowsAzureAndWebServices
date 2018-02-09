@@ -31,7 +31,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod06** should be change
 10. Click **Access keys**.
 11. Review the two access keys and the option to regenerate them.
 
-   >**Note**: You need the access keys to access the storage account. The secondary key is required to renew the primary key; for example, if the primary key is compromised.
+    >**Note**: You need the access keys to access the storage account. The secondary key is required to renew the primary key; for example, if the primary key is compromised.
 
 
 # Lesson 2: Microsoft Azure Blob Storage
@@ -54,11 +54,11 @@ the following path: **[repository root]\AllFiles\20487C\Mod06** should be change
 9. Review the use of the **CreateCloudBlobClient** method, and how it is used to create a **CloudBlobClient** object that controls the blob resources in the storage account.
 10. Review the use of the **GetContainerReference** method and how it is used to return a **CloudBlobContainer** object that controls a specific blob container named **files**. Additionally, review how the **CreateIfNotExists** method verifies that the blob container exists and creates it if it does not exist.
 
-   >**Note**: The name of the container that is passed into the **GetContainerReference** method must be in lowercase.
+    >**Note**: The name of the container that is passed into the **GetContainerReference** method must be in lowercase.
 
 11. Review how the **SetPermissions** method configures the access level of the blob container.
 
-   >**Note**: The default permission for a container is private, which means the container is not publicly accessible from the Internet, and you can only access it by using the storage account access key.
+    >**Note**: The default permission for a container is private, which means the container is not publicly accessible from the Internet, and you can only access it by using the storage account access key.
 
 12. In **Solution Explorer**, under the **BlobStorage.Web** project, expand the **Controllers** folder, and then double-click  **HomeController.cs**.
 13. Locate the **Index** method, and note the call to the **ListBlobs** method. Blob containers can be hierarchical, but you can request the return list to be flattened.
@@ -78,7 +78,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod06** should be change
 23. Click **Upload**.
 24. In the Empire State building row, click **Direct Download**. Verify that the photo of the Empire State building appears.
 
-   >**Note**: If you are using Google Chrome to display the demo, clicking the **Direct Download** link or the **Download** link will result in the actual download of the file.
+    >**Note**: If you are using Google Chrome to display the demo, clicking the **Direct Download** link or the **Download** link will result in the actual download of the file.
 
 25. Review the URL in the address bar. The Storage Emulator has its own port, and the URL is composed of the name of the storage account: **devstoreaccount1**, the name of the container: **files**, and the name of the blob: **EmpireStateBuilding.jpg**.
 26. Return to the previous tab, in the Statue of Liberty row, click **Download** and then verify that the photo of the Statue of Liberty appears.
@@ -156,7 +156,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod06** should be change
 34. In the browser, append **countries?continent=Europe** to the address bar, and then press Enter.  
     The filtered list should show only one country.
 
-   > **Warning**: Before continuing any further, make sure that you are logged in to Visual Studio using the email you used to register to Microsoft Azure. Otherwise you will not be able to perform the next steps.
+    > **Warning**: Before continuing any further, make sure that you are logged in to Visual Studio using the email you used to register to Microsoft Azure. Otherwise you will not be able to perform the next steps.
 
 35. Close the browser and return to Visual Studio 2017.
 36. On the **View** menu, click **Server Explorer**.
@@ -241,14 +241,14 @@ the following path: **[repository root]\AllFiles\20487C\Mod06** should be change
     The **CreateIfNotExists** method verifies if the queue exists, and creates it if it does not exist.  
     The code in the **for** loop creates a new message by creating a **CloudQueueMessage** object with a _string_ content, and then adds the message to the queue by calling the **AddMessage** method.  
 
-   >**Note:** The **CloudQueueMessage** object can contain a _string_ content, and binary data in the form of a byte array.
+    >**Note:** The **CloudQueueMessage** object can contain a _string_ content, and binary data in the form of a byte array.
 
 29. In **Solution Explorer**, expand the **WorkingWithAzureQueues.Receiver** project, and then double-click **Program.cs**.
 30. Review the code in the **Main** method:  
     The code uses a reference to the **messagesqueue** queue, and creates it if it does not exist.  
     The code in the **while** loop retrieves a message from the queue by calling the **GetMessage** method, handles the message, and then removes it from the queue by calling the **DeleteMessage** method.
 
-   >**Note:** When a message is being retrieved from the queue, it is not removed from the queue, but is marked as locked for a certain duration. When the message is locked, other queue clients cannot retrieve it. After you successfully handle the message, you must delete it from the queue, otherwise the lock will expire, making the message visible and retrievable by queue clients.
+    >**Note:** When a message is being retrieved from the queue, it is not removed from the queue, but is marked as locked for a certain duration. When the message is locked, other queue clients cannot retrieve it. After you successfully handle the message, you must delete it from the queue, otherwise the lock will expire, making the message visible and retrievable by queue clients.
 
 31. In **Solution Explorer**, right-click the solution&#39;s root node, and then click **Properties**.
 32. In the **Solution &#39;WorkingWithAzureQueues&#39; Property Pages** dialog box, select the **Multiple startup projects** option.
