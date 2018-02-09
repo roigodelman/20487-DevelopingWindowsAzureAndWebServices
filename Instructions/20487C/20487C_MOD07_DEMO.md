@@ -23,16 +23,16 @@
 14. Close the browser and the console window.
 15. On the Start menu, click the **Microsoft Edge** tile.
 16. Go to the Microsoft Azure portal at **http://portal.azure.com**.
-17. If a page appears, asking for your email address and password, type your email address and password, and then click **Sign in**.
+17. If a page appears, asking for your email address and password, enter your email address and password, and then click **Sign in**.
 
-     >**Note:** If during the sign-in process, a page appears asking you to choose from a list of previously used accounts, select the account you previously used, and then continue to type your credentials.
+     >**Note:** If during the sign-in process, a page appears asking you to choose from a list of previously used accounts, select the account you previously used, and then continue to enetr your credentials.
 
 18. If the **Windows Azure Tour** dialog box appears, close it.
 19. On the top-left side of the portal, click the **+** button.
 20. Click **Enterprise Integration**, and then click **Service Bus**.
 21. In the **CREATE A NAMESPACE** dialog box, provide the following information:
 
-    a. Name: Type **ServiceBusDemo07 _YourInitials_** (Replace _YourInitials_ with your initials).      
+    a. Name: Type **ServiceBusDemo07***YourInitials* (Replace *YourInitials* with your initials).      
     b. Pricing Tier: Select **Standard**. \
     c. Subscription: Select either **Free Trial** or any available subscription.
        
@@ -273,14 +273,14 @@
 18. Click **Enterprise Integration**, and then click **Service Bus**.
 19. In the **CREATE A NAMESPACE** dialog box, provide the following information:
 
-    a. Name: Type **ServiceBusDemo07 _YourInitials_** (Replace _YourInitials_ with your initials).      
-    b. Pricing Tier: Select **Standard**. \
-    c. Subscription: Select either **Free Trial** or any available subscription.
+    a. Name: Type **ServiceBusDemo07 _YourInitials_** (Replace _YourInitials_ with your initials)      
+    b. Pricing Tier: Select **Standard**  
+    c. Subscription: Select either **Free Trial** or any available subscription  
        
        >**Note:** If you don't have an available subscription, create one before proceeding.
        
-    d. Resource Group: Select **Create New**, and then type **ServiceBusDemo07 _YourInitials_** (Replace _YourInitials_ with your initials). \
-    e. Region: Select the region closest to your location.
+    d. Resource Group: Select **Create New**, and then type **ServiceBusDemo07 _YourInitials_** (Replace _YourInitials_ with your initials)  
+    e. Region: Select the region closest to your location  
 
 20. To create the namespace, at the bottom of the dialog box, click **Create**, and then wait until the namespace is active.
 21. In the **Dashboard**, under the **All Resources** tile, you should see your newly created service bus. Click it.
