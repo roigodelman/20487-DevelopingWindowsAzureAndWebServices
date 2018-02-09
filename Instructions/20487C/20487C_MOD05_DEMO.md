@@ -40,7 +40,7 @@
 24. To each of the properties of the class, add the **[DataMember]** attribute.
 25. To save the file, press Ctrl+S.
 26. In Visual Studio 2017, press F5 to run the project. Check that the WCF Test Client opens, and the service project&#39;s tree in the left pane displays the **BookHotel()** operation node.
-27. Double-click the operation **BookHotel**, locate the **HotelName** parameter in the **Request** section on the right, and enter  **HotelA** in the **Value** column.
+27. Double-click the operation **BookHotel**, locate the **HotelName** parameter in the **Request** section on the right, and enter**HotelA** in the **Value** column.
 28. To make a request to the service, click **Invoke**.
 29. If a security warning appears, click **OK**.
 32. Check that the **Response** section displays the following:
@@ -99,13 +99,13 @@
         host.AddServiceEndpoint(typeof(IHotelBookingService), new NetTcpBinding(), "booking");
 ```
    
-   You added an endpoint that uses **NetTcpBinding**, with a relative address (**booking**).
-17. To save the file, press Ctrl+S.
-18. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.
-19. To run the project, press F5.
-20. Verify that the service is hosted in the console application.
-21. On the Start screen, click the **Developer Command Prompt for VS2017** tile.
-22. In the command prompt, type the following command and press Enter.
+   You added an endpoint that uses **NetTcpBinding**, with a relative address (**booking**).  
+17. To save the file, press Ctrl+S.  
+18. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.  
+19. To run the project, press F5.  
+20. Verify that the service is hosted in the console application.  
+21. On the Start screen, click the **Developer Command Prompt for VS2017** tile.  
+22. In the command prompt, type the following command and press Enter.  
 
    ```cs
         WcfTestClient  http://localhost:8733/
