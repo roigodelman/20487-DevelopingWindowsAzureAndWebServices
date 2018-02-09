@@ -6,16 +6,16 @@
 
 1. On the Start menu, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
-3. Go to **\Allfiles\Mod05\DemoFiles\CreatingWCFService\begin**.
+3. Go to **Allfiles\Mod05\DemoFiles\CreatingWCFService\begin**.
 4. Select the **CreatingWCFService.sln** file, and then click **Open**.
 5. In **Solution Explorer**, expand the **Service** project, and then double-click **IHotelBookingService.cs**. This interface is the service contract, but it still has to be configured with **[ServiceContract]** and **[ServiceOperation]** attributes.
 6. In **Solution Explorer**, double-click **HotelBookingService.cs**. This class is the implementation of the service contract.
-7. In Solution Explorer, double-click **BookingResponse.cs**. This class is a data contract that is returned by the service operation **BookHotel**. It still has to be configured with the **[DataContract]** and **[DataMember]** attributes.
+7. In **Solution Explorer**, double-click **BookingResponse.cs**. This class is a data contract that is returned by the service operation **BookHotel**. It still has to be configured with the **[DataContract]** and **[DataMember]** attributes.
 8. In **Solution Explorer**, right-click the project, and then click **Add Reference**.
 9. In the **Reference Manager** dialog box, expand the **Assemblies** node in the left pane, and then click **Framework**.
 10. Scroll down the assemblies list, point to the **System.Runtime.Serialization** assembly, and then select the check box next to the assembly name.
 11. Scroll down the assemblies list some more, point to the **System.ServiceModel** assembly, and then select the check box next to the assembly name. Click **OK** to close the dialog box.
-12. In Solution Explorer, double-click **IHotelBookingService.cs**.
+12. In **Solution Explorer**, double-click **IHotelBookingService.cs**.
 13. Add the following **using** directive.
 
    ```cs
@@ -45,8 +45,8 @@
 29. If a security warning appears, click **OK**.
 32. Check that the **Response** section displays the following:
 
-     - BookingReference: **AR3254**
-     - IsApproved: **True**
+   - BookingReference: **AR3254**
+   - IsApproved: **True**
 
 33. Close the WCF Test Client application.
 34. Close Visual Studio 2017.
@@ -79,7 +79,7 @@
         ```
 8. To save the file, press Ctrl+S.
 9. In **Solution Explorer**, right-click **App.config**, and then click **Edit WCF Configuration**.
-10. In the **Configuration** pane of the **Service Configuration Editor** window, expand the **HotelBooking.HotelBookingService** node right-click the **Endpoints** node, and then click **New Service Endpoint.**
+10. In the **Configuration** pane of the **Service Configuration Editor** window, expand the **HotelBooking.HotelBookingService** node,  right-click the **Endpoints** node, and then click **New Service Endpoint.**
 11. In the **General** tab, enter the following information.
 
   - Address: **booking**
@@ -98,78 +98,83 @@
    ```cs
         host.AddServiceEndpoint(typeof(IHotelBookingService), new NetTcpBinding(), "booking");
 ```
-19. You added an endpoint that uses **NetTcpBinding** , with a relative address ( **booking** ).
-20. To save the file, press Ctrl+S.
-21. In Solution Explorer, right-click the **ServiceHost** project and click **Set as StartUp Project**.
-22. To run the project, press F5.
-23. Verify that the service is hosted in the console application.
-24. On the Start screen, click the **Developer Command Prompt for VS2017** tile.
-25. In the command prompt, type the following command and press Enter.
+   
+   You added an endpoint that uses **NetTcpBinding**, with a relative address (**booking**).
+17. To save the file, press Ctrl+S.
+18. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.
+19. To run the project, press F5.
+20. Verify that the service is hosted in the console application.
+21. On the Start screen, click the **Developer Command Prompt for VS2017** tile.
+22. In the command prompt, type the following command and press Enter.
 
    ```cs
         WcfTestClient  http://localhost:8733/
 ```
-26. After the **WCF Test Client** tool opens, review the service and its endpoint. Notice that the service has two endpoints.
-27. Under the TCP binding endpoint, double-click the method **BookHotel**.
-28. In the parameter **HotelName** (under the **Value** column), enter the value **HotelA**.
-29. To send the request to the service, click **Invoke**.
-30. If a security warning appears, click **OK**.
-31. Check that the **Response** section displays the following:
+23. After the **WCF Test Client** tool opens, review the service and its endpoint. Notice that the service has two endpoints.
+24. Under the TCP binding endpoint, double-click the method **BookHotel**.
+25. In the parameter **HotelName** (under the **Value** column), enter the value **HotelA**.
+26. To send the request to the service, click **Invoke**.
+27. If a security warning appears, click **OK**.
+28. Check that the **Response** section displays the following:
 
   - BookingReference: **AR3254**
   - IsApproved: **True**
 
-32. In the left pane, right-click the **http://localhost:8733/** node, and click **Copy Address**.
-33. On the Start menu, click the **Microsoft Edge** icon, select all the text in the browser address bar, and press Ctrl+V to paste the metadata address you copied. Press Enter.
-34. The page displays an explanation of how to consume the service from a client. Click the link  **http://localhost:8733/?wsdl** and review the overall structure of the WSDL file.
-35. Close the browser and the WCF Test Client window.
-36. Return to Visual Studio 2017, press Shift+F5 to stop debugging, and then close Visual Studio 2017.
+29. In the left pane, right-click the **http://localhost:8733/** node, and then click **Copy Address**.
+30. On the Start menu, click the **Microsoft Edge** icon, select all the text in the browser address bar, and press Ctrl+V to paste the metadata address you copied. Press Enter.
+31. The page displays an explanation of how to consume the service from a client. Click **http://localhost:8733/?wsdl**, and then review the overall structure of the WSDL file.
+32. Close the browser and the WCF Test Client window.
+33. Return to Visual Studio 2012, press Shift+F5 to stop debugging, and then close Visual Studio 2012.
 
 # Lesson 4: Consuming WCF Services
 
 ### Demonstration 1: Adding a Service Reference
 
 1. On the Start menu, click the **Visual Studio 2017** tile.
-2. On the **File** menu, point to **Open** , and then click **Project/Solution**.
-3. Go to **D:\Allfiles\Mod05\DemoFiles\AddingServiceReference\begin**.
-4. Select the file **AddServiceReference.sln** and click **Open**.
-5. In Solution Explorer, expand the **ServiceHost** project and double-click **App.config**. **App.config** contains three service endpoints: one with **BasicHttpBinding** , one with **NetTcpBinding** , and one MEX endpoint. The service must have the **ServiceMetadata** behavior before you can add a service reference with Visual Studio 2012.
-6. In Solution Explorer, right-click the **ServiceHost** project and click **Set as StartUp Project**.
+2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
+3. Go to **Allfiles\Mod05\DemoFiles\AddingServiceReference\begin**.
+4. Select the **AddServiceReference.sln** file, and then click **Open**.
+5. In **Solution Explorer**, expand the **ServiceHost** project and double-click **App.config**. **App.config** contains three service endpoints: one with **BasicHttpBinding**, one with **NetTcpBinding**, and one MEX endpoint. The service must have the **ServiceMetadata** behavior before you can add a service reference with Visual Studio 2012.
+6. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.
 7. To start the service host without debugging, press Ctrl+F5.
 8. Wait for the service host console to display the message &quot;Service Hosted Successfully!&quot;
-9. Return to Visual Studio 2017. In Solution Explorer, right-click **Service References** under the **ServiceClient** project and click **Add Service Reference**.
-10. In the **Add Service Reference** dialog box, enter **http://localhost:8733/HotelBooking** in the **Address** box, and then click  **Go**.
-11. Wait for the service information to download, enter **HotelBooking** in the **Namespace** box, and then click **OK**. The service proxy class and the data contract classes are added under the **HotelBooking** namespace.
-12. In Solution Explorer, expand the **ServiceClient** project, and double-click the **app.config** file. Point out the new **&lt;system.serviceModel&gt;** section group that Visual Studio added to the file. The configuration contains the client endpoints and binding configuration.
-13. In Solution Explorer, under the **ServiceClient** project, double-click **Program.cs**.
-14. Select the code that appears in comments, click the **Edit** menu, point to **Advanced** , and click **Uncomment Selection**. The code in the **Main** method initializes a new instance of the generated service proxy  **HotelBooking.HotelBookingServiceClient.** The generated proxy implements the service contract interface and, therefore, you can use it to start the service methods as if it was a local object.
+9. Return to Visual Studio 2017. In **Solution Explorer**, under the **ServiceClient** project, right-click **Service References**, and then click **Add Service Reference**.
+10. In the **Add Service Reference** dialog box, in the **Address** box, enter **http://localhost:8733/HotelBooking**,  and then click  **Go**.
+11. Wait for the service information to download. In the **Namespace** box, enter **HotelBooking**, and then click **OK**. The service proxy class and the data contract classes are added under the **HotelBooking** namespace.
+12. In **Solution Explorer**, expand the **ServiceClient** project, and double-click the **app.config** file. Point out the new **&lt;system.serviceModel&gt;** section group that Visual Studio added to the file. The configuration contains the client endpoints and binding configuration.
+13. In **Solution Explorer**, under the **ServiceClient** project, double-click **Program.cs**.
+14. Select the code that appears in comments, click the **Edit** menu, point to **Advanced**, and then click **Uncomment Selection**. The code in the **Main** method initializes a new instance of the generated service proxy **HotelBooking.HotelBookingServiceClient.** The generated proxy implements the service contract interface and, therefore, you can use it to start the service methods as if it was a local object.
 15. To save the file, press Ctrl+S.
-16. In Solution Explorer, right-click **ServiceClient** , point to **Debug** , and click **Start new instance**.
-17. Wait until the console application starts and displays the following message: &quot;Booking response: Approved, booking reference: AR3254&quot;.
-18. To close the client console application, press Enter.
-19. Switch to the service console application window, and press Enter to shut down the service.
-20. Close Visual Studio 2017.
+16. In **Solution Explorer**, right-click **ServiceClient**, point to **Debug**, and click then **Start new instance**.  
+
+    Wait until the console application starts and displays the following message: &quot;Booking response: Approved, booking reference: AR3254&quot;.
+    
+17. To close the client console application, press Enter.
+18. Switch to the service console application window, and press Enter to shut down the service.
+19. Close Visual Studio 2017.
 
 ### Demonstration 2: Using Channel Factories
 
 1. On the Start menu, click the **Visual Studio 2017** tile.
-2. On the **File** menu, point to **Open** , and then click **Project/Solution**.
-3. Go to **D:\Allfiles\Mod05\DemoFiles\UsingChannelFactory\begin**.
-4. Select the file **UsingChannelFactory.sln** and click **Open**.
-5. In Solution Explorer, expand the **ServiceHost** project, and double-click **App.config**. The **App.config** file contains three service endpoints: one with **BasicHttpBinding** , one with **NetTcpBinding** , and one MEX endpoint.
-6. In Solution Explorer, right-click the **ServiceClient** project, point to **Add** and then click **Reference**.
-7. In the **Reference Manager** dialog box, expand the **Solution** node in the left pane, and then click **Projects**.
-8. In the projects list, point to **Common** and select the check box next to the project name.
-9. In the left pane, expand the **Assemblies** node and click **Framework**. Scroll down the assemblies list, point to the  **System.ServiceModel** assembly, select the check box next to the assembly name, and click **OK**.
-10. The reference was added to gain access to the service and data contracts and to the WCF client libraries.
-11. In Solution Explorer, expand the **ServiceClient** project and double-click **Program.cs**.
-12. To the **using** section at the top of the file, add the following **using** directives.
+2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
+3. Go to **Allfiles\Mod05\DemoFiles\UsingChannelFactory\begin**.
+4. Select the **UsingChannelFactory.sln** file and then click **Open**.
+5. In **Solution Explorer**, expand the **ServiceHost** project, and then double-click **App.config**. The **App.config** file contains three service endpoints: one with **BasicHttpBinding**, one with **NetTcpBinding**, and one MEX endpoint.
+6. In **Solution Explorer**, right-click the **ServiceClient** project, point to **Add**, and then click **Reference**.
+7. In the left pane of the **Reference Manager** dialog box, expand the **Solution** node, and then click **Projects**.
+8. In the projects list, point to **Common**, and then select the check box next to the project name.
+9. In the left pane, expand the **Assemblies** node, and then click **Framework**. Scroll down the assemblies list, point to the  **System.ServiceModel** assembly, select the check box next to the assembly name, and then click **OK**.  
+
+    The reference was added to gain access to the service and data contracts and to the WCF client libraries.
+    
+10. In **Solution Explorer**, expand the **ServiceClient** project and double-click **Program.cs**.
+11. To the **using** section at the top of the file, add the following **using** directives.
 
    ```cs
         using HotelBooking;
         using System.ServiceModel;
 ```
-13. At the beginning of the **Main** method, add the following lines of code before the commented code.
+12. At the beginning of the **Main** method, add the following lines of code before the commented code.
 
    ```cs
         ChannelFactory<IHotelBookingService> serviceFactory =
@@ -179,19 +184,19 @@
                 
         IHotelBookingService proxy = serviceFactory.CreateChannel();
 ```
-14. The service contract interface is passed as a generic type parameter to the **ChannelFactory&lt;T&gt;** generic class.
-15. Select the code that appears in comments, click the **Edit** menu, point to **Advanced** , and then click **Uncomment Selection**.
-16. To save the file, press Ctrl+S.
-17. In Solution Explorer, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.
-18. To start the service host without debugging, press Ctrl+F5.
-19. Wait for the service host console to display the message &quot;Service Hosted Successfully!&quot;
-20. Return to Visual Studio 2017. In Solution Explorer, right-click the **ServiceClient** project, and then click **Set as StartUp Project**.
-21. To start the client without debugging, press Ctrl+F5.
-22. Wait until the console application starts and displays the message &quot;Booking response: Approved, booking reference: AR3254&quot;.
-23. Close both console applications and Visual Studio 2017. 
+   The service contract interface is passed as a generic type parameter to the **ChannelFactory&lt;T&gt;** generic class.
+13. Select the code that appears in comments, click the **Edit** menu, point to **Advanced**, and then click **Uncomment Selection**.
+14. To save the file, press Ctrl+S.
+15. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.
+16. To start the service host without debugging, press Ctrl+F5.
+17. Wait for the service host console to display the message &quot;Service Hosted Successfully!&quot;
+18. Return to Visual Studio 2017. In **Solution Explorer**, right-click the **ServiceClient** project, and then click **Set as StartUp Project**.
+19. To start the client without debugging, press Ctrl+F5.
+20. Wait until the console application starts and displays the message &quot;Booking response: Approved, booking reference: AR3254&quot;.
+21. Close both console applications and Visual Studio 2017. 
 
-©2016 Microsoft Corporation. All rights reserved.
+©2018 Microsoft Corporation. All rights reserved.
 
-The text in this document is available under the  [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/legalcode), additional terms may apply. All other content contained in this document (including, without limitation, trademarks, logos, images, etc.) are  **not**  included within the Creative Commons license grant. This document does not provide you with any legal rights to any intellectual property in any Microsoft product. You may copy and use this document for your internal, reference purposes.
+The text in this document is available under the [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/legalcode), additional terms may apply. All other content contained in this document (including, without limitation, trademarks, logos, images, etc.) are **not** included within the Creative Commons license grant. This document does not provide you with any legal rights to any intellectual property in any Microsoft product. You may copy and use this document for your internal, reference purposes.
 
 This document is provided &quot;as-is.&quot; Information and views expressed in this document, including URL and other Internet Web site references, may change without notice. You bear the risk of using it. Some examples are for illustration only and are fictitious. No real association is intended or inferred. Microsoft makes no warranties, express or implied, with respect to the information provided here.
