@@ -9,7 +9,7 @@
 1. On the Start screen, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 3. Browse to **D:\Allfiles\Mod04\DemoFiles\RequestResponseFlow\begin\RequestResponseFlow**.
-4. Select the **RequestResponseFlow.sln**, file and then click **Open**.
+4. Select the **RequestResponseFlow.sln** file, and then click **Open**.
 5. In **Solution Explorer**, under the **RequestResponseFlow.Web** project, right-click the **Extensions** folder, point to **Add**, and then click **New Item**.
 6. In the **Add New Item** dialog box, in the pane on the left side, expand the **Installed** node, expand the **Visual C#** node, click the **Code** node, and then click **Class** in the list of items.
 7. In the **Name** box, type **TraceHandler.cs**, and then click **Add**.
@@ -116,7 +116,7 @@
         }
 	```
 28. To save the file, press CTRL+S.
-29. To set a breakpoint, place the cursor on the first line of the **ExecuteActionFilterAsync** method and then press F9.
+29. To set a breakpoint, place the cursor on the first line of the **ExecuteActionFilterAsync** method, and then press F9.
 30. In **Solution Explorer**, under the **RequestResponseFlow.Web** project, expand the **Controllers** folder, and then double-click the **ValuesController.cs** file.
 31. Add the following by using the directive at the top of the **ValuesController.cs** file.
 
@@ -137,7 +137,7 @@
 37. On the **Debug** menu, point to **Windows**, and then click **Call Stack**.
 38. Right-click the **Call Stack** pane, and make sure that the **Show External Code** option is selected.
 39. Review the lines in the **Call Stack** that display the calls to **HttpControllerHandler**, **HttpServer**, and  **DelegatingHandler**.
-40. To continue debugging, press F5 When the debugger breaks inside **TraceFilterAttribute**, review the lines executed by the **ApiController** class.
+40. To continue debugging, press F5. When the debugger breaks inside **TraceFilterAttribute**, review the lines executed by the **ApiController** class.
 41. To stop the debugger, press Shift+F5.
 
 ### Demonstration 2: Creating Asynchronous Actions
@@ -263,44 +263,44 @@
 4. Select the **ConsumingODataService.sln** file, and then click **Open**.
 5. In **Solution Explorer**, under the **ConsumingODataService.Host** project, expand the **Controllers** folder node, and then double-click the **CoursesController.cs** file.
 6. Review the **Get** action, which returns **IQueryable&lt;Course&gt;** and is also decorated with the **[Queryable]** attribute.
-7. This is done to enable OData queries.  
+   This is done to enable OData queries.  
    The **CoursesController** class derives from the **ODataController** base class, which handles the formatting.   
-8. In **Solution Explorer**, under the **ConsumingODataService.Host** project, double-click the **Global.asax** file.
-9. Review the content of the **SetupOData** method.  
+7. In **Solution Explorer**, under the **ConsumingODataService.Host** project, double-click the **Global.asax** file.
+8. Review the content of the **SetupOData** method.  
    The **ODataConventionModelBuilder** class is used to create an entity data model, which will be used to create the OData metadata. The **MapODataRoute** method is used to create a new route that exposes the OData metadata and the various controllers in the model.
-10. In **Solution Explorer**, right-click the **ConsumingODataService.Host** project, and then click **Set as StartUp Project**.
-11. To start the project without debugging, press Ctrl+F5 .
-12. Return to Visual Studio 2017.
-13. In **Solution Explorer**, under the **ODataService.Client** project, right-click the **references** node and then select **Add Service Reference**.
-14. In the **Address** text box, type **http://localhost:57371/OData**, and then click **Go**.
+9. In **Solution Explorer**, right-click the **ConsumingODataService.Host** project, and then click **Set as StartUp Project**.
+10. To start the project without debugging, press Ctrl+F5 .
+11. Return to Visual Studio 2017.
+12. In **Solution Explorer**, under the **ODataService.Client** project, right-click the **references** node and then select **Add Service Reference**.
+13. In the **Address** text box, type **http://localhost:57371/OData**, and then click **Go**.
 
     >**Note** : OData URLs are case-sensitive. Use the casing as shown in the instruction.
 
-15. In the **Namespace** text box, type **OData**, and then click **OK**.
-16. In **Solution Explorer**, under the **ODataService.Client** project, double-click the **Program.cs** file.
-17. Use the following code to in the **Main** method, to create a new instance of the **OData.Container** class.
+14. In the **Namespace** text box, type **OData**, and then click **OK**.
+15. In **Solution Explorer**, under the **ODataService.Client** project, double-click the **Program.cs** file.
+16. Use the following code to in the **Main** method, to create a new instance of the **OData.Container** class.
 
 	```cs
         var container = new OData.Container(new Uri("http://localhost:57371/OData"));
 	```
     >**Note** : OData URLs are case-sensitive. Use the casing as shown in the instruction.
 
-18. Use the following code to create a LINQ query to select the WCF course from the container&#39;s **Courses** property.
+17. Use the following code to create a LINQ query to select the WCF course from the container&#39;s **Courses** property.
 
 	```cs
         var course = (from c in container.Courses
                where c.Name == "WCF"
                select c).FirstOrDefault();
 	```
-19. Use the following code to print the name and ID of the course.
+18. Use the following code to print the name and ID of the course.
 
 	```cs
         Console.WriteLine("the course {0} has the Id: {1}", course.Name, course.Id);
         Console.ReadKey();
 	```
-20. To save the changes, press Ctrl+S .
-21. In **Solution Explorer**, right-click the **ODataService.Client** project, point to **Debug**, and then click **Start New Instance** to run the client application.
-22. Notice how the query returns data about the WCF course.  
+19. To save the changes, press Ctrl+S .
+20. In **Solution Explorer**, right-click the **ODataService.Client** project, point to **Debug**, and then click **Start New Instance** to run the client application.
+21. Notice how the query returns data about the WCF course.  
 
     The application transforms the LINQ query to an OData service call to the server. The server then uses OData querying in CoursesController to query the database.
 
@@ -367,7 +367,7 @@
 9. Review the **GetService** method. The method returns an instance of a specific service based on the **serviceType** parameter.
 10. In **Solution Explorer**, under the **DependencyResolver** project, expand **App_Start**, and then double-click **WebApiConfig.cs**.
 11. Review the **Register** method. The dependency resolver that will be used by ASP.NET Web API is the one that is set in the **config.DependencyResolver** property.
-12. To start the project without debugging, press Ctrl+F5 .
+12. To start the project without debugging, press Ctrl+F5.
 13. To call the **Get** action of the **CoursesController** class, in the browser window, append the **api/courses** relative address to the address bar, and then press Enter.
 
 ©2018 Microsoft Corporation. All rights reserved.
