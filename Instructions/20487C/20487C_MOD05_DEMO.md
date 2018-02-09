@@ -188,15 +188,15 @@
         IHotelBookingService proxy = serviceFactory.CreateChannel();
 ```
    The service contract interface is passed as a generic type parameter to the **ChannelFactory&lt;T&gt;** generic class.  
-13. Select the code that appears in comments, click the **Edit** menu, point to **Advanced**, and then click **Uncomment Selection**.
-14. To save the file, press Ctrl+S.
-15. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.
-16. To start the service host without debugging, press Ctrl+F5.
-17. Wait for the service host console to display the **Service Hosted Successfully!** message.
-18. Return to Visual Studio 2017. In **Solution Explorer**, right-click the **ServiceClient** project, and then click **Set as StartUp Project**.
-19. To start the client without debugging, press Ctrl+F5.
-20. Wait until the console application starts and displays the **Booking response: Approved, booking reference: AR3254** message.
-21. Close both console applications and Visual Studio 2017.
+13. Select the code that appears in comments, click the **Edit** menu, point to **Advanced**, and then click **Uncomment Selection**.  
+14. To save the file, press Ctrl+S.  
+15. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.  
+16. To start the service host without debugging, press Ctrl+F5.  
+17. Wait for the service host console to display the **Service Hosted Successfully!** message.  
+18. Return to Visual Studio 2017. In **Solution Explorer**, right-click the **ServiceClient** project, and then click **Set as StartUp Project**.  
+19. To start the client without debugging, press Ctrl+F5.  
+20. Wait until the console application starts and displays the **Booking response: Approved, booking reference: AR3254** message.  
+21. Close both console applications and Visual Studio 2017.  
 
 ©2018 Microsoft Corporation. All rights reserved.  
 
