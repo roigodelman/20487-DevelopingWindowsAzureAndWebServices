@@ -39,7 +39,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
 	```
 
 15. To save the changes, press Ctrl+S.
-16. In **Solution Explorer**, under **App\Start folder, double-click **WebApiConfig.cs**.
+16. In **Solution Explorer**, under **App\Start folder**, double-click **WebApiConfig.cs**.
 17. Add the following code to the beginning of the **Register** method.  
 
 
@@ -113,8 +113,8 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
 
 1. Open **Visual Studio 2017**.
 2. On the File menu, point to **Open**, and then click **Project/Solution**.
-3. In the **File Name** box, type **[repository root]\Allfiles\20487C\Mod03\Democode\ConsumingFromJQuery\Begin\JQueryClient\JQueryClient.sln** , and then click **Open**.
-4. In **Solution Explorer** , under the **JQueryClient** project, expand the **Views** folder, then expand the **Home** folder, and then  double-click **Index.cshtml**.
+3. In the **File Name** box, type **[repository root]\Allfiles\20487C\Mod03\Democode\ConsumingFromJQuery\Begin\JQueryClient\JQueryClient.sln**, and then click **Open**.
+4. In **Solution Explorer**, under the **JQueryClient** project, expand the **Views** folder, then expand the **Home** folder, and then  double-click **Index.cshtml**.
 5. Locate the script section and notice that jQuery retrieves the data from the server and how this method of work enables AJAX.
 6. In the beginning of the script section, add jQuery code to register to the **submit** event of the **deleteLocation** form. The registration code should look as follows.
 
@@ -142,7 +142,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
 	``` 
 
 8. To save the changes, press Ctrl+S.
-9. In **Solution Explorer**, under the **JQueryClient** project, expand the **Controllers** folder and then double-click **DestinationsController.cs**.
+9. In **Solution Explorer**, under the **JQueryClient** project, expand the **Controllers** folder, and then double-click **DestinationsController.cs**.
 10. Locate the **Delete** method, and then click it. To put a breakpoint on the **Delete** method, press F9.
 11. To debug the application, press F5. After the browser opens, show that the page lists the destinations retrieved from the **Get**  method of the **DestinationsAPI** controller.
 12. Type **1** in the **Location id** box, and then click **delete**.
@@ -157,7 +157,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
 2. On the **File** menu, point to **Open**, and then click **Project/Solution.**
 3. In the **File Name** text box, type **[repository root]\Allfiles\20487C\Mod03\Democode\ConsumingFromHttpClient\Begin\HttpClientApplication\HttpClientApplication.sln**, and then click  **Open**.
 4. In **Solution Explorer**, under the **HttpClientApplication.Client** project, right-click **References**, and then click **Manage NuGet Packages**.
-5. Inside the **NuGet Manager** window, click **Online** on the left menu, and in the search box on the upper-right side, enter **Microsoft.AspNet.WebApi.Client**.
+5. Inside the **NuGet Manager** window, click **Online** on the left menu, and in the search box on the upper-right side, type **Microsoft.AspNet.WebApi.Client**.
 6. In the search results list, locate **Microsoft ASP.NET Web API 2.2 Client Libraries**, and then click **Install**.
 7. If a **License Acceptance** dialog box appears, click **I Accept**.
 8. After the installation is complete, to close the **NuGet Manager** window, click **Close**.
