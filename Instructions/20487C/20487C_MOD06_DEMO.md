@@ -15,13 +15,13 @@ You need to activate Microsoft Internet Information Services (IIS) on your machi
 1. Open **Search Windows** by clicking the magnifying glass next to the **Start** menu.
 2. Enter **Turn windows features on or off**, and then press **Enter**.
 3. Select the **Internet Information Services** check box once. A black square should appear within the white check box.
-4. Expand **Internet Information Services** and then expand **World Wide Web Services**.
+4. Expand **Internet Information Services**, and then expand **World Wide Web Services**.
 5. Select the **Application Development Features** check box.
 6. You also need to activate Windows Communication Foundation (WCF) support before you can deploy WCF services to IIS. To do this:  
 	a) In the **Windows Features** window, expand **.NET Framework 4.7 Advances Services**.  
 	b) Expand **WCF Services**, and then select all the check boxes inside it (**HTTP Activation**, **Message Queuing (MSMQ) Activation**, and so on.) 
-6. Click **Ok**, Windows proceeds to install the required components. After this, IIS will is activated.
-7. Verify that IIS works:  
+7. Click **Ok**. Windows proceeds to install the required components. After this, IIS will is activated.
+8. Verify that IIS works:  
 	a) Open a browser.  
 	b) Navigate to **http://localhost/**.  
 	c) An **Internet Information Services** page should appear.
