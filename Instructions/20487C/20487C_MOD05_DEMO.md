@@ -145,7 +145,7 @@
 13. In **Solution Explorer**, under the **ServiceClient** project, double-click **Program.cs**.
 14. Select the code that appears in comments, click the **Edit** menu, point to **Advanced**, and then click **Uncomment Selection**. The code in the **Main** method initializes a new instance of the generated service proxy **HotelBooking.HotelBookingServiceClient.** The generated proxy implements the service contract interface and, therefore, you can use it to start the service methods as if it was a local object.
 15. To save the file, press Ctrl+S.
-16. In **Solution Explorer**, right-click **ServiceClient**, point to **Debug**, and click then **Start new instance**.  
+16. In **Solution Explorer**, right-click **ServiceClient**, point to **Debug**, and then click **Start new instance**.  
 
     Wait until the console application starts and displays the following message: &quot;Booking response: Approved, booking reference: AR3254&quot;.
     
