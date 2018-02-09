@@ -19,7 +19,7 @@
 10. Click **OK**.
 11. To start the solution without debugging, press Ctrl+F5. Wait until the console application displays the **The server is running** message.
 12. Position the browser and console windows next to each other so that you can show both windows.
-13. In the browser window, in the **Text** text box, type **Hello** and then click **Write to console**. The **Hello** text will appear in the console window.
+13. In the browser window, in the **Text** text box, type **Hello**, and then click **Write to console**. The **Hello** text will appear in the console window.
 14. Close the browser and the console window.
 15. On the Start menu, click the **Microsoft Edge** tile.
 16. Go to the Microsoft Azure portal at **http://portal.azure.com**.
@@ -44,7 +44,7 @@
 22. To create the namespace, at the bottom of the dialog box, click **Create**, and then wait until the namespace is active.
 23. In the **Dashboard**, under the **All Resources** tile, you should see your newly created service bus. Click it.
      >**Note:** If you cannot see the service bus, click **See more** to access the full list of resources. Alternatively, you can expand the tile by dragging its bottom-right corner. 
-24. In the service bus box, on the menu on the left, click the **Shared access policies**, and then click **RootManageSharedAccessKey**.
+24. In the service bus box, on the menu on the left, click the **Shared access policies** tab, and then click **RootManageSharedAccessKey**.
 25. In the box that opens to the right, click the **Copy** icon on the right side of the **Primary Key** text box.
 26. If you are prompted to allow access to your Clipboard, click **Allow access**.
 27. Close the dialog box, and then return to Visual Studio 2017.
@@ -62,7 +62,7 @@
   ```cs
         using Microsoft.ServiceBus;
 ```
-38. Locate the call to the **ServiceHost** constructor and change the host&#39;s address from **net.tcp://127.0.0.1:747/** to **sb://ServiceBusDemo07** _YourInitials_.servicebus.windows.net** (Replace _YourInitials_ with your initials).
+38. Locate the call to the **ServiceHost** constructor and change the host&#39;s address from **net.tcp://127.0.0.1:747/** to **sb://ServiceBusDemo07** _YourInitials_**.servicebus.windows.net** (Replace _YourInitials_ with your initials).
 39. Locate the call to the **host.AddServiceEndpoint** method, and then update the binding to **NetTcpRelayBinding** by using the following code.
 
   ```cs
@@ -111,7 +111,7 @@
 65. In **Solution Explorer**, right-click the **ServiceBusRelay.WebClient** project, and then click **Publish**.
 66. In the **Publish Web** dialog box, click **Import**, and then go to **D:\Allfiles\Mod07\DemoFiles\ServiceBusRelay**. Select the profile file that you downloaded earlier, and then click **Open**.
 67. In the **Import Publish Profile** dialog box, click **OK**.
-68. Click **Publish**. Visual Studio 2012 publishes the web application according to the settings that are provided in the profile file. After the deployment is completes, the uploaded web application opens in a new browser window.
+68. Click **Publish**. Visual Studio 2012 publishes the web application according to the settings that are provided in the profile file. After the deployment completes, the uploaded web application opens in a new browser window.
 69. Return to Visual Studio 2012.
 70. In **Solution Explorer**, right-click the **ServiceBusRelay.Server** project, and then click **Set as StartUp Project**.
 71. To start the application without debugging, press Ctrl+F5. Wait until the console application displays the **The server is running** message.
@@ -144,7 +144,7 @@
 16. In the **Reference Manager** dialog box, expand the **Assemblies** node in the pane on the left side, and then click **Framework**.
 17. Scroll down the assemblies list, point to the **System.Configuration** assembly, select the check box next to the assembly name, and then click **OK.**
 18. Go to the Azure portal at **http://portal.azure.com**.
-19. If a page appears, asking for your email address and password, type your email address and password, and then click **Sign in**.
+19. If a page appears asking for your email address and password, type your email address and password, and then click **Sign in**.
 
     >**Note:** If during the sign-in process, a page appears asking you to choose from a list of previously used accounts, select the account you previously used, and then continue to type your credentials.
 
@@ -241,7 +241,7 @@
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 3. In the **File name** text box, type **D:\Allfiles\Mod07\DemoFiles\TopicsDemo\TopicsDemo.sln**, and then click **Open**.  
    
-   Explain to the students that the solution contains four console application projects. The **ServiceBusTopicPublisher** project creates topics, defines the available subscriptions and sends four sales messages.
+   Explain that the solution contains four console application projects. The **ServiceBusTopicPublisher** project creates topics, defines the available subscriptions, and sends four sales messages.
    
    The three remaining projects act as subscribers, and print messages sent to their subscription to the console.
 
@@ -255,14 +255,16 @@
 8. Show how the four **BrokeredMessage** objects are created, and how their properties are set accordingly.
 9. Demonstrate how the **TopicClient** object is created, and how it is used to send messages to the Service Bus.
 10. In **Solution Explorer**, expand the **ExpensivePurchasesSubscriber** project, and then double-click **Program.cs**.
-11. Locate the **Main** method, and show the use of the **SubscriptionClient** class. The code connects to the **productsalestopic** topic with the **ExpensivePurchases** subscription.  
+11. Locate the **Main** method, and show the use of the **SubscriptionClient** class. The code connects to the 
+**productsalestopic** topic with the **ExpensivePurchases** subscription.  
 
     Explain that the code continuously receives messages from the subscription and prints them to the console.
     
 12. Show the **CheapPurchasesSubscriber** and **AuditSubscriber** projects, and explain that the difference between these projects is just the name of the subscription that is being passed to the **Create** method in **SubscriptionClient**.
 13. On the Start screen, click the **Internet Explorer** tile.
 14. Go to the Azure portal at **http://manage.windowsazure.com**.
-15. If a page appears, asking for your email address, type your email address, and then click **Continue**. Wait for the **Sign In**  page to appear, type your email address and password, and then click **Sign In.**
+15. If a page appears, asking for your email address, type your email address, and then click **Continue**. Wait for the 
+**Sign In** page to appear, type your email address and password, and then click **Sign In.**
 
      >**Note:** If during the sign-in process, a page appears asking you to choose from a list of previously used accounts, select the account you previously used, and then continue to type your credentials.
 
