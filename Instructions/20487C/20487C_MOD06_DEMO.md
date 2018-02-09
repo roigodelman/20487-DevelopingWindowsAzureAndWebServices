@@ -13,7 +13,7 @@ the following path: **[repository root]\AllFiles\20487C\Mod06** should be change
 You need to activate Microsoft Internet Information Services (IIS) on your machine. The instructions below are for Windows 10 only.
 
 1. Open **Search Windows** by clicking the magnifying glass next to the **Start** menu.
-2. Enter **Turn windows features on or off**, and then press **Enter**.
+2. Type **Turn windows features on or off**, and then press Enter.
 3. Select the **Internet Information Services** check box once. A black square should appear within the white check box.
 4. Expand **Internet Information Services**, and then expand **World Wide Web Services**.
 5. Select the **Application Development Features** check box.
@@ -54,9 +54,9 @@ You need to activate Microsoft Internet Information Services (IIS) on your machi
 	a. In Solution Explorer, right-click the **MyIISService** project, and then click **Publish**. The **Publish** tab opens.
 	b. Select **IIS, FTP, etc**, and then click **Publish**. The **Publish** window opens.
 	c. In **Publish method**, select **Web Deploy**.
-	d. In **Server**, enter **localhost**.
-	e. In **Site Name**, enter **Default Web Site/MyIISService**.
-	f. In **Destination URL**, enter **http://localhost/MyIISService/Service1.svc?wsdl**.
+	d. In **Server**, type **localhost**.
+	e. In **Site Name**, type **Default Web Site/MyIISService**.
+	f. In **Destination URL**, type **http://localhost/MyIISService/Service1.svc?wsdl**.
 	g. Click **Save**.  
 	
     Visual Studio 2017 proceeds to build and deploy the service to IIS. When it's done, a browser automatically opens and navigates to the service WSDL.
