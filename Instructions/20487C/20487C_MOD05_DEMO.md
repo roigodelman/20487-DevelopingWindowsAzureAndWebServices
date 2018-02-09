@@ -58,7 +58,7 @@
 1. On the Start menu, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 3. Go to **Allfiles\Mod05\DemoFiles\DefineServiceEndpoints\begin**, select **DefineServiceEndpoints.sln**, and then click **Open**.
-4. In **Solution Explorer**, expand the **ServiceHost** project and double-click **App.config**.
+4. In **Solution Explorer**, expand the **ServiceHost** project, and then double-click **App.config**.
 5. Locate the **&lt;system.serviceModel&gt;** section group. In this section of the file, you define the base address, endpoints, and behaviors of the service.
 6. To the **&lt;serviceBehaviors&gt;** element, add the following configuration:
 
@@ -137,13 +137,16 @@
 5. In **Solution Explorer**, expand the **ServiceHost** project and double-click **App.config**. **App.config** contains three service endpoints: one with **BasicHttpBinding**, one with **NetTcpBinding**, and one MEX endpoint. The service must have the **ServiceMetadata** behavior before you can add a service reference with Visual Studio 2012.
 6. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.
 7. To start the service host without debugging, press Ctrl+F5.
-8. Wait for the service host console to display the message &quot;Service Hosted Successfully!&quot;
+8. Wait for the service host console to display the **Service Hosted Successfully!** message.
 9. Return to Visual Studio 2017. In **Solution Explorer**, under the **ServiceClient** project, right-click **Service References**, and then click **Add Service Reference**.
 10. In the **Add Service Reference** dialog box, in the **Address** box, enter **http://localhost:8733/HotelBooking**,  and then click  **Go**.
 11. Wait for the service information to download. In the **Namespace** box, enter **HotelBooking**, and then click **OK**. The service proxy class and the data contract classes are added under the **HotelBooking** namespace.
 12. In **Solution Explorer**, expand the **ServiceClient** project, and double-click the **app.config** file. Point out the new **&lt;system.serviceModel&gt;** section group that Visual Studio added to the file. The configuration contains the client endpoints and binding configuration.
 13. In **Solution Explorer**, under the **ServiceClient** project, double-click **Program.cs**.
-14. Select the code that appears in comments, click the **Edit** menu, point to **Advanced**, and then click **Uncomment Selection**. The code in the **Main** method initializes a new instance of the generated service proxy **HotelBooking.HotelBookingServiceClient.** The generated proxy implements the service contract interface and, therefore, you can use it to start the service methods as if it was a local object.
+14. Select the code that appears in comments, click the **Edit** menu, point to **Advanced**, and then click **Uncomment Selection**.  
+    
+    The code in the **Main** method initializes a new instance of the generated service proxy **HotelBooking.HotelBookingServiceClient.** The generated proxy implements the service contract interface and, therefore, you can use it to start the service methods as if it was a local object.
+
 15. To save the file, press Ctrl+S.
 16. In **Solution Explorer**, right-click **ServiceClient**, point to **Debug**, and then click **Start new instance**.  
 
@@ -158,7 +161,7 @@
 1. On the Start menu, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
 3. Go to **Allfiles\Mod05\DemoFiles\UsingChannelFactory\begin**.
-4. Select the **UsingChannelFactory.sln** file and then click **Open**.
+4. Select the **UsingChannelFactory.sln** file, and then click **Open**.
 5. In **Solution Explorer**, expand the **ServiceHost** project, and then double-click **App.config**. The **App.config** file contains three service endpoints: one with **BasicHttpBinding**, one with **NetTcpBinding**, and one MEX endpoint.
 6. In **Solution Explorer**, right-click the **ServiceClient** project, point to **Add**, and then click **Reference**.
 7. In the left pane of the **Reference Manager** dialog box, expand the **Solution** node, and then click **Projects**.
@@ -189,10 +192,10 @@
 14. To save the file, press Ctrl+S.  
 15. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.  
 16. To start the service host without debugging, press Ctrl+F5.  
-17. Wait for the service host console to display the message &quot;Service Hosted Successfully!&quot;  
+17. Wait for the service host console to display the **Service Hosted Successfully!** message.  
 18. Return to Visual Studio 2017. In **Solution Explorer**, right-click the **ServiceClient** project, and then click **Set as StartUp Project**.  
 19. To start the client without debugging, press Ctrl+F5.  
-20. Wait until the console application starts and displays the message &quot;Booking response: Approved, booking reference: AR3254&quot;.  
+20. Wait until the console application starts and displays the **Booking response: Approved, booking reference: AR3254** message.  
 21. Close both console applications and Visual Studio 2017.   
 
 ©2018 Microsoft Corporation. All rights reserved.  
