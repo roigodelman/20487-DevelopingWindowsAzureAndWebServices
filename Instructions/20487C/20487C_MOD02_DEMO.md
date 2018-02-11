@@ -144,7 +144,7 @@
 11. To run the application, press F5. After a few seconds, the code execution will break, and the breakpoint will be highlighted in yellow.
 12. In the console window, review the course and student lists printed to the console window.  
 
-    In Visual Studio 2017, while debugging, you can view **IntelliTrace** events in the **Diagnostic Tools** pane on the right side of the window.
+    In Visual Studio 2017 Enterprise Edition, while debugging, you can view **IntelliTrace** events in the **Diagnostic Tools** pane on the right side of the window.
     
 13. In the **Diagnostic Tools** pane, below the charts, click the **Events** tab. The **Events** tab lists various events that happen during execution.  
 
@@ -154,7 +154,6 @@
 
      >**Notes**: 
      >1. IntelliTrace is available on Visual Studio 2017 Enterprise edition. 
-     >2. IntelliTrace will be covered in Module 10, &quot;Monitoring and Diagnostics&quot; in Course 20487.
 
 15. To stop the debugger, press Shift+F5.
 
@@ -238,7 +237,7 @@
 
     The list of students appears in the console window. Notice that there are two new students at the bottom of the list, and student 1 is missing from the list. Also notice that the salary of the teacher is now 101000.
 
-17. In Visual Studio 2017, while debugging, you can view **IntelliTrace** events in the **Diagnostic Tools** pane on the right side of the window.
+17. In Visual Studio 2017 Enterprise Edition, while debugging, you can view **IntelliTrace** events in the **Diagnostic Tools** pane on the right side of the window.
 18. In the **Diagnostic Tools** pane, on the bottom part below the charts, click the **Events** tab. The **Events** tab lists various events that happen during execution.
 19. Events that start with "**ADO.NET:**" contain the actual SQL statements executed by Entity Framework.
 20. Notice the SQL update, delete, and insert statements that correspond to the salary update, student deletion, and the addition of the two new students.
