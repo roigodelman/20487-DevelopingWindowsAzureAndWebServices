@@ -187,9 +187,9 @@
                 "http://localhost:8733/HotelBooking/HotelBookingHttp");
                 
         IHotelBookingService proxy = serviceFactory.CreateChannel();
-```
-     
-   The service contract interface is passed as a generic type parameter to the **ChannelFactory&lt;T&gt;** generic class.  
+   ```  
+    
+   The service contract interface is passed as a generic type parameter to the **ChannelFactory&lt;T&gt;** generic class. 
    
 13. Select the code that appears in comments, click the **Edit** menu, point to **Advanced**, and then click **Uncomment Selection**.  
 14. To save the file, press Ctrl+S.  
