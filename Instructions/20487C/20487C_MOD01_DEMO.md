@@ -45,8 +45,8 @@
 #### Demonstration Steps
 
 1. Open the file explorer, and go to **[repository root]\AllFiles\20487C\Mod01\DemoFiles\BlueYonderDemo\Setup**.
-   > Substitute **[repository root]** with the absolute path to which you cloned the 20487 repository.
-   > For example, if you cloned the repository to **C:\Users\JohnDoe\20487**, then the path should be changed to   **C:\Users\JohnDoe\20487\AllFiles\20487C\Mod01\DemoFiles\BlueYonderDemo\Setup**.
+   Substitute **[repository root]** with the absolute path to which you cloned the 20487 repository.
+   For example, if you cloned the repository to **C:\Users\JohnDoe\20487**, then the path should be changed to   **C:\Users\JohnDoe\20487\AllFiles\20487C\Mod01\DemoFiles\BlueYonderDemo\Setup**.
 2. Right-click the **SetupIIS.cmd** file, and then click **Run as Administrator**.
 3. Click **Yes** and wait for the script to finish.  
    
