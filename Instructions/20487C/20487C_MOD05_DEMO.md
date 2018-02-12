@@ -98,6 +98,7 @@
    ```cs
         host.AddServiceEndpoint(typeof(IHotelBookingService), new NetTcpBinding(), "booking");
 ```
+
    You added an endpoint that uses **NetTcpBinding**, with a relative address (**booking**).  
     
 17. To save the file, press Ctrl+S.  
