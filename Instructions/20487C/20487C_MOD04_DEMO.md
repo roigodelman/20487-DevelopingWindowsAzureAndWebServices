@@ -337,14 +337,14 @@
 15. Remove **/1** from the address in the address bar and then press Enter.
 16. In the **Windows Security** dialog box, type the following information:
 
-   * User name: **Admin**
-   * Password: **Admin1**
+    * User name: **Admin**
+    * Password: **Admin1**
 
 17. Click **OK**. Verify that the dialog box reappears.
 18. Type the following information in the **Windows Security** dialog box:
 
-   * User name: **Admin**
-   * Password: **Admin**
+    * User name: **Admin**
+    * Password: **Admin**
 
 19. Click **OK**. Verify that you can see an XML reply with the response of the action.
 20. Close the browser.
