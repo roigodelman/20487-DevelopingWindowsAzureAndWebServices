@@ -2,8 +2,8 @@
 
 # Lesson 2: Creating an ASP. NET Web API Service
 
-> Wherever  you see a path to file starting with *[repository root]*, replace it with the absolute path to the directory in which the 20487 repository resides.
-> For example, if you cloned or extracted the 20487 repository to **C:\Users\John Doe\Downloads\20487**,
+   Wherever  you see a path to file starting with *[repository root]*, replace it with the absolute path to the directory in which the 20487 repository resides.
+   For example, if you cloned or extracted the 20487 repository to **C:\Users\John Doe\Downloads\20487**,
 the following path: **[repository root]\AllFiles\20487C\Mod03** should be changed to **C:\Users\John Doe\Downloads\20487\AllFiles\20487C\Mod03**.
 
 ### Demonstration: Creating Your First ASP. NET Web API Service
