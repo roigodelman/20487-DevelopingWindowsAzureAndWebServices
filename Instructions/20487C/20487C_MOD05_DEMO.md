@@ -45,8 +45,8 @@
 29. If a security warning appears, click **OK**.
 32. Check that the **Response** section displays the following:
 
-   - BookingReference: **AR3254**
-   - IsApproved: **True**
+    - BookingReference: **AR3254**
+    - IsApproved: **True**
 
 33. Close the WCF Test Client application.
 34. Close Visual Studio 2017.
@@ -82,9 +82,9 @@
 10. In the **Configuration** pane of the **Service Configuration Editor** window, expand the **HotelBooking.HotelBookingService** node,  right-click the **Endpoints** node, and then click **New Service Endpoint.**
 11. In the **General** tab, enter the following information.
 
-  - Address: **booking**
-  - Binding: **basicHttpBinding**
-  - Contract: **HotelBooking.IHotelBookingService**
+    - Address: **booking**
+    - Binding: **basicHttpBinding**
+    - Contract: **HotelBooking.IHotelBookingService**
 
 12. On the **File** menu, click **Save**.
 13. On the **File** menu, click **Exit**.
@@ -117,8 +117,8 @@
 27. If a security warning appears, click **OK**.
 28. Check that the **Response** section displays the following:
 
-  - BookingReference: **AR3254**
-  - IsApproved: **True**
+    - BookingReference: **AR3254**
+    - IsApproved: **True**
 
 29. In the left pane, right-click the **http://localhost:8733/** node, and then click **Copy Address**.
 30. On the Start menu, click the **Microsoft Edge** icon, select all the text in the browser address bar, and press Ctrl+V to paste the metadata address you copied. Press Enter.
