@@ -98,7 +98,6 @@
    ```cs
         host.AddServiceEndpoint(typeof(IHotelBookingService), new NetTcpBinding(), "booking");
 ```
-   
    You added an endpoint that uses **NetTcpBinding**, with a relative address (**booking**).  
 17. To save the file, press Ctrl+S.  
 18. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.  
@@ -188,6 +187,7 @@
         IHotelBookingService proxy = serviceFactory.CreateChannel();
 ```
    The service contract interface is passed as a generic type parameter to the **ChannelFactory&lt;T&gt;** generic class.  
+   
 13. Select the code that appears in comments, click the **Edit** menu, point to **Advanced**, and then click **Uncomment Selection**.  
 14. To save the file, press Ctrl+S.  
 15. In **Solution Explorer**, right-click the **ServiceHost** project, and then click **Set as StartUp Project**.  
