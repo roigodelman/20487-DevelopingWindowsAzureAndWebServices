@@ -1,7 +1,7 @@
 # Module 9: Microsoft Azure Storage
 
-> Wherever  you see a path to a file starting with *[repository root]*, replace it with the absolute path to the directory in which the 20487 repository resides.
-> For example, if you cloned or extracted the 20487 repository to **C:\Users\John Doe\Downloads\20487**,
+   Wherever  you see a path to a file starting with *[repository root]*, replace it with the absolute path to the directory in which the 20487 repository resides.
+   For example, if you cloned or extracted the 20487 repository to **C:\Users\John Doe\Downloads\20487**,
 the following path: **[repository root]\AllFiles\20487C\Mod06** should be changed to **C:\Users\John Doe\Downloads\20487\AllFiles\20487C\Mod06**.
 
 # Lesson 1: Introduction to Microsoft Azure Storage
