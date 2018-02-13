@@ -1,5 +1,8 @@
 # Module 5: Creating WCF Services
 
+> Wherever you see a path to file starting at [repository root], replace it with the absolute path to the directory in which the 20487 repository resides. 
+> e.g. - you cloned or extracted the 20487 repository to C:\Users\John Doe\Downloads\20487, then the following path: [repository root]\AllFiles\20487C\Mod06 will become C:\Users\John Doe\Downloads\20487\AllFiles\20487C\Mod06
+
 ## Lab: Creating and Consuming the WCF Booking Service
 
 #### Scenario
@@ -30,7 +33,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create a data contract for the booking request
 
-1. Open the **BlueYonder.Server.sln** solution file from the  **D:\AllFiles\Mod05\LabFiles\begin\BlueYonder.Server** folder.
+1. Open the **BlueYonder.Server.sln** solution file from the  **[repository root]\AllFiles\20487C\Mod05\LabFiles\begin\BlueYonder.Server** folder.
 2. In the **BlueYonder.BookingService.Contracts** project, add the **TripDto** data contract class.
 
    a. Set the access modifier of the class to **public** and decorate it with the **[DataContract]** attribute.  
@@ -180,7 +183,7 @@ The main tasks for this exercise are as follows:
         providerName="System.Data.SqlClient" />
         </connectionStrings>
 ```
-  >**Note:** You can copy the connection string from the ASP.NET Web API services configuration file in  **D:\Allfiles\Mod05\Labfiles\begin\BlueYonder.Server\BlueYonder.Companion.Host\Web.config**. Make sure you change the database parameter to **BlueYonder.Server.Lab5**.
+  >**Note:** You can copy the connection string from the ASP.NET Web API services configuration file in  **[repository root]\Allfiles\20487C\Mod05\Labfiles\begin\BlueYonder.Server\BlueYonder.Companion.Host\Web.config**. Make sure you change the database parameter to **BlueYonder.Server.Lab5**.
 ```
 
  ##### Task 2: Create the service hosting code
@@ -226,7 +229,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Add a reference to the service contract project in the ASP.NET Web API project
 
-1. Open the **D:\AllFiles\Mod05\LabFiles\begin\BlueYonder.Server\BlueYonder.Companion.sln** solution file in a new Visual Studio 2012 instance, and add the **BlueYonder.BookingService.Contracts** project from the  **D:\Allfiles\Mod05\Labfiles\begin\BlueYonder.Server\BlueYonder.BookingService.Contracts** folder to the solution.
+1. Open the **[repository root]\AllFiles\20487C\Mod05\LabFiles\begin\BlueYonder.Server\BlueYonder.Companion.sln** solution file in a new Visual Studio 2012 instance, and add the **BlueYonder.BookingService.Contracts** project from the  **[repository root]\Allfiles\20487C\Mod05\Labfiles\begin\BlueYonder.Server\BlueYonder.BookingService.Contracts** folder to the solution.
 
 2. In the **BlueYonder.Companion.Controllers** project, add a reference to the **BlueYonder.BookingService.Contracts** project.
 3. In the **BlueYonder.Companion.Host** project, add a reference to the **BlueYonder.BookingService.Contracts** project.
@@ -298,7 +301,7 @@ The main tasks for this exercise are as follows:
 #### Task 4: Debug the WCF service with the client app
 
 1. Place a breakpoint on the line of code that calls the **CreateReservationOnBackendSystem** method, and start debugging the web application.
-2. Open the **BlueYonder.Companion.Client** solution from the **D:\AllFiles\Mod05\LabFiles\begin** folder, and run it without debugging.
+2. Open the **BlueYonder.Companion.Client** solution from the **[repository root]\AllFiles\20487C\Mod05\LabFiles\begin** folder, and run it without debugging.
 3. Search for **New** and purchase a new trip from _Seattle_ to _New York_.
 4. Debug the **BlueYonder.Companion** and **BlueYonder.Server** solutions. Verify that the ASP.NET Web API service is able to call the WCF service. Continue running both solutions and verify that the client is showing the new reservation.
 

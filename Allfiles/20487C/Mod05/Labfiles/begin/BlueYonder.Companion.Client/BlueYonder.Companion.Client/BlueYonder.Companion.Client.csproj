@@ -209,7 +209,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="BlueYonder.Companion.Client_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\BlueYonderGraphics\badgelogo-sdk.scale-100.png" />
@@ -309,9 +308,6 @@
     <Reference Include="FrequentFlyerService">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Components\FrequentFlyerService.winmd</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.10\lib\winrt45\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

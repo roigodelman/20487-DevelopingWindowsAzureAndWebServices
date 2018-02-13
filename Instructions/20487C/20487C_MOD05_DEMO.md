@@ -1,12 +1,15 @@
 # Module 5: Creating WCF Services
 
+> Wherever you see a path to file starting at [repository root], replace it with the absolute path to the directory in which the 20487 repository resides. 
+> e.g. - you cloned or extracted the 20487 repository to C:\Users\John Doe\Downloads\20487, then the following path: [repository root]\AllFiles\20487C\Mod06 will become C:\Users\John Doe\Downloads\20487\AllFiles\20487C\Mod06
+
 # Lesson 2: Creating and Implementing a Contract
 
 ### Demonstration: Creating a WCF Service
 
 1. On the Start menu, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
-3. Go to **Allfiles\Mod05\DemoFiles\CreatingWCFService\begin**.
+3. Go to **[repository root]\Allfiles\20487C\Mod05\DemoFiles\CreatingWCFService\begin**.
 4. Select the **CreatingWCFService.sln** file, and then click **Open**.
 5. In **Solution Explorer**, expand the **Service** project, and then double-click **IHotelBookingService.cs**. This interface is the service contract, but it still has to be configured with **[ServiceContract]** and **[ServiceOperation]** attributes.
 6. In **Solution Explorer**, double-click **HotelBookingService.cs**. This class is the implementation of the service contract.

@@ -4,7 +4,7 @@
     {
         public static string BaseUri
         {
-            get { return "http://localhost:4392/"; }
+            get { return "http://[Web Api web app name].azurewebsites.net/"; }
         }
 
         public static string GetLocationsUri
@@ -14,7 +14,7 @@
 
         public static string GetLocationsWithQueryUri
         {
-            get { return GetLocationsUri + "?$filter=substringof(tolower('{0}'),tolower(City))"; }
+            get { return GetLocationsUri + "?City={0}"; }
         }
 
         public static string GetFlightsUri
@@ -24,7 +24,7 @@
 
         public static string GetFlightByIdUri
         {
-            get { return BaseUri + "Flights?id={0}"; }
+            get { return BaseUri + "Flights/{0}"; }
         }
 
         public static string AddReservationUri
