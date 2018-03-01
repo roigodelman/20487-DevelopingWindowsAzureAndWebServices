@@ -22,36 +22,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueYonder.Server.Booking.WebHost", "BlueYonder.Server.Booking.WebHost\BlueYonder.Server.Booking.WebHost.csproj", "{6A77B963-6E67-4792-800A-94560E165B0A}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 9
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccProjectUniqueName0 = BlueYonder.DataAccess\\BlueYonder.DataAccess.csproj
-		SccProjectName0 = BlueYonder.DataAccess
-		SccLocalPath0 = BlueYonder.DataAccess
-		SccProjectUniqueName1 = BlueYonder.DataAccess.Interfaces\\BlueYonder.DataAccess.Interfaces.csproj
-		SccProjectName1 = BlueYonder.DataAccess.Interfaces
-		SccLocalPath1 = BlueYonder.DataAccess.Interfaces
-		SccProjectUniqueName2 = BlueYonder.Entities\\BlueYonder.Entities.csproj
-		SccProjectName2 = BlueYonder.Entities
-		SccLocalPath2 = BlueYonder.Entities
-		SccProjectUniqueName3 = BlueYonder.Server.Booking.Host\\BlueYonder.Server.Booking.Host.csproj
-		SccProjectName3 = BlueYonder.Server.Booking.Host
-		SccLocalPath3 = BlueYonder.Server.Booking.Host
-		SccProjectUniqueName4 = BlueYonder.Server.DataContracts\\BlueYonder.Server.DataContracts.csproj
-		SccProjectName4 = BlueYonder.Server.DataContracts
-		SccLocalPath4 = BlueYonder.Server.DataContracts
-		SccProjectUniqueName5 = BlueYonder.BookingService.Contracts\\BlueYonder.BookingService.Contracts.csproj
-		SccProjectName5 = BlueYonder.BookingService.Contracts
-		SccLocalPath5 = BlueYonder.BookingService.Contracts
-		SccProjectUniqueName6 = BlueYonder.BookingService.Implementation\\BlueYonder.BookingService.Implementation.csproj
-		SccProjectName6 = BlueYonder.BookingService.Implementation
-		SccLocalPath6 = BlueYonder.BookingService.Implementation
-		SccProjectUniqueName7 = BlueYonder.Server.Booking.WebHost\\BlueYonder.Server.Booking.WebHost.csproj
-		SccProjectName7 = BlueYonder.Server.Booking.WebHost
-		SccLocalPath7 = BlueYonder.Server.Booking.WebHost
-		SccLocalPath8 = .
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -10,18 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataService.Client", "ODataService.Client\ODataService.Client.csproj", "{9DBF8C38-6322-42AA-BB31-0568C9153255}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ConsumingODataService.Host\\ConsumingODataService.Host.csproj
-		SccProjectName1 = ConsumingODataService.Host
-		SccLocalPath1 = ConsumingODataService.Host
-		SccProjectUniqueName2 = ODataService.Client\\ODataService.Client.csproj
-		SccProjectName2 = ODataService.Client
-		SccLocalPath2 = ODataService.Client
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -1,4 +1,5 @@
-﻿using BlueYonder.Companion.Client.DataModel;
+﻿using BlueYonder.Companion.Client.Common;
+using BlueYonder.Companion.Client.DataModel;
 using BlueYonder.Companion.Client.Helpers;
 using BlueYonder.Companion.Client.ViewModels;
 using System;
@@ -29,6 +30,8 @@ namespace BlueYonder.Companion.Client.Views
             this.InitializeComponent();
 
             this.DataContext = new PurchaseViewModel();
+
+            this.Loaded += (o, args) => heightSB.Begin();
         }
 
         /// <summary>

@@ -13,10 +13,10 @@
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
     <Name>BlueYonder.Companion.Host.Azure</Name>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
+    
+    
+    
+    
     <UseEmulatorExpressByDefault>False</UseEmulatorExpressByDefault>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.OData.Builder;
+using System.Web.Http.OData.Extensions;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -43,7 +44,7 @@ namespace ConsumingODataService.Host
 
             IEdmModel model = modelBuilder.GetEdmModel();
 
-            GlobalConfiguration.Configuration.Routes.MapODataRoute(routeName: "OData",
+            GlobalConfiguration.Configuration.Routes.MapODataServiceRoute(routeName: "OData",
                                                                    routePrefix: "odata",
                                                                    model: model);
         }

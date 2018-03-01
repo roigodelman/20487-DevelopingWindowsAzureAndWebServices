@@ -29,45 +29,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueYonder.Companion.WNS", "BlueYonder.Companion.WNS\BlueYonder.Companion.WNS.csproj", "{53645A7A-8EF9-4769-BE05-5D86399E54C7}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 12
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = BlueYonder.Companion.Entities\\BlueYonder.Companion.Entities.csproj
-		SccProjectName1 = BlueYonder.Companion.Entities
-		SccLocalPath1 = BlueYonder.Companion.Entities
-		SccProjectUniqueName2 = BlueYonder.Entities\\BlueYonder.Entities.csproj
-		SccProjectName2 = BlueYonder.Entities
-		SccLocalPath2 = BlueYonder.Entities
-		SccProjectUniqueName3 = BlueYonder.Companion.Entities.Mappers\\BlueYonder.Companion.Entities.Mappers.csproj
-		SccProjectName3 = BlueYonder.Companion.Entities.Mappers
-		SccLocalPath3 = BlueYonder.Companion.Entities.Mappers
-		SccProjectUniqueName4 = BlueYonder.DataAccess.Interfaces\\BlueYonder.DataAccess.Interfaces.csproj
-		SccProjectName4 = BlueYonder.DataAccess.Interfaces
-		SccLocalPath4 = BlueYonder.DataAccess.Interfaces
-		SccProjectUniqueName5 = BlueYonder.DataAccess\\BlueYonder.DataAccess.csproj
-		SccProjectName5 = BlueYonder.DataAccess
-		SccLocalPath5 = BlueYonder.DataAccess
-		SccProjectUniqueName6 = BlueYonder.Companion.Controllers\\BlueYonder.Companion.Controllers.csproj
-		SccProjectName6 = BlueYonder.Companion.Controllers
-		SccLocalPath6 = BlueYonder.Companion.Controllers
-		SccProjectUniqueName7 = BlueYonder.Companion.Host\\BlueYonder.Companion.Host.csproj
-		SccProjectName7 = BlueYonder.Companion.Host
-		SccLocalPath7 = BlueYonder.Companion.Host
-		SccProjectUniqueName8 = BlueYonder.Companion.Storage\\BlueYonder.Companion.Storage.csproj
-		SccProjectName8 = BlueYonder.Companion.Storage
-		SccLocalPath8 = BlueYonder.Companion.Storage
-		SccProjectUniqueName9 = BlueYonder.Server.FrequentFlyer.Contracts\\BlueYonder.FrequentFlyerService.Contracts.csproj
-		SccProjectName9 = BlueYonder.Server.FrequentFlyer.Contracts
-		SccLocalPath9 = BlueYonder.Server.FrequentFlyer.Contracts
-		SccProjectUniqueName10 = BlueYonder.BookingService.Contracts\\BlueYonder.BookingService.Contracts.csproj
-		SccProjectName10 = BlueYonder.BookingService.Contracts
-		SccLocalPath10 = BlueYonder.BookingService.Contracts
-		SccProjectUniqueName11 = BlueYonder.Companion.WNS\\BlueYonder.Companion.WNS.csproj
-		SccProjectName11 = BlueYonder.Companion.WNS
-		SccLocalPath11 = BlueYonder.Companion.WNS
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM

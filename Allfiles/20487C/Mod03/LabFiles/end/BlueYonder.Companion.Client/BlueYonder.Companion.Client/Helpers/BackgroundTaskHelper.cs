@@ -8,57 +8,47 @@ using Windows.Storage;
 
 namespace BlueYonder.Companion.Client.Helpers
 {
-    //Module 10 - Background Tasks
-    //The student will be able to create and consume background tasks.
     public class BackgroundTaskHelper
     {
-        public static IBackgroundTaskRegistration RegisterBackgroundTask(String taskEntryPoint, String name, IBackgroundCondition condition, params IBackgroundTrigger[] triggers)
+        public static void RegisterBackgroundTaskForWeather()
         {
-            IBackgroundTaskRegistration _task = IsTaskRegistered(name);
-            if (_task == null)
+            var taskName = Constants.WeatherTaskName;
+
+            IBackgroundTaskRegistration task = FindRegisteredTask(taskName);
+            if (task == null)
             {
                 var builder = new BackgroundTaskBuilder();
+                builder.Name = taskName;
+                builder.TaskEntryPoint = Constants.WeatherTaskEntryPoint;
 
-                builder.Name = name;
-                builder.TaskEntryPoint = taskEntryPoint;
+                builder.AddCondition(new SystemCondition(SystemConditionType.InternetAvailable));
 
-                foreach (var trigger in triggers)
-                {
-                    builder.SetTrigger(trigger);
-                }
+                builder.SetTrigger(new SystemTrigger(SystemTriggerType.TimeZoneChange, false));
 
-                if (condition != null)
-                {
-                    builder.AddCondition(condition);
-                }
+                builder.SetTrigger(new TimeTrigger(15, false));
 
-                BackgroundTaskRegistration task = builder.Register();
+                task = builder.Register();
 
                 var settings = ApplicationData.Current.LocalSettings;
                 var key = task.TaskId.ToString();
-                settings.Values[name] = key;
-
-                return task;
+                settings.Values[taskName] = key;
             }
-            return _task;
         }
 
-        public static void UnregisterWeatherTask(String name)
+        public static void UnregisterWeatherTask(string taskName)
         {
-            foreach (var cur in BackgroundTaskRegistration.AllTasks)
+            var task = FindRegisteredTask(taskName);
+            if (task != null)
             {
-                if (cur.Value.Name == name)
-                {
-                    cur.Value.Unregister(true);
-                    var settings = ApplicationData.Current.LocalSettings;
-                    settings.Values[name] = string.Empty;
-                }
+                task.Unregister(true);
+                var settings = ApplicationData.Current.LocalSettings;
+                settings.Values[taskName] = string.Empty;
             }
         }
 
-        private static IBackgroundTaskRegistration IsTaskRegistered(string taskName)
+        public static IBackgroundTaskRegistration FindRegisteredTask(string taskName)
         {
-            foreach (var task in Windows.ApplicationModel.Background.BackgroundTaskRegistration.AllTasks)
+            foreach (var task in BackgroundTaskRegistration.AllTasks)
             {
                 if (task.Value.Name == taskName)
                 {
