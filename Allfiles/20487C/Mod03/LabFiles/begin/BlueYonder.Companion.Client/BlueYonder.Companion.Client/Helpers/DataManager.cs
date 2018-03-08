@@ -1,6 +1,6 @@
 ﻿using BlueYonder.Companion.Client.DataModel;
 using BlueYonder.Companion.Client.DataTransferObjects;
-using Newtonsoft.Json;
+using BlueYonder.Companion.Shared;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,47 +8,25 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using File = BlueYonder.Companion.Client.DataModel.File;
 
 namespace BlueYonder.Companion.Client.Helpers
 {
     public class DataManager
     {
-        public const string BaseUri = "http://10.10.0.10/BlueYonder.Companion.Host/";
-
-        private const string _getLocationsUri = BaseUri + "Locations";
-        private const string _getLocationsWithQueryUri = _getLocationsUri + "?City={0}";
-        private const string _getFlightsUri = BaseUri + "Flights?source={0}&destination={1}&date={2}";
-        private const string _getFlightByIdUri = BaseUri + "Flights?id={0}";
-        private const string _addReservation = BaseUri + "Reservations";
-        private const string _updateReservation = BaseUri + "Reservations/{0}";
-        private const string _getReservationsByTravelerUri = BaseUri + "travelers/{0}/reservations";
-        private const string _getReservationByIdUri = BaseUri + "Reservations/{0}";
-        private const string _getTravelerByIdentityUri = BaseUri + "Travelers/{0}";
-        private const string _createTravelerUri = BaseUri + "Travelers";
-        private const string _updateTravelerUri = BaseUri + "Travelers/{0}";
-        private const string _getWeatherUri = BaseUri + "locations/{0}/weather?date={1}";
-        private const string _registerNotificationsUri = BaseUri + "Notifications/Register";
-        private const string _getFilesMetadataUri = BaseUri + "Files/Metadata?tripId={0}";
-
-        /// <summary>
-        /// Make sure Internet Connection avilable and perform HttpClient request.
-        /// </summary>
-        /// <param name="uri">Request Target</param>
-        /// <returns>Json Response</returns>
         private async Task<Response> GetAsync(Uri uri)
         {
-            var client = new HttpClient();
+            var client = CreateHttpClient();
             var request = client.GetAsync(uri);
             return await SendRequestAsync(request);
         }
 
         private async Task<Response> PostAsync(Uri uri, string json)
         {
-            var client = new HttpClient();
+            var client = CreateHttpClient();
             var content = new StringContent(json);
             content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
             var request = client.PostAsync(uri, content);
@@ -57,7 +35,7 @@ namespace BlueYonder.Companion.Client.Helpers
 
         private async Task<Response> PutAsync(Uri uri, string json)
         {
-            var client = new HttpClient();
+            var client = CreateHttpClient();
             var content = new StringContent(json);
             content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
             var request = client.PutAsync(uri, content);
@@ -66,11 +44,17 @@ namespace BlueYonder.Companion.Client.Helpers
 
         private async Task<Response> DeleteAsync(Uri uri)
         {
-            var client = new HttpClient();
+            var client = CreateHttpClient();
             var request = client.DeleteAsync(uri);
             return await SendRequestAsync(request);
         }
-      
+
+        private static HttpClient CreateHttpClient()
+        {
+            var httpClient = new HttpClient();
+            return httpClient;
+        }
+
         private static async Task<Response> SendRequestAsync(Task<HttpResponseMessage> request)
         {
             if (!await NetworkManager.CheckInternetConnection(true, ""))
@@ -88,28 +72,29 @@ namespace BlueYonder.Companion.Client.Helpers
             }
             catch (Exception ex)
             {
-                throw new InvalidOperationException("GetAsync", ex);
+                throw new InvalidOperationException("SendRequestAsync", ex);
             }
         }
 
         /// <summary>
-        /// Get list of Locations from Server
+        /// Get the list of locations from the server
         /// </summary>
-        /// <returns>List of locations</returns>
+        /// <returns></returns>
         public async Task<IEnumerable<Location>> GetLocationsAsync(string query)
         {
             string uri;
             if (query == null)
             {
-                uri = _getLocationsUri;
+                uri = Addresses.GetLocationsUri;
             }
             else
             {
-                uri = string.Format(_getLocationsWithQueryUri, query);
+                uri = string.Format(Addresses.GetLocationsWithQueryUri, query);
             }
             var response = await GetAsync(new Uri(uri));
             var locationDTOs = JsonSerializerHelper.Deserialize<IEnumerable<LocationDTO>>(response.Content);
             return locationDTOs.Select(dto => dto.ToObject()).ToArray();
+            // TODO: Module 04, exercise 2, task 2 - replace the implementation of the method to use OData
         }
 
         /// <summary>
@@ -118,11 +103,7 @@ namespace BlueYonder.Companion.Client.Helpers
         /// <returns></returns>
         public async Task<Traveler> GetTravelerAsync()
         {
-            
-            var hardwareId = GetHardwareId();
-            HttpClient client = new HttpClient();
-            
-            // TODO: Lab 03 Exercise 2: Task 1.3: Implement the GetTravelelrAsync method
+            // TODO: Lab 03 Exercise 2: Task 1.6: Implement the GetTravelerAsync method
             return null;
         }
 
@@ -131,42 +112,27 @@ namespace BlueYonder.Companion.Client.Helpers
         /// </summary>
         /// <param name="traveler">The Traveler</param>
         /// <returns></returns>
-        
-        // TODO: Lab 03 Exercise 2: Task 1.8: Review the UpdateTravelerAsync method
         public async Task UpdateTravelerAsync(Traveler traveler)
         {
-            if (!await NetworkManager.CheckInternetConnection(true, ""))
-                return;
-            
+            // TODO: Lab 03 Exercise 2: Task 1.11: Review the UpdateTravelerAsync method
             var dto = traveler.ToDTO();
             dto.TravelerUserIdentity = GetHardwareId();
-            string json = JsonConvert.SerializeObject(dto);
-            
-            HttpClient client = new HttpClient();
-            var content = new StringContent(json);
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var travelerUri = string.Format("{0}/travelers/{1}", BaseUri, dto.TravelerUserIdentity);
-            await client.PutAsync(new Uri(travelerUri), content);
-
+            var serializedTraveler = JsonSerializerHelper.Serialize(dto);
+            var uri = new Uri(string.Format(Addresses.UpdateTravelerUri, traveler.TravelerId));
+            await PutAsync(uri, serializedTraveler);
         }
 
-        // TODO: Lab 03 Exercise 2: Task 1.6: Review the UpdateTravelerAsync method
         public async Task<Traveler> CreateTravelerAsync()
         {
+            // TODO: Lab 03 Exercise 2: Task 1.9: Review the CreateTravelerAsync method
             var dto = new TravelerDTO()
             {
                 TravelerUserIdentity = GetHardwareId()
             };
-            string json = JsonConvert.SerializeObject(dto);
-            HttpClient client = new HttpClient();
-            var content = new StringContent(json);
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            HttpResponseMessage response = await client.PostAsync(new Uri(_createTravelerUri), content);
-
-            var resultJson = await response.Content.ReadAsStringAsync();
-            return await JsonConvert.DeserializeObjectAsync<Traveler>(resultJson);
-
-
+            var json = JsonSerializerHelper.Serialize(dto);
+            var uri = new Uri(Addresses.CreateTravelerUri);
+            var response = await PostAsync(uri, json);
+            return JsonSerializerHelper.Deserialize<TravelerDTO>(response.Content).ToObject();
         }
 
         /// <summary>
@@ -176,27 +142,27 @@ namespace BlueYonder.Companion.Client.Helpers
         /// <returns></returns>
         public async Task<IEnumerable<Reservation>> GetReservationsAsync(int travelerId)
         {
-            var uri = new Uri(string.Format(_getReservationsByTravelerUri, GetHardwareId()));
+            var uri = new Uri(string.Format(Addresses.GetReservationsByTravelerUri, travelerId));
             var response = await GetAsync(uri);
             var reservations = JsonSerializerHelper.Deserialize<IEnumerable<Reservation>>(response.Content);
             return reservations.OrderBy(t => t.DepartureFlight.FlightInfo.Departure.Value);
         }
 
         /// <summary>
-        /// Get reservation by id
+        /// Get a reservation by id
         /// </summary>
         /// <param name="reservationId">Reservation Id</param>
         /// <returns></returns>
         public async Task<Reservation> GetReservationAsync(int reservationId)
         {
-            var uri = new Uri(string.Format(_getReservationByIdUri, reservationId));
+            var uri = new Uri(string.Format(Addresses.GetReservationByIdUri, reservationId));
             var response = await GetAsync(uri);
             var reservation = JsonSerializerHelper.Deserialize<Reservation>(response.Content);
             return reservation;
         }
 
         /// <summary>
-        /// Get list of flights
+        /// Get a filtered list of flights
         /// </summary>
         /// <param name="source">Source Country Id</param>
         /// <param name="destination">Destination Country Id</param>
@@ -204,14 +170,14 @@ namespace BlueYonder.Companion.Client.Helpers
         /// <returns></returns>
         public async Task<IEnumerable<Flight>> GetFlightsAsync(int source, int destination, DateTime? startDate)
         {
-            var uri = new Uri(string.Format(_getFlightsUri, source, destination, startDate));
+            var uri = new Uri(string.Format(Addresses.GetFlightsUri, source, destination, startDate));
             var response = await GetAsync(uri);
             return JsonSerializerHelper.Deserialize<IEnumerable<Flight>>(response.Content);
         }
 
         public async Task<Flight> GetFlightByIdAsync(int flightId)
         {
-            var uri = new Uri(string.Format(_getFlightByIdUri, flightId));
+            var uri = new Uri(string.Format(Addresses.GetFlightByIdUri, flightId));
             var response = await GetAsync(uri);
             return JsonSerializerHelper.Deserialize<Flight>(response.Content);
         }
@@ -219,35 +185,34 @@ namespace BlueYonder.Companion.Client.Helpers
         public async Task<Reservation> CreateNewReservationAsync(Reservation reservation)
         {
             var json = JsonSerializerHelper.Serialize(reservation);
-            var uri = new Uri(_addReservation);
+            var uri = new Uri(Addresses.AddReservationUri);
             var response = await PostAsync(uri, json);
             return JsonSerializerHelper.Deserialize<Reservation>(response.Content);
         }
 
         public async Task DeleteReservationAsync(int reservationId)
         {
-            var uri = new Uri(string.Format(_updateReservation, reservationId));
+            var uri = new Uri(string.Format(Addresses.UpdateReservationUri, reservationId));
             await DeleteAsync(uri);
         }
 
         public async Task<string> UpdateNewReservationAsync(Reservation reservation, int reservationId)
         {
             var json = JsonSerializerHelper.Serialize(reservation);
-            var uri = new Uri(string.Format(_updateReservation, reservationId));
+            var uri = new Uri(string.Format(Addresses.UpdateReservationUri, reservationId));
             var response = await PostAsync(uri, json);
             return response.Content;
         }
 
         /// <summary>
-        /// Get Weather Forecast by id
+        /// Get the weather forecast for a specified location
         /// </summary>
         /// <param name="locationId">Location Id</param>
         /// <param name="date">Weather Forecast Date</param>
         /// <returns></returns>
         public async Task<WeatherForecast> GetWeatherForecastByIdAsync(int locationId, DateTime? date)
         {
-            var formattedDate = String.Format("{0:MM/dd/yyyy}", date);
-            var uri = new Uri(string.Format(_getWeatherUri, locationId, formattedDate));
+            var uri = new Uri(string.Format(Addresses.GetWeatherUri, locationId, date));
             var response = await GetAsync(uri);
             return JsonSerializerHelper.Deserialize<WeatherForecast>(response.Content);
         }
@@ -257,26 +222,52 @@ namespace BlueYonder.Companion.Client.Helpers
             return new Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation().Id.ToString();
         }
 
-        public async Task<bool> RegisterNotificationsChannel(string channelUri)
+        public async Task<bool> RegisterNotificationsChannelAsync(string channelUri)
         {
-            var dto = new RegisterNotificationsRequestDTO
+            var dto = new RegisterNotificationsRequestDTO()
             {
                 DeviceID = GetHardwareId(),
                 DeviceURI = channelUri
             };
             var json = JsonSerializerHelper.Serialize(dto);
-            var uri = new Uri(_registerNotificationsUri);
+            var uri = new Uri(Addresses.RegisterNotificationsUri);
             var response = await PostAsync(uri, json);
             return response.Success;
         }
 
-        public async Task<IEnumerable<Uri>> GetAzureStorageFileUris(int reservationId)
+        public async Task<IEnumerable<File>> GetAzureStorageFilesByTrip(int tripId)
         {
-            var uri = new Uri(string.Format(_getFilesMetadataUri, reservationId));
+            var uri = new Uri(string.Format(Addresses.GetFilesMetadataByTripUri, tripId));
             var response = await GetAsync(uri);
-            var fileDtos = JsonSerializerHelper.Deserialize<IEnumerable<FileDTO>>(response.Content);
-            var fileUris = fileDtos.Select(fileDto => fileDto.Uri);
-            return fileUris;
+            var fileDtos = response.Success ? JsonSerializerHelper.Deserialize<IEnumerable<FileDTO>>(response.Content) : new List<FileDTO>();
+            var files = fileDtos.Select(fileDto => fileDto.ToObject());
+            return files;
+        }
+
+        public async Task<IEnumerable<File>> GetAzureStorageFilesByLocation(int locationId, int count)
+        {
+            var uri = new Uri(string.Format(Addresses.GetFilesMetadataByLocationUri, locationId, count));
+            var response = await GetAsync(uri);
+            var fileDtos = response.Success ? JsonSerializerHelper.Deserialize<IEnumerable<FileDTO>>(response.Content) : new List<FileDTO>();
+            var files = fileDtos.Select(fileDto => fileDto.ToObject());
+            return files;
+        }
+
+        public async Task<bool> CreateAzureStorageFileMetadata(Uri fileUri, string fileName, int reservationId, bool isPrivate, int travelerId, int locationId)
+        {
+            var dto = new FileDTO()
+            {
+                Uri = fileUri,
+                FileName = fileName,
+                TripId = reservationId,
+                IsPrivate = isPrivate,
+                UserId = travelerId.ToString(),
+                LocationId = locationId
+            };
+            var uri = new Uri(Addresses.CreateFileMetadataUri);
+            var json = JsonSerializerHelper.Serialize(dto);
+            var response = await PostAsync(uri, json);
+            return response.Success;
         }
     }
 }

@@ -157,8 +157,8 @@ the following path: **[repository root]\AllFiles\20487C\Mod03** should be change
 2. On the **File** menu, point to **Open**, and then click **Project/Solution.**
 3. In the **File Name** text box, type **[repository root]\Allfiles\20487C\Mod03\Democode\ConsumingFromHttpClient\Begin\HttpClientApplication\HttpClientApplication.sln**, and then click  **Open**.
 4. In **Solution Explorer**, under the **HttpClientApplication.Client** project, right-click **References**, and then click **Manage NuGet Packages**.
-5. Inside the **NuGet Manager** window, click **Online** on the left menu, and in the search box on the upper-right side, type **Microsoft.AspNet.WebApi.Client**.
-6. In the search results list, locate **Microsoft ASP.NET Web API 2.2 Client Libraries**, and then click **Install**.
+5. Inside the **NuGet Manager** window, click the **Browse** tab, and in the search box on the upper-left side, type **Microsoft.AspNet.WebApi.Client**.
+6. In the search results list, locate **Microsoft.AspNet.WebApi.Client**, and then click **Install**.
 7. If a **License Acceptance** dialog box appears, click **I Accept**.
 8. After the installation is complete, to close the **NuGet Manager** window, click **Close**.
 9. In **Solution Explorer**, under the **HttpClientApplication.Client** project, double-click **Program.cs.**

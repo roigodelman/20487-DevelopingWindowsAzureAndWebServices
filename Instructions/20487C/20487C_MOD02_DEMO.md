@@ -8,17 +8,17 @@
 
 1. On the Start screen, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **New**, and then click **Project**.
-3. In the navigation pane of the **New Project** dialog box, expand the **Installed** node, expand the **Templates** node, and then select the **Visual C#** node. From the list of templates, select **Console App (.Net Framework)**.
+3. In the navigation pane of the **New Project** dialog box, expand the **Installed** node, and then select the **Visual C#** node. From the list of templates, select **Console App (.Net Framework)**.
 4. In the **Name** box, type **MyFirstEF**.
 5. In the **Location** box, type **c:\users\[user name]\documents\visual studio 2017\Projects\Allfiles\Mod02\Democode**.
 6. Select the **Create directory for solution** check box, and then click **OK**.
 7. In **Solution Explorer**, right-click the **MyFirstEF** project, and then click **Manage NuGet Packages**. 
-8. In the left pane of the **Manage NuGet Packages** dialog box, select the **Browse** node.
+8. In the left pane of the **NuGet Package Manager: MyFirstEF** dialog box, select the **Browse** node.
 9. On the upper right side of the dialog box, click the **Search** box, and type **EntityFramework**.
-10. In the search results, select **EntityFramework**, and then click **Install**. If a **Preview** dialog box appears, click **OK**. If a **License Acceptance** dialog box appears, click **I Accept**.
-11. Wait until the package is completely downloaded and installed. To close the **Manage NuGet Packages** dialog box, click **Close**.
+10. In the search results, select **EntityFramework**, and then click **Install**. If a **Preview Changes** dialog box appears, click **OK**. If a **License Acceptance** dialog box appears, click **I Accept**.
+11. Wait until the package is completely downloaded and installed. To close the **NuGet Package Manager: MyFirstEF** dialog box, click **Close**.
 12. In **Solution Explorer**, right-click the **MyFirstEF** project, point to **Add**, and then click **Class**.
-13. In the **Add New Item** dialog box, in the **Name** box, type **Product**, and then click **Add**.
+13. In the **Add New Item- MyFirstEF** dialog box, in the **Name** box, type **Product**, and then click **Add**.
 14. In **Product.cs**, change the class definition to the match the following code.
 
   ```cs
@@ -30,7 +30,7 @@
 ```
 15. To save the changes, press Ctrl+S.
 16. In **Solution Explorer**, right-click the **MyFirstEF** project, point to **Add**, and then click **Class**.
-17. In the **Add New Item** dialog box, in the **Name** box, type **Store**, and then click **Add**.
+17. In the **Add New Item- MyFirstEF** dialog box, in the **Name** box, type **Store**, and then click **Add**.
 18. In **Store.cs**, change the class definition to match the following code.
 
   ```cs
@@ -43,7 +43,7 @@
 ```
 19. To save the changes, press Ctrl+S.
 20. In **Solution Explorer**, right-click the **MyFirstEF** project, point to **Add**, and then click **Class**.
-21. In the **Add New Item** dialog box, in the **Name** box, type **MyDbContext**, and then click **Add**.
+21. In the **Add New Item- MyFirstEF** dialog box, in the **Name** box, type **MyDbContext**, and then click **Add**.
 22. In **MyDbContext.cs**, add the following **using** directive to the beginning of the file.
 
   ```cs
@@ -75,14 +75,14 @@
 29. Locate the **&lt;entityFramework&gt;** element.
 30. Delete the element and its content.
 
-    >**Note**: This demonstration requires you to use Microsoft SQL Server Express and not LocalDb, because with LocalDb the newly created database will not show in the SQL Server Management Studio (LocalDb detaches the application&#39;s database after the application stops). The **SqlConnectionFactory** class uses LocalDb, so by deleting the **&lt;entityFramework&gt;** element, the creation of the database will be in the local SQL Server Express instance.
+    >**Note**: This demonstration requires you to use Microsoft SQL Server Express and not LocalDb, because with LocalDb the newly created database will not show in the Microsoft SQL Server Management Studio (LocalDb detaches the application&#39;s database after the application stops). The **SqlConnectionFactory** class uses LocalDb, so by deleting the **&lt;entityFramework&gt;** element, the creation of the database will be in the local SQL Server Express instance.
 
 31. To save the changes, press Ctrl+S.
 32. To run the application, press F5.  
 
     The application now creates a new database on the local SQL Express, named **MyFirstEF.MyDbContext.**  
     
-33. On the Start screen, click the **SQL Server Management Studio** tile.
+33. On the Start screen, click the **Microsoft SQL Server Management Studio 17** tile.
 34. In the **Server Name** box, type **.\SQLEXPRESS**.
 35. In the **Authentication** drop-down menu, verify that **Windows Authentication** is selected, and then click **Connect**.
 36. In **Object Explorer**, expand the **Databases** node.
@@ -93,7 +93,7 @@
     >**Note**: Database tables are usually named in the plural form, which is why Entity Framework changed the names of the generated tables from Store and Product to Stores and Products. The _dbo_ prefix is the name of the schema in which the tables were created.
 
 40. Expand the **dbo.Products** and **dbo.Stores** tables, and then expand the **Columns** node in each of them to see that both tables have **Id** and **Name** columns, similar to their corresponding class properties.
-41. Close SQL Server Management Studio.
+41. Close **Microsoft SQL Server Management Studio 17**.
 
 
 
@@ -107,7 +107,7 @@
 
 1. On the Start screen, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
-3. Browse to **Allfiles\Mod02\Democode\UsingLINQtoEntities\Begin**.
+3. Browse to **[repositoryroot]\Allfiles\20487C\Mod02\Democode\UsingLINQtoEntities\Begin**.
 4. Click **EF\_CodeFirst.sln**, and then click **Open**.
 5. In **Solution Explorer**, under the **EF\_CodeFirst** project, double-click **Program.cs**.
 6. Create a new **SchoolContext** object by appending the following code to the **Main** method, after the **InitializeDatabase**   method call.
@@ -163,7 +163,7 @@
 
 1. On the Start screen, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
-3. Go to **Allfiles\Mod02\Democode\StoredProcedure\Begin**.
+3. Go to **[repositoryroot]\Allfiles\20487C\Mod02\Democode\StoredProcedure\Begin**.
 4. Click **EF\_CodeFirst.sln**, and then click **Open**.
 5. In **Solution Explorer**, expand the **EF\_CodeFirst** project, and double-click the **Program.cs** file.
 6. Go to the **Main** method, and notice that a **SchoolContext** instance is created to establish a connection to the database.
@@ -181,7 +181,7 @@
 
 1. On the Start screen, click the **Visual Studio 2017** tile.
 2. On the **File** menu, point to **Open**, and then click **Project/Solution**.
-3. Browse to **Allfiles\Mod02\Democode\CRUD\Begin**.
+3. Browse to **[rootrepository]\Allfiles\Mod02\Democode\CRUD\Begin**.
 4. Click **EF\_CodeFirst.sln**, and then click **Open**.
 5. In **Solution Explorer**, under the **EF\_CodeFirst** project, double-click **Program.cs**.
 6. Create a new **SchoolContext** object by appending the following code to the **Main** method after the **InitializeDatabase** method call.
@@ -242,6 +242,7 @@
 19. Events that start with "**ADO.NET:**" contain the actual SQL statements executed by Entity Framework.
 20. Notice the SQL update, delete, and insert statements that correspond to the salary update, student deletion, and the addition of the two new students.
 21. To stop the debugger, press Shift+F5.
+22. Close all open windows.
 
 ©2018 Microsoft Corporation. All rights reserved.
 

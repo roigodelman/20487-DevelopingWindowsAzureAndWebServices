@@ -10,24 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusTopicPublisher", "ServiceBusTopicPublisher\ServiceBusTopicPublisher\ServiceBusTopicPublisher.csproj", "{426FE18C-938A-48C7-A9CE-33BD925C97F5}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = AuditSubscriber\\AuditSubscriber\\AuditSubscriber.csproj
-		SccProjectName1 = AuditSubscriber/AuditSubscriber
-		SccLocalPath1 = AuditSubscriber\\AuditSubscriber
-		SccProjectUniqueName2 = CheapPurchasesSubscriber\\CheapPurchasesSubscriber\\CheapPurchasesSubscriber.csproj
-		SccProjectName2 = CheapPurchasesSubscriber/CheapPurchasesSubscriber
-		SccLocalPath2 = CheapPurchasesSubscriber\\CheapPurchasesSubscriber
-		SccProjectUniqueName3 = ExpensivePurchasesSubscriber\\ExpensivePurchasesSubscriber\\ExpensivePurchasesSubscriber.csproj
-		SccProjectName3 = ExpensivePurchasesSubscriber/ExpensivePurchasesSubscriber
-		SccLocalPath3 = ExpensivePurchasesSubscriber\\ExpensivePurchasesSubscriber
-		SccProjectUniqueName4 = ServiceBusTopicPublisher\\ServiceBusTopicPublisher\\ServiceBusTopicPublisher.csproj
-		SccProjectName4 = ServiceBusTopicPublisher/ServiceBusTopicPublisher
-		SccLocalPath4 = ServiceBusTopicPublisher\\ServiceBusTopicPublisher
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

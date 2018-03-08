@@ -20,41 +20,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueYonder.BookingService.Host", "BlueYonder.BookingService.Host\BlueYonder.BookingService.Host.csproj", "{39E5C06A-14BA-4CD7-8B97-98CE0496313A}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccProjectUniqueName0 = BlueYonder.Server.Common\\BlueYonder.Server.Common.csproj
-		SccProjectName0 = BlueYonder.Server.Common
-		SccAuxPath0 = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath0 = BlueYonder.Server.Common
-		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName1 = BlueYonder.Entities\\BlueYonder.Entities.csproj
-		SccProjectName1 = BlueYonder.Entities
-		SccAuxPath1 = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath1 = BlueYonder.Entities
-		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName2 = BlueYonder.BookingService.Contracts\\BlueYonder.BookingService.Contracts.csproj
-		SccProjectName2 = BlueYonder.BookingService.Contracts
-		SccAuxPath2 = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath2 = BlueYonder.BookingService.Contracts
-		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName3 = BlueYonder.DataAccess.Interfaces\\BlueYonder.DataAccess.Interfaces.csproj
-		SccProjectName3 = BlueYonder.DataAccess.Interfaces
-		SccAuxPath3 = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath3 = BlueYonder.DataAccess.Interfaces
-		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName4 = BlueYonder.DataAccess\\BlueYonder.DataAccess.csproj
-		SccProjectName4 = BlueYonder.DataAccess
-		SccAuxPath4 = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath4 = BlueYonder.DataAccess
-		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName5 = BlueYonder.BookingService.Implementation\\BlueYonder.BookingService.Implementation.csproj
-		SccProjectName5 = BlueYonder.BookingService.Implementation
-		SccAuxPath5 = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath5 = BlueYonder.BookingService.Implementation
-		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

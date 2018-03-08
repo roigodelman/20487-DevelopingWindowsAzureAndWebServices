@@ -39,8 +39,10 @@ namespace BlueYonder.Companion.Controllers
 
         public HttpResponseMessage Get(string travelerId)
         {
-            var traveler = Travelers.FindBy(t => t.TravelerUserIdentity == travelerId).FirstOrDefault();
-            if(traveler == null)
+            int.TryParse(travelerId, out int travelerIdAsInt);
+
+            var traveler = Travelers.FindBy(t => t.TravelerId == travelerIdAsInt).FirstOrDefault();
+            if (traveler == null)
                 return Request.CreateResponse(HttpStatusCode.NotFound);
 
             var reservations = Reservations.FindBy(r => r.TravelerId == traveler.TravelerId);

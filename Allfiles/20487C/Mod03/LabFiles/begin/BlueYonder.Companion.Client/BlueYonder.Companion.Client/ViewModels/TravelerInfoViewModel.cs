@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlueYonder.Companion.Shared;
 
 namespace BlueYonder.Companion.Client.ViewModels
 {
@@ -90,7 +91,6 @@ namespace BlueYonder.Companion.Client.ViewModels
 
         private void LoadFromLocalSettings()
         {
-            //Module 13 - Securing Windows 8 App Data
             var travelerIdString = _settings.Get(Constants.TravelerId);
             int travelerId;
             int.TryParse(travelerIdString, out travelerId);
@@ -110,10 +110,11 @@ namespace BlueYonder.Companion.Client.ViewModels
             }
         }
 
-        private void SetFrequentFlyerMiles(int travelerId)
+        private async void SetFrequentFlyerMiles(int travelerId)
         {
-            var frequentFlyerMiles = 0;// await FrequentFlyerService.FrequentFlyerProvider.GetFrequentFlyerMilesAsync(travelerId);
-            this.FrequentFlyerMessage = string.Format(Accessories.resourceLoader.GetString("FrequentFlyerMiles"), frequentFlyerMiles);
+            var frequentFlyerProvider = new FrequentFlyerService.FrequentFlyerProvider(Addresses.GetFrequentFlyerMilesUri);
+            var frequentFlyerMiles = await frequentFlyerProvider.GetFrequentFlyerMilesAsync(travelerId);
+            this.FrequentFlyerMessage = string.Format(ResourceHelper.ResourceLoader.GetString("FrequentFlyerMiles"), frequentFlyerMiles);
         }
 
         private void Reset(object parameter)
@@ -126,12 +127,11 @@ namespace BlueYonder.Companion.Client.ViewModels
             StoreInLocalSettings();
             StoreOnServer();
 
-            this.Message = Accessories.resourceLoader.GetString("TravelerInformationSaved");
+            this.Message = ResourceHelper.ResourceLoader.GetString("TravelerInformationSaved");
         }
 
         private void StoreInLocalSettings()
         {
-            //Module 13 - Securing Windows 8 App Data
             _settings.Add(Constants.TravelerId, this.TravelerId.ToString());
             _settings.Add(Constants.FirstName, this.FirstName);
             _settings.Add(Constants.LastName, this.LastName);
@@ -154,8 +154,15 @@ namespace BlueYonder.Companion.Client.ViewModels
                 Email = this.Email
             };
 
-            var data = new DataManager();
-            await data.UpdateTravelerAsync(traveler);
+            try
+            {
+                var data = new DataManager();
+                await data.UpdateTravelerAsync(traveler);
+            }
+            catch
+            {
+                // The server could not be reached or the authentication failed
+            }
         }
 
         private void LoadTravelerInfo(int travelerId, string firstName, string lastName, string passportNumber, string mobileNumber, string homeAddress, string email)

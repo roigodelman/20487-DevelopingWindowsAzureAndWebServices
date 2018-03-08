@@ -10,5 +10,9 @@ namespace BlueYonder.Companion.Client.Common
         {
             this.Frame = frame;
         }
+
+        public virtual void Uninitialize()
+        {
+        }
     }
 }

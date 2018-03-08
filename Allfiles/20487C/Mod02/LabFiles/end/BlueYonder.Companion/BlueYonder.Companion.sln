@@ -15,24 +15,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueYonder.IntegrationTests", "BlueYonder.IntegrationTests\BlueYonder.IntegrationTests.csproj", "{5C9EBA8D-E360-491D-8C81-22DC1BE2BCE1}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = BlueYonder.DataAccess.Interfaces\\BlueYonder.DataAccess.Interfaces.csproj
-		SccProjectName1 = BlueYonder.DataAccess.Interfaces
-		SccLocalPath1 = BlueYonder.DataAccess.Interfaces
-		SccProjectUniqueName2 = BlueYonder.DataAccess\\BlueYonder.DataAccess.csproj
-		SccProjectName2 = BlueYonder.DataAccess
-		SccLocalPath2 = BlueYonder.DataAccess
-		SccProjectUniqueName3 = BlueYonder.Entities\\BlueYonder.Entities.csproj
-		SccProjectName3 = BlueYonder.Entities
-		SccLocalPath3 = BlueYonder.Entities
-		SccProjectUniqueName4 = BlueYonder.IntegrationTests\\BlueYonder.IntegrationTests.csproj
-		SccProjectName4 = BlueYonder.IntegrationTests
-		SccLocalPath4 = BlueYonder.IntegrationTests
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

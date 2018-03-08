@@ -24,39 +24,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{85C03D
 	EndProjectSection
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 10
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccProjectUniqueName0 = BlueYonder.DataAccess\\BlueYonder.DataAccess.csproj
-		SccProjectName0 = BlueYonder.DataAccess
-		SccLocalPath0 = BlueYonder.DataAccess
-		SccProjectUniqueName1 = BlueYonder.DataAccess.Interfaces\\BlueYonder.DataAccess.Interfaces.csproj
-		SccProjectName1 = BlueYonder.DataAccess.Interfaces
-		SccLocalPath1 = BlueYonder.DataAccess.Interfaces
-		SccProjectUniqueName2 = BlueYonder.Entities\\BlueYonder.Entities.csproj
-		SccProjectName2 = BlueYonder.Entities
-		SccLocalPath2 = BlueYonder.Entities
-		SccLocalPath3 = .
-		SccProjectUniqueName4 = BlueYonder.BookingService.Contracts\\BlueYonder.BookingService.Contracts.csproj
-		SccProjectName4 = BlueYonder.BookingService.Contracts
-		SccLocalPath4 = BlueYonder.BookingService.Contracts
-		SccProjectUniqueName5 = BlueYonder.BookingService.Implementation\\BlueYonder.BookingService.Implementation.csproj
-		SccProjectName5 = BlueYonder.BookingService.Implementation
-		SccLocalPath5 = BlueYonder.BookingService.Implementation
-		SccProjectUniqueName6 = BlueYonder.Server.Booking.WebHost\\BlueYonder.Server.Booking.WebHost.csproj
-		SccProjectName6 = BlueYonder.Server.Booking.WebHost
-		SccLocalPath6 = BlueYonder.Server.Booking.WebHost
-		SccProjectUniqueName7 = BlueYonder.Server.FrequentFlyer.Contracts\\BlueYonder.FrequentFlyerService.Contracts.csproj
-		SccProjectName7 = BlueYonder.Server.FrequentFlyer.Contracts
-		SccLocalPath7 = BlueYonder.Server.FrequentFlyer.Contracts
-		SccProjectUniqueName8 = BlueYonder.Server.FrequentFlyer.Implementation\\BlueYonder.FrequentFlyerService.Implementation.csproj
-		SccProjectName8 = BlueYonder.Server.FrequentFlyer.Implementation
-		SccLocalPath8 = BlueYonder.Server.FrequentFlyer.Implementation
-		SccProjectUniqueName9 = BlueYonder.Server.FrequentFlyer.WebHost\\BlueYonder.Server.FrequentFlyer.WebHost.csproj
-		SccProjectName9 = BlueYonder.Server.FrequentFlyer.WebHost
-		SccLocalPath9 = BlueYonder.Server.FrequentFlyer.WebHost
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

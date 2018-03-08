@@ -8,21 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusRelay.Server", "ServiceBusRelay.Server\ServiceBusRelay.Server.csproj", "{7785D8DF-6E31-4FE7-9646-9A4DD268778A}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://vstf-us-wa-11.partners.extranet.microsoft.com:8443/tfs/mslearning
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ServiceBusRelay.WebClient\\ServiceBusRelay.WebClient.csproj
-		SccProjectName1 = ServiceBusRelay.WebClient
-		SccLocalPath1 = ServiceBusRelay.WebClient
-		SccProjectUniqueName2 = ServiceBusRelay.Contract\\ServiceBusRelay.Contract.csproj
-		SccProjectName2 = ServiceBusRelay.Contract
-		SccLocalPath2 = ServiceBusRelay.Contract
-		SccProjectUniqueName3 = ServiceBusRelay.Server\\ServiceBusRelay.Server.csproj
-		SccProjectName3 = ServiceBusRelay.Server
-		SccLocalPath3 = ServiceBusRelay.Server
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

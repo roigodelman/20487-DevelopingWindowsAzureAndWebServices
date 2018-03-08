@@ -1,0 +1,52 @@
+﻿@using ScalableAzureApp.Models
+@model CountingModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Scalable Azure App Service</h1>
+    <p class="lead">This application uses Redis Cache to maintain a shared counter that is updated from a scaled-out Web App.</p>
+    <p class="lead">Note that updating the counter the is done by an arbitrary instance of the Web App.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Counter Information</h2>
+        <p>
+            <table>
+                <tr><th colspan="2"><br />Current counter value:</th></tr>
+                <tr><td>@Html.TextBoxFor(m => Model.CounterValue)</td></tr>
+                <tr><th colspan="1"><br />Request served by instance:</th></tr>
+                <tr>
+                    <td>@Html.TextBoxFor(m => Model.CurrentInstance)</td>
+                </tr>
+            </table>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Update Counter</h2>
+        <table>
+            <tr><th colspan="2"><br />Update counter by:</th></tr>
+            <tr>
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                {
+                    <td>@Html.TextBoxFor(m => Model.IncrementValue)</td>
+                    <td><input type="submit" value="Update" /></td>
+                }
+            </tr>
+        </table>
+    </div>
+    @*<div class="col-md-4">
+        <h2>Active Instances</h2>
+        <p>
+            <table>
+                @foreach (var instance in Model.Instances)
+                {
+                    <tr><td> @instance </td></tr>
+                }
+            </table>
+        </p>
+    </div>*@
+</div>
+
